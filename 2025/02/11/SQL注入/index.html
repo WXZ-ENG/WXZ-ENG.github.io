@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en" color-mode="light">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="John Doe" />
+  <!-- Open Graph Description 简短摘要-->
+  
+  <!-- 用于搜索引擎的文章摘要 -->
+  
+  
+  
+  <title>
+    
+      SQL注入 
+      
+      
+      |
+    
+     Hexo
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/xiongmao.png">
+    <link rel="icon" href="/images/xiongmao.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
+  
+
+  <!-- jquery3.3.1 -->
+  
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
+  
+
+  <!-- fancybox -->
+  
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
+  
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+
+  
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img src="/images/xiongmao.png" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">WXZ</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">Friends</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">SQL注入</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+          2025-02-11 15:07:20
+        </span>
+        
+      </div>
+      <div class="markdown-body">
+        <p>SQL注入（SQL Injection）是一种常见的Web安全漏洞，形成的主要原因是web应用程序在接收相关数据参数时未做好过滤，将其直接带入到数据库中查询，导致攻击者可以拼接执行构造的SQL语句。<br>	数字型语句：select * from table where id &#x3D;3<br>	字符型语句：select * from table where name&#x3D;’admin’</p>
+<h1 id="漏洞产生原因"><a href="#漏洞产生原因" class="headerlink" title="漏洞产生原因"></a><strong>漏洞产生原因</strong></h1><pre><code># 1. 没有对输入框进行限制  
+# 2. 直接使用url传递变量  
+# 3. 未过滤特殊字符
+# 4. sql错误回显
+</code></pre>
+<h1 id="攻击方式"><a href="#攻击方式" class="headerlink" title="攻击方式"></a>攻击方式</h1><h2 id="UNION-query-SQL-injection（联合查询注入）"><a href="#UNION-query-SQL-injection（联合查询注入）" class="headerlink" title="UNION query SQL injection（联合查询注入）"></a>UNION query SQL injection（联合查询注入）</h2><pre><code>联合查询适合于有显示位的注入，即页面某个位置会根据我们输入的数据的变化而变化，有注入点时页面会根据输入的数据变化而变化，当存在注入点时，优先考虑使用联合注入手法。
+?id=-1&#39; union select 1,2,database() --+`==`
+?id=-1&#39; union select 1,2,group_concat(table_name) from information_schema.tables where table_schema=database() --+`==`
+</code></pre>
+<h2 id="Error-based-SQL-injection（报错注入）"><a href="#Error-based-SQL-injection（报错注入）" class="headerlink" title="Error-based SQL injection（报错注入）"></a>Error-based SQL injection（报错注入）</h2><pre><code> 报错注入用在数据库的错误信息会回显在网页中的情况，如果联合查询不能使用，首选报错注入。  
+</code></pre>
+<p>       报错注入利用的是数据库的报错信息得到数据库的内容，这里需要构造语句让数据库报错。<br>       1. group by 重复键冲<br>       and (select 1 from (select count(*),concat((select 查询的内容 from information_schema.tables limit 0,1),floor(rand()*2))x from information_schema.tables group by x)a) –+<br>       2. extractvalue() 函数<br>       ?id&#x3D;1’ and extractvalue(1,concat(‘^’,(select database()),’^’)) –+<br>       3. updatexml() 函数<br>       and updatexml(1,concat(‘^’,(需要查询的内容),’^’),1)</p>
+<h2 id="2-Boolean-based-blind-SQL-injection（基于布尔的盲注）"><a href="#2-Boolean-based-blind-SQL-injection（基于布尔的盲注）" class="headerlink" title="2. Boolean-based blind SQL injection（基于布尔的盲注）"></a>2. Boolean-based blind SQL injection（基于布尔的盲注）</h2><pre><code>布尔盲注，即在页面没有错误回显时完成的注入攻击。此时我们输入的语句让页面呈现出两种状态，相当于true和false，根据这两种状态可以判断我们输入的语句是否查询成功。!（一般布尔盲注，手工去注入过于繁琐，不建议手工注入，可以借助于工具。）
+布尔盲注顺序
+	1.判断当前数据库类型
+	2.判断数据库名
+		数据库名长度
+		数据库名每个ascii值
+	3.判断数据库的表名
+		数据库表的个数
+		每个表名的长度
+		每个表名的ascii
+	4.判断表中的字段名
+		字段个数
+		每个字段名长度
+		字段名的ascii
+	5.爆字段中的数据
+		字段中数据的长度
+		数据的ascii
+判断数据库类型（哪个页面正常显示，就属于哪个数据库）
+	MySQL数据库表      information_schema.tables
+		?id=1&#39; and exists(select*from information_schema.tables)
+	access            msysobjects 
+		?id=1&#39; and exists(select*from msysobjects)
+	SQLServer         sysobjects
+		?id=1&#39; and exists(select*from sysobjects)
+</code></pre>
+<h2 id="3-Time-based-blind-SQL-injection（基于时间的盲注）"><a href="#3-Time-based-blind-SQL-injection（基于时间的盲注）" class="headerlink" title="3. Time-based blind SQL injection（基于时间的盲注）"></a>3. Time-based blind SQL injection（基于时间的盲注）</h2><pre><code>也叫延时注入。通过观察页面，既没有回显数据库内容，又没有报错信息也没有布尔类型状态，那么我们可以考虑用“绝招”--延时注入。延时注入就是将页面的时间线作为判断依据，一点一点注入出数据库的信息。
+	延时注入
+	观察请求的时间线，大概在5秒以上，说明构造的sleep(5) 语句起作用，可以把这个时间线作为sql 注入的判断依据。
+		?id=1&#39; and sleep(5) --+    
+</code></pre>
+<h2 id="（HTTP头注入）"><a href="#（HTTP头注入）" class="headerlink" title="（HTTP头注入）"></a>（HTTP头注入）</h2><pre><code>常见的sql注入一般是通过请求参数或者表单进行注入，而HTTP头部注入是通过HTTP协议头部字段值进行注入。
+User-Agent
+使得服务器能够识别客户使用的操作系统，浏览器版本等。（很多数据量大的网站中会记录客户使用的操作系统或浏览器版本等然后将其存入数据库中）。这里获取User-Agent就可以知道客户都是通过什么浏览器访问系统的，然后将其值保存到数据库中。
+cookie
+服务器端用来记录客户端的状态。由服务端产生，保存在浏览器中。
+referer
+是HTTP header的一部分，当浏览器向web服务器发送请求的时候，一般会带上Referer，告诉服务器该网页是从哪个页面链接过来的，服务器因此可以获得一些信息用于处理。
+X-forwarded-For
+用来识别客户端最原始的ip地址。
+</code></pre>
+<h2 id="宽字节注入"><a href="#宽字节注入" class="headerlink" title="宽字节注入"></a>宽字节注入</h2><pre><code>宽字节注入准确来说不是注入手法，而是另外一种比较特殊的情况。若提交的符号被转义成其他字符。此时，转义后的字符会被作为普通字符带入数据库查询。也就是说，我们提交的单引号不会影响到原来SQL语句的结构。
+宽字节是指多个字节宽度的编码，GB2312、GBK、GB18030、BIG5、Shift_JIS等这些都是常说的宽字节，实际上只有两字节。转义函数在对这些编码进行转义时会将转义字符 ‘\’ 转为 %5c ,于是我们在他前面输入一个单字符编码与它组成一个新的多字符编码，使得原本的转义字符没有发生作用。
+
+关于编码
+	1. 某字符的大小为一个字节时，称其字符为窄字节.
+	2. 当某字符的大小为两个字节时，称其字符为宽字节.
+	3. 所有英文默认占一个字节，汉字占两个字节
+	4. 常见的宽字节编码：GB2312,GBK,GB18030,BIG5,Shift_JIS等等
+黑盒
+	如注入点后面加%df，然后按照正常的注入流程开始注入即可。如果我们需要使用sqlmap进行检测注入的话也需要在注入点后面加%df然后再用sqlmap跑
+白盒
+	查看mysql是否为GBK编码，且是否使用preg_replace()把单引号转换成\&#39;或自带函数addslashes()进行转义
+</code></pre>
+<h2 id="4-Stacked-queries-SQL-injection（堆叠查询SQL注入）"><a href="#4-Stacked-queries-SQL-injection（堆叠查询SQL注入）" class="headerlink" title="4. Stacked queries SQL injection（堆叠查询SQL注入）"></a>4. Stacked queries SQL injection（堆叠查询SQL注入）</h2><pre><code> 堆叠查询也叫堆叠注入，在SQL中，分号（;）是用来表示一条sql语句的结束。试想一下我们在 ; 结束一个sql语句后继续构造下一条语句，会不会一起执行？因此这个想法也就造就了堆叠注入。而union injection（联合注入）也是将两条语句合并在一起，两者之间有什么区别么？区别就在于union 或者union all执行的语句类型是有限的，可以用来执行查询语句，而堆叠注入可以执行的是任意的语句。
+	id=1&#39;;update users set password=&#39;123456&#39; where id=1; --+ 
+**堆叠查询的局限性**
+	堆叠注入的局限性在于并不是每一个环境下都可以执行，可能受到API或者数据库引擎不支持的限制，当然了权限不足也可以解释为什么攻击者无法修改数据或者调用一些程序。虽然我们前面提到了堆叠查询可以执行任意的sql语句，但是这种注入方式并不是十分的完美的。在我们的web系统中，因为代码通常只返回一个查询结果，因此，堆叠注入第二个语句产生错误或者结果只能被忽略，我们在前端界面是无法看到返回结果的。如上面的实例如果我们不输出密码那我们是看不到这个结果的。因此，在读取数据时，我们建议使用union（联合）注入。同时在使用堆叠注入之前，我们也是需要知道一些数据库相关信息的，例如表名，列名等信息
+</code></pre>
+<h2 id="二阶注入"><a href="#二阶注入" class="headerlink" title="二阶注入"></a>二阶注入</h2><pre><code>二次注入漏洞是一种在Web应用程序中广泛存在的安全漏洞形式。相对于一次注入漏洞而言，二次注入漏洞更难以被发现，但是它却具有与—次注入攻击漏洞相同的攻击威力。
+	1.黑客通过构造数据的形式，在浏览器或者其他软件中提交HTTP数据报文请求到服务端进行处理，提交的数据报文请求中可能包含了黑客构造的SQL语句或者命令。
+	2.服务端应用程序会将黑客提交的数据信息进行存储，通常是保存在数据库中，保存的数据信息的主要作用是为应用程序执行其他功能提供原始输入数据并对客户端请求做出响应。
+	3.黑客向服务端发送第二个与第一次不相同的请求数据信息。
+	4.服务端接收到黑客提交的第二个请求信息后，为了处理该请求，服务端会查询数据库中已经存储的数据信息并处理，从而导致黑客在第一次请求中构造的SQL语句或者命令在服务端环境中执行。
+	5.服务端返回执行的处理结果数据信息，黑客可以通过返回的结果数据信息判断二次注入漏洞利用是否成功
+二次注入就是由于将数据存储进数据库中时未做好过滤，先提交构造好的特殊字符请求存储进数据库，然后提交第二次请求时与第一次提交进数据库中的字符发生了作用，形成了一条新的sql语句导致被执行
+</code></pre>
+<h1 id="常用词汇"><a href="#常用词汇" class="headerlink" title="常用词汇"></a>常用词汇</h1><table>
+<thead>
+<tr>
+<th>select</th>
+<th>查询</th>
+<th>table</th>
+<th>表</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>from</td>
+<td>来自</td>
+<td>union</td>
+<td>联合查询</td>
+</tr>
+<tr>
+<td>order by ‘n’</td>
+<td>查询回显位</td>
+<td>sheep</td>
+<td>睡眠</td>
+</tr>
+<tr>
+<td>version()</td>
+<td>版本</td>
+<td>@@version_compile_os</td>
+<td>操作系统版本</td>
+</tr>
+<tr>
+<td>database()</td>
+<td>数据库名</td>
+<td>@@datadir</td>
+<td>数据库路径</td>
+</tr>
+</tbody></table>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2025/02/11/docker-%E7%8E%AF%E5%A2%83%E5%A4%87%E5%BF%98/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+              2025-02-11 15:07:20
+            </span>
+            
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E4%BA%A7%E7%94%9F%E5%8E%9F%E5%9B%A0"><span class="toc-text">漏洞产生原因</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%94%BB%E5%87%BB%E6%96%B9%E5%BC%8F"><span class="toc-text">攻击方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#UNION-query-SQL-injection%EF%BC%88%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5%EF%BC%89"><span class="toc-text">UNION query SQL injection（联合查询注入）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Error-based-SQL-injection%EF%BC%88%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5%EF%BC%89"><span class="toc-text">Error-based SQL injection（报错注入）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Boolean-based-blind-SQL-injection%EF%BC%88%E5%9F%BA%E4%BA%8E%E5%B8%83%E5%B0%94%E7%9A%84%E7%9B%B2%E6%B3%A8%EF%BC%89"><span class="toc-text">2. Boolean-based blind SQL injection（基于布尔的盲注）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Time-based-blind-SQL-injection%EF%BC%88%E5%9F%BA%E4%BA%8E%E6%97%B6%E9%97%B4%E7%9A%84%E7%9B%B2%E6%B3%A8%EF%BC%89"><span class="toc-text">3. Time-based blind SQL injection（基于时间的盲注）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%88HTTP%E5%A4%B4%E6%B3%A8%E5%85%A5%EF%BC%89"><span class="toc-text">（HTTP头注入）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%BD%E5%AD%97%E8%8A%82%E6%B3%A8%E5%85%A5"><span class="toc-text">宽字节注入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Stacked-queries-SQL-injection%EF%BC%88%E5%A0%86%E5%8F%A0%E6%9F%A5%E8%AF%A2SQL%E6%B3%A8%E5%85%A5%EF%BC%89"><span class="toc-text">4. Stacked queries SQL injection（堆叠查询SQL注入）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E9%98%B6%E6%B3%A8%E5%85%A5"><span class="toc-text">二阶注入</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E8%AF%8D%E6%B1%87"><span class="toc-text">常用词汇</span></a></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        
+<div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          
+              <a title="github" target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">
+                <i class="iconfont icon-github"></i>
+              </a>
+              
+        </li>
+        
+    </ul>
+  </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2025 Oranges</a>
+        
+    </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+  
+</div>
+
+      </div>
+
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="Search...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>First search, index file loading, please wait...<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>No result<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The search.xml file was not found, please refer to：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The request failed, Try to refresh the page or try again later.<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + SQL%E6%B3%A8%E5%85%A5 + '&url=' + http%3A%2F%2Fexample.com%2F2025%2F02%2F11%2FSQL%25E6%25B3%25A8%25E5%2585%25A5%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://example.com/2025/02/11/SQL%E6%B3%A8%E5%85%A5/" target="_blank" title="Facebook">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        
+      </div>
+    </div>
+  
+  
+<script src="/js/shares.js"></script>
+
+
+
+      </div>
+    </div>
+  </body>
+</html>
