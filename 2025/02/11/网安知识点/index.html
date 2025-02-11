@@ -1,0 +1,2418 @@
+<!DOCTYPE html>
+<html lang="en" color-mode="light">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="John Doe" />
+  <!-- Open Graph Description 简短摘要-->
+  
+  <!-- 用于搜索引擎的文章摘要 -->
+  
+  
+  
+  <title>
+    
+      网安笔记 
+      
+      
+      |
+    
+     WXZ
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/xiongmao.png">
+    <link rel="icon" href="/images/xiongmao.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
+  
+
+  <!-- jquery3.3.1 -->
+  
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
+  
+
+  <!-- fancybox -->
+  
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
+  
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+
+  
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img src="/images/xiongmao.png" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">WXZ</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">Friends</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">网安笔记</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+          2025-02-11 15:22:51
+        </span>
+        
+      </div>
+      <div class="markdown-body">
+        <h1 id="网安"><a href="#网安" class="headerlink" title="网安"></a>网安</h1><h1 id="密码学"><a href="#密码学" class="headerlink" title="密码学"></a>密码学</h1><h3 id="加密算法"><a href="#加密算法" class="headerlink" title="加密算法"></a>加密算法</h3><h4 id="对称算法"><a href="#对称算法" class="headerlink" title="对称算法"></a>对称算法</h4><p>共用一个公钥，对数据的加密和解密进行操作（DES、3DES、DESX、Blowfish、IDEA、RC4、RC5、RC6和AES）</p>
+<h4 id="非对称算法"><a href="#非对称算法" class="headerlink" title="非对称算法"></a>非对称算法</h4><p>一个公钥，一个私钥；RSA、DH、ECC（移动设备用）、Diffie-Hellman、El Gamal、DSA（数字签名用）<br>公钥加密私钥解密，私钥加密公钥解密。</p>
+<h4 id="对称-非对称算法（混合加密）"><a href="#对称-非对称算法（混合加密）" class="headerlink" title="对称+非对称算法（混合加密）"></a>对称+非对称算法（混合加密）</h4><h4 id="在实际应用中，通常会结合使用对称加密算法和非对称加密算法，利用对称加密算法的高效性对数据进行加密，再使用非对称加密算法对对称密钥进行加密和传输，以保证数据的安全性和完整性。这种结合使用的方式被称为混合加密。"><a href="#在实际应用中，通常会结合使用对称加密算法和非对称加密算法，利用对称加密算法的高效性对数据进行加密，再使用非对称加密算法对对称密钥进行加密和传输，以保证数据的安全性和完整性。这种结合使用的方式被称为混合加密。" class="headerlink" title="在实际应用中，通常会结合使用对称加密算法和非对称加密算法，利用对称加密算法的高效性对数据进行加密，再使用非对称加密算法对对称密钥进行加密和传输，以保证数据的安全性和完整性。这种结合使用的方式被称为混合加密。"></a>在实际应用中，通常会结合使用对称加密算法和非对称加密算法，利用对称加密算法的高效性对数据进行加密，再使用非对称加密算法对对称密钥进行加密和传输，以保证数据的安全性和完整性。这种结合使用的方式被称为混合加密。</h4><h4 id="国密算法"><a href="#国密算法" class="headerlink" title="国密算法"></a>国密算法</h4><p><strong>国密算法包括对称密码算法、非对称密码算法和杂凑算法</strong>，即SM1、SM2、SM3、SM4、SM7、SM9、祖冲之密码算法（ZUC）等。其中，SM1是一种分组密码算法，用于加密和解密数据，该算法未公开；SM2是一种非对称加密算法，基于离散对数实现，常用于数字签名和密钥交换；SM3是一种杂凑算法，用于数据完整性校验和消息认证码，该算法为不可逆的算法，未公开；SM4是一种分组密码算法，可用于替代DES&#x2F;AES等国际密码算法，拥有和AES算法相同的密钥长度和分组长度，均为128比特；SM7是一种分组加密算法，该算法没有公开，SM7适用于非接IC卡应用包括身份识别类应用(门禁卡、工作证、参赛证)，票务类应用(大型赛事门票、展会门票)，支付与通卡类应用(积分消费卡、校园一卡通、企业一卡通、公交一卡通)；SM9是基于标识的非对称密码算法，用椭圆曲线对实现的基于标识的数字签名算法、密钥交换协议、密钥封装机制和公钥加密与解密算法，包括数字签名生成算法和验证算法，并给出了数字签名与验证算法及其相应的流程；祖冲之密码算法是一种流加密算法，该算法可适用于3GPP LTE通信中的加密和解密。</p>
+<p>加密机成对出现放在网络两端网路的出入口</p>
+<h3 id="哈希算法"><a href="#哈希算法" class="headerlink" title="哈希算法"></a>哈希算法</h3><p>哈希算法是一种将任意长度的输入数据（如字符串、文件、数据包等）通过特定的算法转化为固定长度的输出数据的计算过程。</p>
+<h4 id="哈希算法分类"><a href="#哈希算法分类" class="headerlink" title="哈希算法分类"></a>哈希算法分类</h4><p>MD5，SHA-1，SHA-256用于实现数据完成性校验（还有MD2、MD4、HAVAL-Hakimi、SHA、SHA-1、HMAC、HMAC-MD5、HMAC-SHA1）</p>
+<h4 id="哈希算法原理"><a href="#哈希算法原理" class="headerlink" title="哈希算法原理"></a>哈希算法原理</h4><p><strong>特征</strong>：</p>
+<ul>
+<li>雪崩效应：明文有任何修改，hash全局改变</li>
+<li>不可逆向：无法根据哈希值得到明文</li>
+<li>固定输出：128bit、160bit（字符串长度）</li>
+<li>hash改变的是MD5值</li>
+</ul>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>完整性校验</li>
+<li>安全性校验</li>
+</ul>
+<h4 id="哈希算法的应用"><a href="#哈希算法的应用" class="headerlink" title="哈希算法的应用"></a>哈希算法的应用</h4><p>网盘秒传：保存到个人网盘里，将他人传输文件与服务器本身的资源进行哈希值对比，如果有，则直接就保存上了，但该服务器内只有一份该文件<br>软件下载（安全验证）</p>
+<h3 id="数字签名"><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h3><p>先将文件做hash，再用私钥加密，生成数字签名。</p>
+<p>再用公钥解密，解密之后，比对解密后的hash，与之前的签名hash做比对，如果一致，说明文件的完整性。</p>
+<h3 id="数字证书"><a href="#数字证书" class="headerlink" title="数字证书"></a>数字证书</h3><p>数字证书是指在互联网通讯中标志通讯各方身份信息的一个数字认证，人们可以在网上用它来识别对方的身份。</p>
+<h4 id="数字证书组成"><a href="#数字证书组成" class="headerlink" title="数字证书组成"></a>数字证书组成</h4><ul>
+<li>对等体公钥</li>
+<li>对等体姓名、组织、地址</li>
+<li>证书有效期</li>
+<li>CA的数字签名</li>
+</ul>
+<h4 id="PKI架构（Public-Key-Infrastructure，公钥基础设施）"><a href="#PKI架构（Public-Key-Infrastructure，公钥基础设施）" class="headerlink" title="PKI架构（Public Key Infrastructure，公钥基础设施）"></a>PKI架构（Public Key Infrastructure，<strong>公钥基础设施</strong>）</h4><p>CA、RA、数字证书、对等体、分发机制 </p>
+<h1 id="VMware"><a href="#VMware" class="headerlink" title="VMware"></a>VMware</h1><h4 id="VMware简介"><a href="#VMware简介" class="headerlink" title="VMware简介"></a>VMware简介</h4><p>WMware是一个虚拟PC的软件，可以在现有操作系统上虚拟出一个新的硬件环境，相当于模拟出一台新的PC，以此来实现在一台机器上真正同时运行两个独立的操作系统。</p>
+<h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h2 id="Linux的优点"><a href="#Linux的优点" class="headerlink" title="Linux的优点"></a>Linux的优点</h2><ul>
+<li>Linux是开源的，所以有大量可用软件和免费软件。</li>
+<li>Linux稳定性，安全性好。因为未作图形化，应用程序少，所以稳定性好。使用用户少，开发病毒收入低，导致很少有人在linux开发病毒。</li>
+<li>强大的内存管理和文件管理系统。</li>
+<li>多数网络协议支持，方便的远程管理<ul>
+<li>aux端口 用于远程配置</li>
+<li>pstn 电话交换网络</li>
+</ul>
+</li>
+</ul>
+<h3 id="Linux嵌入式应用"><a href="#Linux嵌入式应用" class="headerlink" title="Linux嵌入式应用"></a>Linux嵌入式应用</h3><ul>
+<li>生物特征识别系统</li>
+<li>智能卡系统</li>
+<li>掌上电脑，手机，信息家电</li>
+<li>里尤其，机顶盒，数码相机,MP4</li>
+</ul>
+<h3 id="Linux分区规划"><a href="#Linux分区规划" class="headerlink" title="Linux分区规划"></a>Linux分区规划</h3><ul>
+<li>根分区 &#x2F;</li>
+<li>swap分区</li>
+<li>其他分区可根据需要划分</li>
+</ul>
+<h3 id="Linux文件命名规则"><a href="#Linux文件命名规则" class="headerlink" title="Linux文件命名规则"></a>Linux文件命名规则</h3><ul>
+<li>除了&#x2F;之外，所有的字符都合法。</li>
+<li>有些字符最好不用，如空格符，制表符，退格符和字符@#$&amp;()</li>
+<li>避免使用，作为普通文件名的第一个字符</li>
+<li>大小写敏感</li>
+</ul>
+<h2 id="Linux操作命令"><a href="#Linux操作命令" class="headerlink" title="Linux操作命令"></a>Linux操作命令</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_23329167/article/details/83856430">Linux常用命令-CSDN博客</a></p>
+<h4 id="文件类型"><a href="#文件类型" class="headerlink" title="文件类型"></a>文件类型</h4><h4 id="bin"><a href="#bin" class="headerlink" title="bin"></a>bin</h4><h3 id="软链接，硬链接"><a href="#软链接，硬链接" class="headerlink" title="软链接，硬链接"></a>软链接，硬链接</h3><p>参考文档<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_56069910/article/details/133408213">【Linux】—— 详解软硬链接_linux 硬链接-CSDN博客</a></p>
+<p>等同于window的快捷方式</p>
+<h3 id="软链接"><a href="#软链接" class="headerlink" title="软链接"></a>软链接</h3><p>为使用户 B 能够共享用户 A的一个文件FILE，可以由系统创建一个LINK类型的新文件，也取名为FILE，并将该文件写入用户B的目录中，已实现用户B的目录与文件FILE的链接。</p>
+<p>创建软链接是在文件系统中创建一个指向目标文件或目录的符号链接。软链接类似于Windows系统中的快捷方式，它提供了一种方便的方式来引用目标文件或目录。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln-s&lt;目标文件或目录&gt;&lt;链接名&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="硬链接"><a href="#硬链接" class="headerlink" title="硬链接"></a>硬链接</h3><p>在树形结构的目录中，当有两个或多个用户需要共享一个子目录或文件时，必须将共享文件或子目录链接到两个或多个用户的目录中，才能方便找到该文件。</p>
+<p>创建硬链接是在文件系统中创建一个指向目标文件的硬链接，硬链接与目标文件共享相同的 inode 和数据块，它们在文件系统中被视为同一实体，即使使用不同的文件名。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln &lt;目标文件&gt;&lt;链接名&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="编辑文件"><a href="#编辑文件" class="headerlink" title="编辑文件"></a>编辑文件</h3><h4 id="vi"><a href="#vi" class="headerlink" title="vi"></a>vi</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi 文件名</span><br></pre></td></tr></table></figure>
+
+<p>在编辑器中按下<code>i</code>键切换到插入模式，然后输入要写入的内容。按下Esc键退出插入模式，输入<code>:wq</code>保存并退出编辑器。这种方法也会覆盖原有内容。</p>
+<h4 id="echo"><a href="#echo" class="headerlink" title="echo"></a>echo</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span> <span class="string">&quot;要写入的内容&quot;</span> &gt; 文件名</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span> <span class="string">&quot;要追加的内容&quot;</span> &gt;&gt; 文件名</span><br></pre></td></tr></table></figure>
+
+<h3 id="权限修改"><a href="#权限修改" class="headerlink" title="权限修改"></a>权限修改</h3><h4 id="chomd（重点）"><a href="#chomd（重点）" class="headerlink" title="chomd（重点）"></a>chomd（重点）</h4><p>在Linux中，可以使用<code>chmod</code>命令来修改文件或目录的权限。权限可以分为读（r）、写（w）和执行（x）三种。用户类型可以分为文件所有者（u）、文件所属组（g）和其他用户（o）。</p>
+<p><code>chmod</code>命令有两种设置权限的方法：</p>
+<ul>
+<li>符号设置法：通过符号”+”、”-“和”&#x3D;”来设置权限。例如，<code>chmod u+x file</code>表示给文件所有者增加执行权限。</li>
+<li>数字设置法：将读、写、执行权限分别用数字4、2、1表示，然后将它们相加得到一个数字，再用这个数字来设置权限。例如，<code>chmod 755 file</code>表示设置文件所有者为读、写、执行权限（7&#x3D;4+2+1），文件所属组和其他用户为读、执行权限（5&#x3D;4+1）。</li>
+</ul>
+<p>需要注意的是，在使用<code>chmod</code>命令修改权限时，必须拥有足够的权限才能进行修改。否则，命令将无法执行。</p>
+<h4 id="chown"><a href="#chown" class="headerlink" title="chown"></a>chown</h4><p><strong>Linux chown命令用于设置文件所有者和文件关联组的命令1。</strong></p>
+<p>chown的基本语法格式是：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@<span class="number">192</span> soft]<span class="comment"># chown test.test 1.txt</span></span><br></pre></td></tr></table></figure>
+
+<p>其中，选项可以是以下之一：</p>
+<ul>
+<li>-R：递归地修改文件夹及其子文件夹的权限。</li>
+<li>-v：显示详细的操作信息。</li>
+<li>-c：只显示发生了改变的文件。</li>
+</ul>
+<p>例如，如果想将文件file.txt的所有者修改为user1，可以执行命令：chown user1 file.txt。</p>
+<p>如果只给出了冒号和组，但省略了所有者，则只更改文件组；在这种情况下，chown执行与chgrp相同的功能1。</p>
+<h4 id="chgrp"><a href="#chgrp" class="headerlink" title="chgrp"></a>chgrp</h4><p><code>chgrp</code>命令的基本语法如下1：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chgrp [options] group filename</span><br></pre></td></tr></table></figure>
+
+<p>其中，<code>options</code>是可选的参数，常用的参数包括：</p>
+<ul>
+<li><code>-R</code>：递归地改变目录及其子目录下的所有文件和目录的所属组。</li>
+<li><code>-H</code>：如果改变的是符号链接的所属组，那么该链接的目标文件的所属组也会相应改变。</li>
+</ul>
+<p>例如，要将文件<code>file.txt</code>的所属组更改为<code>group1</code>，可以使用命令<code>chgrp group1 file.txt</code>；要将目录<code>directory</code>及其子目录下的所有文件和目录的所属组更改为<code>group2</code>，可以使用命令<code>chgrp -R group2 directory</code>。</p>
+<p>需要注意的是，使用<code>chgrp</code>命令需要有适当的权限才能改变文件或目录的所属组1。</p>
+<h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><h4 id="which"><a href="#which" class="headerlink" title="which"></a>which</h4><p><code>which</code>是Linux中的一个常用命令，用于查找并显示指定命令的绝对路径1。</p>
+<p><code>which</code>命令会在环境变量<code>$PATH</code>指定的路径中查找命令的可执行文件，并将查找到的第一个可执行文件的完整路径输出到标准输出上。它只会输出可执行文件的完整路径，而不会输出其他信息。因此，<code>which</code>命令主要用于查找命令的可执行文件路径2。</p>
+<p>例如，输入<code>which ls</code>，如果<code>ls</code>是<code>ls --color=auto</code>的别名，则<code>which</code>命令将显示<code>ls --color=auto</code>的实际路径</p>
+<h4 id="find（重点）"><a href="#find（重点）" class="headerlink" title="find（重点）"></a>find（重点）</h4><p>在Linux中，<code>find</code>命令是一个非常强大的工具，用于在目录树中搜索文件。你可以使用<code>find</code>命令根据各种条件（如名称、类型、大小、修改日期等）来查找文件，并对找到的文件执行各种操作（如打印、删除、执行命令等）。</p>
+<p>以下是<code>find</code>命令的一些基本用法：</p>
+<ol>
+<li><p><strong>按名称查找文件</strong>：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`find /path/to/search -name <span class="string">&quot;filename&quot;</span>`</span><br></pre></td></tr></table></figure>
+
+<p>这将在<code>/path/to/search</code>目录及其子目录中查找名为<code>filename</code>的文件。</p>
+</li>
+<li><p><strong>按类型查找文件</strong>：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`find /path/to/search -type f`</span><br></pre></td></tr></table></figure>
+
+<p>这将查找<code>/path/to/search</code>目录及其子目录中的所有普通文件。</p>
+</li>
+<li><p><strong>按大小查找文件</strong>：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`find /path/to/search -size +<span class="number">1</span>M`</span><br></pre></td></tr></table></figure>
+
+<p>这将查找大小超过1MB的文件。</p>
+</li>
+<li><p><strong>按修改日期查找文件</strong>：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`find /path/to/search -mtime -<span class="number">7</span>`</span><br></pre></td></tr></table></figure>
+
+<p>这将查找在过去7天内修改过的文件。</p>
+</li>
+<li><p><strong>查找并列出匹配的文件</strong>：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`find /path/to/search -name <span class="string">&quot;*.txt&quot;</span> -<span class="keyword">print</span>`</span><br></pre></td></tr></table></figure>
+
+<p>这将查找所有以<code>.txt</code>结尾的文件，并将它们的路径打印到标准输出。</p>
+</li>
+<li><p><strong>查找并执行命令</strong>：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`find /path/to/search -name <span class="string">&quot;*.txt&quot;</span> -exec cat &#123;&#125; \;`</span><br></pre></td></tr></table></figure>
+
+<p>这将查找所有以<code>.txt</code>结尾的文件，并使用<code>cat</code>命令打印它们的内容。<code>&#123;&#125;</code>是一个占位符，代表找到的每个文件。</p>
+</li>
+<li><p><strong>查找并删除文件</strong>：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`find /path/to/search -name <span class="string">&quot;*.tmp&quot;</span> -delete`</span><br></pre></td></tr></table></figure>
+
+<p>这将查找所有以<code>.tmp</code>结尾的文件，并删除它们。</p>
+</li>
+<li><p><strong>忽略某些路径</strong>：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`find /path/to/search -path <span class="string">&quot;/path/to/ignore&quot;</span> -prune -o -<span class="keyword">print</span>`</span><br></pre></td></tr></table></figure>
+
+<p>这将查找<code>/path/to/search</code>目录中的文件，但会忽略<code>/path/to/ignore</code>路径及其子目录。</p>
+</li>
+</ol>
+<p><code>find</code>命令的选项和参数非常丰富，以上只是其中的一小部分。你可以通过<code>man find</code>或<code>find --help</code>命令查看完整的命令帮助和更多选项。在实际使用中，你经常需要组合多个选项来满足特定的搜索需求。</p>
+<h4 id="locate"><a href="#locate" class="headerlink" title="locate"></a>locate</h4><p>在Linux系统中，locate命令用于快速定位文件。它通过搜索数据库来快速找到文件，而不是像find命令那样实时搜索文件系统。要使用locate命令，请按照以下步骤操作：</p>
+<p>打开终端。</p>
+<p>输入以下命令来更新文件数据库，以确保最新的文件信息被包含在内：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo updatedb</span><br></pre></td></tr></table></figure>
+
+<p>一旦数据库更新完成，你可以使用locate命令来查找文件，例如：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">locate filename </span><br></pre></td></tr></table></figure>
+
+<p>locate命令会输出匹配指定文件名的所有文件路径。请注意，locate命令可能需要一些时间来更新数据库，并且可能无法立即反映最新创建或修改的文件。</p>
+<h4 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h4><p>Linux中的<code>grep</code>命令用于在文件中搜索文本模式，并将包含匹配模式的行打印出来。以下是<code>grep</code>命令的基本用法：</p>
+<ol>
+<li><p>在文件中搜索匹配的文本：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">&quot;pattern&quot;</span> file</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="帮助文档"><a href="#帮助文档" class="headerlink" title="帮助文档"></a>帮助文档</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">info &lt;命令&gt;</span><br><span class="line">&lt;命令&gt; --help</span><br><span class="line">man &lt;命令&gt;</span><br><span class="line">whatis &lt;命令&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="gzip"><a href="#gzip" class="headerlink" title="gzip"></a>gzip</h3><h4 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gzip file</span><br></pre></td></tr></table></figure>
+
+<h4 id="解压缩"><a href="#解压缩" class="headerlink" title="解压缩"></a>解压缩</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gzip -d file.gz</span><br><span class="line">gunzip file.gz</span><br></pre></td></tr></table></figure>
+
+<h3 id="tar-重点"><a href="#tar-重点" class="headerlink" title="tar(重点)"></a>tar(重点)</h3><h4 id="压缩-1"><a href="#压缩-1" class="headerlink" title="压缩"></a>压缩</h4><ol>
+<li><p><strong>创建 tar 归档文件</strong>：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zcvf archive.tar file1 file2 directory</span><br></pre></td></tr></table></figure>
+
+<p>这将创建一个名为<code>archive.tar</code>的归档文件，并将<code>file1</code>、<code>file2</code>和<code>directory</code>添加到归档文件中。</p>
+</li>
+<li><p><strong>创建 tar 归档文件并排除某些文件&#x2F;目录</strong>：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zcvf archive.tar --exclude=<span class="string">&#x27;file1&#x27;</span> directory</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这将创建一个名为<code>archive.tar</code>的归档文件，将<code>directory</code>添加到归档文件中，但排除掉<code>file1</code>。</p>
+</li>
+</ol>
+<h4 id="解压缩-1"><a href="#解压缩-1" class="headerlink" title="解压缩"></a>解压缩</h4><ol>
+<li><p><strong>解包 tar 归档文件</strong>：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf archive.tar</span><br></pre></td></tr></table></figure>
+
+<p>这将解包名为<code>archive.tar</code>的归档文件，将其中的文件提取到当前目录。</p>
+</li>
+<li><p><strong>解包 tar 归档文件到指定目录</strong>：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf archive.tar -C /path/to/directory</span><br></pre></td></tr></table></figure>
+
+<p>这将解包名为<code>archive.tar</code>的归档文件，将其中的文件提取到<code>/path/to/directory</code>目录。查看归档文件内容：</p>
+</li>
+</ol>
+<h4 id="查看-tar-归档文件内容："><a href="#查看-tar-归档文件内容：" class="headerlink" title="查看 tar 归档文件内容："></a><strong>查看 tar 归档文件内容</strong>：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -tvf archive.tar</span><br></pre></td></tr></table></figure>
+
+<h4 id="tar常用选项："><a href="#tar常用选项：" class="headerlink" title="tar常用选项："></a>tar常用选项：</h4><ul>
+<li><code>-c, --create</code>：创建归档文件</li>
+<li><code>-x, --extract</code>：解包归档文件</li>
+<li><code>-t, --list</code>：列出归档文件内容</li>
+<li><code>-f, --file &lt;归档文件&gt;</code>：指定归档文件的名称</li>
+<li><code>-v, --verbose</code>：显示详细信息</li>
+<li><code>-z, --gzip</code>：使用 gzip 格式压缩&#x2F;解压缩</li>
+<li><code>-j, --bzip2</code>：使用 bzip2 格式压缩&#x2F;解压缩</li>
+</ul>
+<h3 id="zip"><a href="#zip" class="headerlink" title="zip"></a>zip</h3><h5 id="创建zip归档文件："><a href="#创建zip归档文件：" class="headerlink" title="创建zip归档文件："></a>创建zip归档文件：</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zip archive.zip file1 file2 directory</span><br></pre></td></tr></table></figure>
+
+<p>这将创建一个名为<code>archive.zip</code>的zip归档文件，并将<code>file1</code>、<code>file2</code>和<code>directory</code>添加到其中。</p>
+<h5 id="添加文件到已存在的zip归档文件："><a href="#添加文件到已存在的zip归档文件：" class="headerlink" title="添加文件到已存在的zip归档文件："></a>添加文件到已存在的zip归档文件：</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zip -r archive.zip newfile</span><br></pre></td></tr></table></figure>
+
+<p>这将向名为<code>archive.zip</code>的zip归档文件中添加新文件<code>newfile</code>。</p>
+<h5 id="解压缩zip归档文件："><a href="#解压缩zip归档文件：" class="headerlink" title="解压缩zip归档文件："></a>解压缩zip归档文件：</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip archive.zip</span><br></pre></td></tr></table></figure>
+
+<p>这将解压缩名为<code>archive.zip</code>的zip归档文件，并将其中的文件提取到当前目录。</p>
+<h5 id="查看zip归档文件内容："><a href="#查看zip归档文件内容：" class="headerlink" title="查看zip归档文件内容："></a>查看zip归档文件内容：</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip -l archive.zip</span><br></pre></td></tr></table></figure>
+
+<p>这将列出名为<code>archive.zip</code>的zip归档文件中的所有文件信息。</p>
+<h5 id="将目录及其内容压缩成zip文件："><a href="#将目录及其内容压缩成zip文件：" class="headerlink" title="将目录及其内容压缩成zip文件："></a>将目录及其内容压缩成zip文件：</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zip -r archive.zip directory</span><br></pre></td></tr></table></figure>
+
+<p>这将递归地将<code>directory</code>目录及其所有内容压缩成名为<code>archive.zip</code>的zip文件。</p>
+<h3 id="write"><a href="#write" class="headerlink" title="write"></a>write</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">write &lt;用户名&gt;</span><br><span class="line">内容(ctrl+d退出)</span><br></pre></td></tr></table></figure>
+
+<h3 id="alias"><a href="#alias" class="headerlink" title="alias"></a>alias</h3><p>在Linux中，<code>alias</code>是用来创建简化命令的命令别名的工具。通过设置别名，你可以为常用的命令创建简短、易记的替代名称，从而提高工作效率。以下是一些关于使用<code>alias</code>的基本信息：</p>
+<ol>
+<li><p><strong>查看当前别名：</strong> 你可以使用<code>alias</code>命令来查看当前系统中定义的所有别名列表。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>创建别名：</strong> 要创建一个别名，可以使用如下语法：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias new_command=<span class="string">&#x27;original_command&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>例如，要将<code>ls -l</code>这个命令创建一个别名<code>ll</code>，可以执行以下命令：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias ll=<span class="string">&#x27;ls -l&#x27;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>永久保存别名：</strong> 如果想让别名在每次登录时都生效，可以将别名定义添加到<code>~/.bashrc</code>或<code>~/.bash_profile</code>文件中。</p>
+</li>
+<li><p><strong>删除别名：</strong> 若要删除一个别名，可以使用<code>unalias</code>命令，其语法为：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unalias alias_name</span><br></pre></td></tr></table></figure>
+
+<p>例如，要删除之前定义的<code>ll</code>别名，可以执行以下命令：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unalias ll</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><h4 id="输入输出重定向"><a href="#输入输出重定向" class="headerlink" title="输入输出重定向"></a>输入输出重定向</h4><p>在Linux中，输入输出重定向是一种将命令的输入和输出重定向到文件或其他设备的方法。以下是一些常见的输入输出重定向操作：</p>
+<ol>
+<li><p><strong>输出重定向（<code>&gt;</code>）：</strong> 使用<code>&gt;</code>符号可以将命令的输出重定向到文件中，如果目标文件已存在，则会被覆盖。<br>例如，将命令<code>ls</code>的输出重定向到一个名为<code>file.txt</code>的文件中：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls &gt; file.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>追加重定向（<code>&gt;&gt;</code>）：</strong> 使用<code>&gt;&gt;</code>符号可以将命令的输出追加到文件末尾，而不会覆盖文件原有内容。<br>例如，将命令<code>ls</code>的输出追加到一个名为<code>file.txt</code>的文件中：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls &gt;&gt; file.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>输入重定向（<code>&lt;</code>）：</strong> 使用<code>&lt;</code>符号可以将文件作为命令的输入。<br>例如，将文件<code>input.txt</code>的内容作为<code>sort</code>命令的输入：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort &lt; input.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>错误重定向（<code>2&gt;</code>）：</strong> 使用<code>2&gt;</code>符号可以将命令的错误输出重定向到文件中。<br>例如，将命令<code>command</code>的错误输出重定向到一个名为<code>error.txt</code>的文件中：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">command <span class="number">2</span>&gt; error.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>标准输入、输出同时重定向（<code>&amp;&gt;</code>）：</strong> 使用<code>&amp;&gt;</code>符号可以将命令的标准输出和错误输出重定向到同一个文件中。<br>例如，将命令<code>command</code>的标准输出和错误输出重定向到一个名为<code>output.txt</code>的文件中：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">command &amp;&gt; output.txt</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="管道符"><a href="#管道符" class="headerlink" title="管道符 |"></a>管道符 |</h4><p>在Linux中，管道符 <code>|</code> 是一种非常有用的特性，它允许将一个命令的输出传递给另一个命令作为输入。通过使用管道符，可以将多个命令组合在一起，实现更复杂的数据处理和操作。以下是关于 Linux 管道符的一些重要信息：</p>
+<ol>
+<li><p><strong>基本语法：</strong> 管道符的基本语法如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">command1 | command2</span><br></pre></td></tr></table></figure>
+
+<p>这将把 <code>command1</code> 的输出作为 <code>command2</code> 的输入。</p>
+</li>
+<li><p><strong>示例用法：</strong></p>
+<ul>
+<li><p>将 <code>ls</code> 命令的输出传递给 <code>grep</code> 命令，以实现文件搜索：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls | grep keyword</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将 <code>ps</code> 命令的输出传递给 <code>grep</code> 命令，以查找特定进程：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps aux | grep process_name</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将 <code>cat</code> 命令的输出传递给 <code>wc</code> 命令，以统计文件行数：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat file.txt | wc -l</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>多重管道：</strong> 你也可以使用多重管道来连接多个命令，形成更复杂的数据处理链。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">command1 | command2 | command3</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>管道与重定向结合使用：</strong> 管道和重定向可以结合使用，这样可以将命令的输出重定向到文件或从文件中读取数据，并进行处理。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat file.txt | grep keyword &gt; output.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>常见用途：</strong></p>
+<ul>
+<li>数据处理和过滤</li>
+<li>文本搜索和替换</li>
+<li>输出格式化和排序</li>
+<li>运行复杂的数据处理任务</li>
+</ul>
+</li>
+</ol>
+<h4 id=""><a href="#" class="headerlink" title=";"></a>;</h4><p>在Linux中，分号 <code>;</code> 用于分隔多个命令，允许在单行中依次执行多个命令。使用分号可以在一行命令中按顺序执行多个命令，而不必等待每个命令的完成。</p>
+<p>基本语法如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">command1 ; command2 ; command3</span><br></pre></td></tr></table></figure>
+
+<h4 id="-1"><a href="#-1" class="headerlink" title="&amp;&amp;"></a>&amp;&amp;</h4><p>在Linux中，<code>&amp;&amp;</code> 是一个逻辑运算符，用于连接两个命令。它的作用是只有在前一个命令成功执行（返回退出状态码为0）的情况下，才会执行后面的命令。</p>
+<p>基本语法如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">command1 &amp;&amp; command2</span><br></pre></td></tr></table></figure>
+
+<p>如果 <code>command1</code> 成功执行，那么 <code>command2</code> 将被执行。如果 <code>command1</code> 失败执行（返回退出状态码非零），那么 <code>command2</code> 将被跳过，不会执行。</p>
+<h4 id="-2"><a href="#-2" class="headerlink" title="||"></a>||</h4><p>在Linux中，<code>||</code> 是一个逻辑运算符，用于连接两个命令。它的作用是只有在前一个命令执行失败（返回退出状态码非零）的情况下，才会执行后面的命令。</p>
+<p>基本语法如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">command1 || command2</span><br></pre></td></tr></table></figure>
+
+<p>如果 <code>command1</code> 执行失败（退出状态码非零），那么 <code>command2</code> 将被执行。如果 <code>command1</code> 成功执行（退出状态码为0），那么 <code>command2</code> 将被跳过，不会执行。</p>
+<h4 id="命令替换符"><a href="#命令替换符" class="headerlink" title="命令替换符  &#96;&#96;"></a>命令替换符  &#96;&#96;</h4><p>将一个命令的输出作为另一个命令的参数【被Esc下边的~按钮，对应的英文状态，包含的命令】</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l`which touch`</span><br></pre></td></tr></table></figure>
+
+<p>相当于【which touch】+【ls-|前一个命令的结果】</p>
+<h3 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h3><p>是一款专业的文本编辑器，可以高效地编辑纯 ASCII。由 Bram Moolenaar 开发，Vim 的行为就像标准 Unix 编辑器 Vi，并添加了很多有用的扩展。它在 Linux 发行版中广泛使用，也适用于 Windows。凭借其强大的代码编辑能力，Vim 是开发人员和用户非常推崇的选择。</p>
+<h1 id="单词"><a href="#单词" class="headerlink" title="单词"></a>单词</h1><p><strong>UTP</strong>  Unshielded Twisted Pair：非屏蔽双绞线<br><strong>STP</strong>   Shielded Twisted Pair：屏蔽双绞线（防止泄密）<br><strong>ICT</strong>   Information Communication Technology: 信息通信技术<br><strong>eNSP</strong> Ethernet Network SIMULATION Platform: 以太网网络模拟平台<br><strong>Terminal</strong> 终端 <br/><strong>Smurf</strong> 拆分洗钱，小号；开小号 <br/><strong>Payload</strong> 载荷<br/><strong>Post</strong> 发布，邮寄<br/><strong>Hunter</strong> 猎人<br/><strong>Monitor</strong> 监视器<br><strong>Cipher</strong> 加密的<br><strong>IDle</strong> 空闲<br><strong>Gigabit</strong> 千兆位<br><strong>Ethernet</strong> ,<strong>FastEthernet</strong>以太网，百兆<br>因此，在 “Gigabit1&#x2F;0&#x2F;1” 中，各个数字的含义可能是：</p>
+<p>“Gigabit”: 表示该接口支持千兆位速率。<br>“1”: 可能表示设备中的某个模块或槽位号。<br>“0”: 表示选定模块或槽位内的端口组号。<br>“1”: 表示具体的端口号。<br><strong>Privilege</strong>  权限<br><strong>Available</strong> 可用<br><strong>Domain</strong> 区域<br>**Redhat **红帽<br><strong>Defender</strong> 防御<br><strong>Activator</strong> 激活器<br><strong>Professional</strong> 专业的<br><strong>New Technology</strong> 新技术<br><strong>IDC Internet Data Center</strong> 互联网数据中心<br><strong>SAS Serial Attached SCSI</strong> 串行连接SCS<br><strong>OS operation system</strong> 操作系统<br><strong>standard</strong> 标准<br><strong>RDP Remote Desktop Protocol</strong> 远程桌面协议<br><strong>Datacenter</strong> 数据中心<br><strong>ECS</strong> <strong>Elastic Compute Service</strong> 弹性云服务器<br><strong>Guest</strong> 客人<br><strong>Duplex</strong> 双工<br><strong>upgrading</strong> 升级<br><strong>distributed</strong> 分布式<br><strong>enterprise</strong> 企业级<br><strong>encryption</strong> 加密<br><strong>fiber</strong> 光纤<br><strong>kernel</strong> 内核<br><strong>attachment</strong> 附件<br><strong>hardware</strong> 硬件<br><strong>memory</strong> 内存<br><strong>Virus</strong> 病毒<br><strong>Crash</strong> 崩溃<br><strong>Offline</strong> 离线的<br><strong>Attack</strong> 攻击<br><strong>Data Breach</strong> 数据泄露<br><strong>Exploit</strong> 利用<br><strong>Honeypot</strong> 蜜罐<br><strong>Incident</strong> 事件<br><strong>Spoofing</strong> 欺骗<br><strong>Malware</strong> 恶意软件<br><strong>Macro Virus</strong> 宏病毒<br><strong>Patch management</strong> 补丁管理<br><strong>Payload</strong> 有效荷载<br><strong>Policy management</strong> 策略管理<br><strong>Proxy server</strong> 代理服务器<br><strong>Trojan</strong> 木马<br><strong>Social engineering</strong> 社会工程学<br><strong>Plaintext</strong> 明文<br><strong>SOC</strong> （Security Operations Center） 安全运营中心<br><strong>Sandboxing</strong> 沙盒<br><strong>Secret key</strong> 密钥<br/><strong>Private</strong> 私密的，私有的<br><strong>Spear Phishing</strong> 鱼叉式网络钓鱼攻击<br><strong>SQL injection</strong> SQL注入<br><strong>Threat Intelligence</strong> 威胁情报<br><strong>Threat analysis</strong> 威胁分析<br><strong>Threat Assessment</strong> 威胁评估<br><strong>WhiteHat</strong> 白帽&#x2F;白帽子<br><strong>Web Application Firewall Web</strong> 应用防火墙<br><strong>(WAF )Whitelist</strong> 白名单<br><strong>Watering hole</strong> 水坑攻击<br><strong>Worm</strong> 蠕虫<br><strong>Whaling</strong> 捕鲸<br><strong>Zero-day</strong> 零日漏洞<br><strong>Antivirus</strong> 反病毒软件&#x2F;杀毒软件<br><strong>BotNet</strong> 僵尸网络<br><strong>CISSP</strong> 信息系统安全认证专家<br><strong>Cryptography</strong> 密码学<br><strong>Agents</strong> 代理<br><strong>Chip</strong> 芯片<br><strong>Channel</strong> 信道<br><strong>Intranet</strong> 内联网<br><strong>Firmware</strong> 固件<br><strong>Identification</strong> 识别<br><strong>Processor</strong> 处理器<br><strong>Certification</strong> 证书<br><strong>Ciphertext</strong> 密文<br><strong>PlainText</strong> 明文<br><strong>Digital signature</strong> 数字签名<br><strong>Environment</strong> 环境<br><strong>Variable</strong> 变量<br><strong>Automatically</strong> 自动的<br><strong>Release</strong> 释放<br><strong>Occur</strong> 发生<br><strong>Power Suppy</strong> 电源模块<br><strong>Guide</strong> 指南<br><strong>Suspend</strong> 中止，暂停<br><strong>Relation</strong> 关系<br><strong>Storage</strong> 存储</p>
+<blockquote>
+<p><strong>存储</strong></p>
+</blockquote>
+<ul>
+<li>一种设备，用于存储服务器的设备</li>
+<li>可以扩展，用以存储多台服务器的数据</li>
+<li>和服务器连接的线路为万兆光纤</li>
+<li>如果服务器设备过多，存储接口不够用，可以在下行连接光纤交换机（推荐博科光纤交换机）</li>
+<li>用raid技术</li>
+</ul>
+<h1 id="端口号，协议号"><a href="#端口号，协议号" class="headerlink" title="端口号，协议号"></a>端口号，协议号</h1><h3 id="端口号和协议号的区别"><a href="#端口号和协议号的区别" class="headerlink" title="端口号和协议号的区别"></a>端口号和协议号的区别</h3><ul>
+<li>端口号存在于UDP和TCP报文的首部，而IP数据报则是将UDP或者TCP报文做为其数据部分，再加上IP数据报首部，封装成IP数据报。而协议号则是存在这个IP数据报的首部。</li>
+<li>端口号仅可用于传输层的TCP或UDP协议上，而协议号在网络层，用来表示网络层或网络层以上使用的协议。</li>
+<li>只有在协议号为6（TCP）或17（UDP）的时候，端口号才会存在。</li>
+<li>协议号用来说明IP报文中承载的是哪种协议，一般是传输层协议，比如6 TCP，17 UDP，也可能是网络层协议，比如1 ICMP，或应用层协议，比如89 OSPF。</li>
+<li>端口号用来说明是哪种上层应用，比如TCP 80代表WWW，TCP 23代表Telnet，UDP 69代表TFTP。</li>
+</ul>
+<p><strong>DNS</strong> 端口53</p>
+<p><strong>日志审计</strong> 端口514</p>
+<p><strong>LDP会话</strong> TCP,UDP公用端口646，ip：224.0.0.2</p>
+<p><strong>BGP目的端口</strong> TCP 端口179</p>
+<p><strong>RPC高危漏洞</strong> 微软漏洞，端口不固定</p>
+<h3 id="高危端口"><a href="#高危端口" class="headerlink" title="高危端口"></a>高危端口</h3><h1 id="常识"><a href="#常识" class="headerlink" title="常识"></a>常识</h1><h3 id="WannaCry勒索病毒"><a href="#WannaCry勒索病毒" class="headerlink" title="WannaCry勒索病毒"></a>WannaCry勒索病毒</h3><p>勒索病毒是<strong>蠕虫病毒</strong></p>
+<p>基于<strong>445</strong>共享端口，“<strong>永恒之蓝</strong>”漏洞进行传播，微软漏洞编号为<strong>ms17-010</strong></p>
+<p><strong>NSA</strong>美国安全局<br>NSA武器库包含永恒之蓝</p>
+<p>杀毒软件根据病毒特征，来判断是不是病毒</p>
+<p>360明星产品，终端安全软件</p>
+<h3 id="“银行两地三中心”："><a href="#“银行两地三中心”：" class="headerlink" title="“银行两地三中心”："></a>“银行两地三中心”：</h3><p>是指银行系统中的一种组织架构，通常用于指代银行在两个地区设立三个中心的运营模式。这三个中心包括总行、分行和营业部，其中总行位于总部所在地，而分行和营业部则分布在其他地区。这种架构旨在实现银行在多个地区的业务拓展和服务覆盖，提供更便捷的金融服务。</p>
+<h3 id="CIA-美国中央情报局"><a href="#CIA-美国中央情报局" class="headerlink" title="CIA 美国中央情报局"></a>CIA 美国中央情报局</h3><h3 id="棱镜门事件"><a href="#棱镜门事件" class="headerlink" title="棱镜门事件"></a>棱镜门事件</h3><p>监听全球政要人物</p>
+<p>电影： 《第四公民》，《斯诺登》</p>
+<h3 id="震网Stuxnet-第一个工控蠕虫病毒"><a href="#震网Stuxnet-第一个工控蠕虫病毒" class="headerlink" title="震网Stuxnet 第一个工控蠕虫病毒"></a>震网Stuxnet 第一个工控蠕虫病毒</h3><p>是美国与以色列用于摧毁伊朗核基础设施铀浓缩离心机而合作研发的。<br>震网也是罕见的同时采用4个零日漏洞的高复杂性病毒。<br>纪录片《零日》</p>
+<h3 id="网络安全法颁布"><a href="#网络安全法颁布" class="headerlink" title="网络安全法颁布"></a>网络安全法颁布</h3><p><strong>2017年6月1日</strong>，《中华人民共和国网络安全法》正式实施。</p>
+<h3 id="网络安全等级保护"><a href="#网络安全等级保护" class="headerlink" title="网络安全等级保护"></a>网络安全等级保护</h3><p>网络安全等级保护是指根据国家对信息安全的重要性和敏感程度，对信息系统进行分类、分级管理，并实施相应的安全防护措施。这种制度旨在保护国家机密信息、重要数据资产以及关键基础设施的安全，防范各类网络攻击和安全威胁。</p>
+<h3 id="网络安全技术分类"><a href="#网络安全技术分类" class="headerlink" title="网络安全技术分类"></a>网络安全技术分类</h3><p>Web安全、Wife安全、移动安全、工控安全、桌面安全、云安全、大数据安全、AI安全等多个领域。</p>
+<h3 id="AAA和AAAA"><a href="#AAA和AAAA" class="headerlink" title="AAA和AAAA"></a>AAA和AAAA</h3><p>AAA 可以是“认证、授权、计费”（Authentication, Authorization, Accounting）的缩写，用于描述网络安全和访问控制方面的概念。</p>
+<p>AAAA可以是“认证、授权、账号、审计”（Authentication, Authorization, Account，Audit）的缩写，用于描述网络安全和访问控制方面的概念，AAAA认证是一个软件，需要安装一个客户端。</p>
+<h3 id="Radius，认证服务器。"><a href="#Radius，认证服务器。" class="headerlink" title="Radius，认证服务器。"></a>Radius，认证服务器。</h3><p>RADIUS（Remote Authentication Dial In User Service，远程用户拨号认证）协议是一种分布式的、客户端&#x2F;服务器结构的信息交互协议，能保护网络不受未授权访问的干扰，常应用在既要求较高安全性、又允许远程用户访问的各种网络环境中。</p>
+<p>漏洞：高危、低危（一般不需要处理）、中危</p>
+<p>LDAP</p>
+<p>进行认证和授权等，类似于微软AD、开源服务器软件</p>
+<h1 id="存储设备-技术Raid"><a href="#存储设备-技术Raid" class="headerlink" title="存储设备 技术Raid"></a>存储设备 技术Raid</h1><blockquote>
+<p>RAID（Redundant Array of Independent Disks）是一种数据存储技术，通过将多个磁盘组合在一起形成一个逻辑存储单元，提高数据存储的性能、容量和&#x2F;或冗余度。RAID技术可以提供数据的冗余备份、增强数据读写速度、提高系统容错能力等优点。</p>
+</blockquote>
+<p><strong>RAID 0 和RAID 1一般用于装操作系统，RAID 5 一般用于安装应用软件&#x2F;数据库（小公司可能会把操作系统和应用软件安装在一起，使用RAID 0或RAID 1）</strong></p>
+<p>常见的RAID级别包括：</p>
+<ol>
+<li><strong>RAID 0</strong>: 镜像，也称为条带化（Striping），1：1数据镜像，备份出两个一摸一样的数据；将数据分割成两块并分布到不同的磁盘上，提高了数据的读写速度，但没有冗余备份功能。</li>
+<li><strong>RAID 1</strong>: 也称为镜像（Mirroring），1+1镜像，将数据同时写入两个磁盘，实现数据的冗余备份，提高了数据的可靠性，但磁盘利用率较低。</li>
+<li><strong>RAID 5</strong>: 也成为磁盘阵列，通过将数据和校验信息分布在多个磁盘上，实现数据的冗余备份和读写性能的提升，通常需要至少三个磁盘。</li>
+<li><strong>RAID 6</strong>: 类似于RAID 5，但提供更高的容错能力，可以容忍两个磁盘的故障，通常需要至少四个磁盘。</li>
+<li><strong>RAID 10</strong>（也称为RAID 1+0）: 将RAID 1和RAID 0结合起来，实现数据的镜像备份和条带化，提供了较高的性能和冗余备份。</li>
+</ol>
+<h4 id="Raid-0"><a href="#Raid-0" class="headerlink" title="Raid 0"></a>Raid 0</h4><p>RAID 0是一种数据存储技术，也称为条带化（Striping）。它将数据块分割成多个部分，然后将这些数据块分别写入到不同的物理磁盘上，从而提高了数据的读写速度。</p>
+<p>在RAID 0中，数据被分割成多个块，并且这些块按照一个称为条带（stripe）的单位大小写入到不同的磁盘上。当数据被读取时，系统可以同时从多个磁盘中读取不同的数据块，从而实现了读取速度的提升。由于数据被分布在多个磁盘上，每个磁盘只需负责处理部分数据，因此总体上提高了数据的读写性能。</p>
+<p>尽管RAID 0提供了较高的读写性能，但它并不提供数据的冗余备份。因此，如果其中一个磁盘出现故障，整个RAID 0数组中的数据都会丢失。因此，RAID 0通常用于对数据备份要求不高、对性能要求较高的场景，例如视频编辑、临时数据存储等。</p>
+<p>总的来说，RAID 0的优点是提高了数据的读写性能，但缺点是没有提供数据的冗余备份，因此在选择RAID级别时需要权衡其性能和数据安全性。</p>
+<p>RAID技术在企业服务器、存储系统以及一些个人计算机中被广泛应用，以提高数据的可靠性和性能。</p>
+<h4 id="Raid-1"><a href="#Raid-1" class="headerlink" title="Raid 1"></a>Raid 1</h4><p>RAID 1是一种数据存储技术，也称为镜像（Mirroring）。在RAID 1中，数据被同时写入到至少两个物理磁盘上，从而实现了数据的冗余备份。</p>
+<p>具体来说，当数据被写入到RAID 1数组时，系统会同时将数据写入到两个或多个磁盘上，这些磁盘被称为镜像。这意味着每个磁盘都包含了完整的数据副本，如果其中一个磁盘发生故障，系统仍然可以从另一个磁盘中恢复数据。因此，RAID 1提供了较高的数据可靠性和冗余备份，即使一个磁盘发生故障，数据也不会丢失。</p>
+<p>尽管RAID 1提供了数据的冗余备份，但它并没有提高数据的读取速度。相反，由于数据被同时写入到多个磁盘上，写入性能可能会略微降低。但是，读取性能可以通过同时从多个磁盘中读取数据而获得一定程度的提升。</p>
+<p>RAID 1通常用于对数据安全性要求较高的环境，例如企业服务器、数据库服务器以及一些重要的个人计算机。虽然RAID 1的成本较高（因为需要购买多个磁盘以进行数据镜像备份），但它提供了更高的数据可靠性和安全性，可以帮助确保数据不会因磁盘故障而丢失。</p>
+<h4 id="Raid-5"><a href="#Raid-5" class="headerlink" title="Raid 5"></a>Raid 5</h4><p>RAID 5是一种数据存储技术，它通过将数据和校验信息分布在多个磁盘上来提高数据的读写性能和冗余备份。在RAID 5中，数据被分割成多个块，并且每个数据块以及对应的校验信息（奇偶校验）被分布到不同的磁盘上。</p>
+<p>具体来说，当数据被写入到RAID 5数组时，系统会将数据分割成多个块，并且每个数据块的奇偶校验信息也被计算并写入到不同的磁盘上。这样，即使其中一个磁盘发生故障，系统仍然可以通过剩余的数据块和校验信息来恢复丢失的数据，从而实现了数据的冗余备份和容错能力。</p>
+<p>RAID 5至少需要三个以上的磁盘来实现，其中一个磁盘用于存储校验信息。在正常情况下，RAID 5可以提供较高的读取性能，因为系统可以同时从多个磁盘中读取数据。但是，由于写入时需要额外计算和写入校验信息，因此写入性能可能相对较低。</p>
+<p>RAID 5通常用于中等规模的企业服务器和存储系统中，用于提高数据的读写性能和容错能力，同时保持相对较低的成本。然而，随着磁盘容量的增加和数据量的增长，RAID 5的使用逐渐受到了一些限制，因为在重建故障磁盘时可能会出现性能问题和数据丢失的风险。</p>
+<h1 id="26个黑客术语"><a href="#26个黑客术语" class="headerlink" title="26个黑客术语"></a>26个黑客术语</h1><h4 id="1、什么是木马？"><a href="#1、什么是木马？" class="headerlink" title="1、什么是木马？"></a><strong>1、什么是木马？</strong></h4><p>答案：“木马”全称是“特洛伊木马(<code>Trojan Horse</code>)”，原指古希腊士兵藏在木马内进入敌方城市从而占领敌方城市的故事。在<code>Internet</code>上，“特洛伊木马”指一些程序设计人员在其可从网络上下载(<code>Download</code>)的应用程序或游戏中，包含了可以控制用户的计算机系统的程序，可能造成用户的系统被破坏甚至瘫痪。</p>
+<h4 id="2、什么是后门？"><a href="#2、什么是后门？" class="headerlink" title="2、什么是后门？"></a><strong>2、什么是后门？</strong></h4><p>答案：大家都知道，一台计算机上有<code>65535</code>个端口，那么如果把计算机看作是一间屋子，那么这<code>65535</code>个端口就可以它看做是计算机为了与外界连接所开的<code>65535</code>扇门。每个门的背后都是一个服务。有的门是主人特地打开迎接客人的（提供服务），有的门是主人为了出去访问客人而开设的（访问远程服务）——理论上，剩下的其他门都该是关闭着的，但偏偏由于各种原因，很多门都是开启的。于是就有好事者进入，主人的隐私被刺探，生活被打扰，甚至屋里的东西也被搞得一片狼迹。这扇悄然被开启的门——就是“后门”。</p>
+<h4 id="3、什么是溢出？"><a href="#3、什么是溢出？" class="headerlink" title="3、什么是溢出？"></a><strong>3、什么是溢出？</strong></h4><p>答案：确切的讲，应该是“缓冲区溢出”。简单的解释就是程序对接受的输入数据没有执行有效的检测而导致错误，后果可能是造成程序崩溃或者是执行攻击者的命令。大致可以分为两类：（<code>1</code>）堆溢出；（<code>2</code>）栈溢出。</p>
+<h4 id="4、什么叫注入？"><a href="#4、什么叫注入？" class="headerlink" title="4、什么叫注入？"></a><strong>4、什么叫注入？</strong></h4><p>答案：<code>A a = new A（）</code>；这相当于我们自己“注入”，就是把刚<code>new</code>出来的<code>A</code>对象“注入”到<code>a</code>这个引用中去（<code>a</code>为<code>A</code>类型或其父类型）</p>
+<p>用<code>spring</code>以后由它替你做这一步，主要利用了<code>java</code>的动态加载机制。看上去没什么，但是结合多态的特性就会带来可观的功效：我们程序中的实际对象可以不必写死在代码中而是在运行时动态“注入”，这样我们就可以通过配置随时改变或增加我们程序的行为。</p>
+<h4 id="5、什么是注入点？"><a href="#5、什么是注入点？" class="headerlink" title="5、什么是注入点？"></a><strong>5、什么是注入点？</strong></h4><p>答案：是可以实行注入的地方，通常是一个访问<a target="_blank" rel="noopener" href="https://cloud.tencent.com/solution/database?from_column=20065&from=20065">数据库</a>的连接。根据注入点数据库的运行帐号的权限的不同，你所得到的权限也不同。</p>
+<h4 id="6、什么叫旁注？"><a href="#6、什么叫旁注？" class="headerlink" title="6、什么叫旁注？"></a><strong>6、什么叫旁注？</strong></h4><p>答案：顾名思义就是从旁注入，也就是利用主机上面的一个虚拟站点进行渗透，得到我们所要得到一个重要关节<code>webshell</code>之后，再利用主机的开放的程序以及一些非安全设置进行的跨站式入侵方法。</p>
+<h4 id="7、什么叫肉鸡？"><a href="#7、什么叫肉鸡？" class="headerlink" title="7、什么叫肉鸡？"></a><strong>7、什么叫肉鸡？</strong></h4><p>答案：所谓“肉鸡”是一种很形象的比喻，比喻那些可以随意被我们控制的电脑，对方可以是<code>WINDOWS</code>系统，也可以是<code>UNIX/LINUX</code>系统，可以是普通的个人电脑，也可以是大型的<a target="_blank" rel="noopener" href="https://cloud.tencent.com/act/pro/promotion-cvm?from_column=20065&from=20065">服务器</a>，我们可以象操作自己的电脑那样来操作它们，而不被对方所发觉。</p>
+<h4 id="8、什么叫跳板？"><a href="#8、什么叫跳板？" class="headerlink" title="8、什么叫跳板？"></a><strong>8、什么叫跳板？</strong></h4><p>答案：一个具有辅助作用的机器，利用这个主机作为一个间接的工具，来入侵其他的主机，一般和肉鸡连用。</p>
+<h4 id="9、什么叫shell-？"><a href="#9、什么叫shell-？" class="headerlink" title="9、什么叫shell ？"></a><strong>9、什么叫shell ？</strong></h4><p>答案：<code>shell</code>就是系统于用户的交换式界面。简单来说，就是系统与用户的一个沟通环境，我们平时用到的DOS就是一个<code>shell</code>。（<code>Win2K</code>是<code>cmd.exe</code>）</p>
+<h4 id="10、什么是root？"><a href="#10、什么是root？" class="headerlink" title="10、什么是root？"></a><strong>10、什么是root？</strong></h4><p>答案：<code>Unix</code>里最高权限的用户,也就是超级管理员。</p>
+<h4 id="12、什么是admin？"><a href="#12、什么是admin？" class="headerlink" title="12、什么是admin？"></a><strong>12、什么是admin？</strong></h4><p>答案：<code>windows NT,2K,XP</code>里最高权限的用户,也就是超级管理员。</p>
+<h4 id="13、什么是rootshell？"><a href="#13、什么是rootshell？" class="headerlink" title="13、什么是rootshell？"></a><strong>13、什么是rootshell？</strong></h4><p>答案：通过一个溢出程序，在主机溢出一个具有<code>root</code>权限的<code>shell</code>。&#x2F;</p>
+<h4 id="14、什么叫webshell？"><a href="#14、什么叫webshell？" class="headerlink" title="14、什么叫webshell？"></a><strong>14、什么叫webshell？</strong></h4><p>答案：<code>webshell</code>是<code>web</code>入侵的脚本攻击工具。简单的说来，<code>webshell</code>就是一个<code>asp</code>或<code>php</code>木马后门，黑客在入侵了一个网站后，常常在将这些<code>asp</code>或<code>php</code>木马后门文件放置在网站服务器的<code>web</code>目录中，与正常的网页文件混在一起。然后黑客就可以用<code>web</code>的方式，通过<code>asp</code>或<code>php</code>木马后门控制网站服务器，包括上传下载文件、查看数据库、执行任意程序命令等。</p>
+<h4 id="15、什么叫网页木马？"><a href="#15、什么叫网页木马？" class="headerlink" title="15、什么叫网页木马？"></a><strong>15、什么叫网页木马？</strong></h4><p>答案：表面上伪装成普通的网页文件或是将而已的代码直接插入到正常的网页文件中，当有人访问时，网页木马就会利用对方系统或者浏览器的漏洞自动将配置好的木马的服务端下载到访问者的电脑上来自动执行。</p>
+<h4 id="16、什么是挂马？"><a href="#16、什么是挂马？" class="headerlink" title="16、什么是挂马？"></a><strong>16、什么是挂马？</strong></h4><p>答案：就是在别人的网站文件里面放入网页木马或者是将代码潜入到对方正常的网页文件里，以使浏览者中马。</p>
+<h4 id="17、什么是rootkit？"><a href="#17、什么是rootkit？" class="headerlink" title="17、什么是rootkit？"></a><strong>17、什么是rootkit？</strong></h4><p>答案：<code>rootkit</code>是攻击者用来隐藏自己的行踪和保留<code>root</code>（根权限，可以理解成<code>WINDOWS</code>下的<code>system</code>或者管理员权限）访问权限的工具。通常，攻击者通过远程攻击的方式获得<code>root</code>访问权限，或者是先使用密码猜解（破解）的方式获得对系统的普通访问权限，进入系统后，再通过，对方系统内存在的安全漏洞获得系统的<code>root</code>权限。然后，攻击者就会在对方的系统中安装<code>rootkit</code>，以达到自己长久控制对方的目的，<code>rootkit</code>与我们前边提到的木马和后门很类似，但远比它们要隐蔽，黑客守卫者就是很典型的<code>rootkit</code>，还有国内的<code>ntroorkit</code>等都是不错的<code>rootkit</code>工具。</p>
+<h4 id="18、什么是弱口令？"><a href="#18、什么是弱口令？" class="headerlink" title="18、什么是弱口令？"></a><strong>18、什么是弱口令？</strong></h4><p>答案：指那些强度不够，容易被猜解的，类似<code>123</code>，<code>abc</code>这样的口令（密码）</p>
+<h4 id="19、什么是默认共享？"><a href="#19、什么是默认共享？" class="headerlink" title="19、什么是默认共享？"></a><strong>19、什么是默认共享？</strong></h4><p>答案：默认共享是<code>WINDOWS2000/XP/2003</code>系统开启共享服务时自动开启所有硬盘的共享，因为加了”<code>$</code>”符号，所以看不到共享的托手图表，也成为隐藏共享。</p>
+<h4 id="20、什么是内网？"><a href="#20、什么是内网？" class="headerlink" title="20、什么是内网？"></a><strong>20、什么是内网？</strong></h4><p>答案:通俗的讲就是局域网，比如网吧，校园网，公司内部网等都属于此类。查看<code>IP</code>地址如果是在以下三个范围之内的话，就说明我们是处于内网之中的：<code>10.0.0.0—10.255.255.255，172.16.0.0—172.31.255.255，192.168.0.0—192.168.255.255</code></p>
+<h4 id="21、什么是外网？"><a href="#21、什么是外网？" class="headerlink" title="21、什么是外网？"></a><strong>21、什么是外网？</strong></h4><p>答案：直接连入<code>INTERNET</code>（互连网），可以与互连网上的任意一台电脑互相访问，<code>IP</code>地址不是保留<code>IP</code>（内网）<code>IP</code>地址。</p>
+<h4 id="22、什么是端口（Port）？"><a href="#22、什么是端口（Port）？" class="headerlink" title="22、什么是端口（Port）？"></a><strong>22、什么是端口（Port）？</strong></h4><p>答案:相当于一种数据的传输通道。用于接受某些数据，然后传输给相应的服务，而电脑将这些数据处理后，再将相应的恢复通过开启的端口传给对方。一般每一个端口的开放的偶对应了相应的服务，要关闭这些端口只需要将对应的服务关闭就可以了。</p>
+<h4 id="23、什么是3389、4899肉鸡？"><a href="#23、什么是3389、4899肉鸡？" class="headerlink" title="23、什么是3389、4899肉鸡？"></a><strong>23、什么是3389、4899肉鸡？</strong></h4><p>答案：<code>3389</code>是<code>Windows</code>终端服务（<code>Terminal Services</code>）所默认使用的端口号，该服务是微软为了方便网络管理员远程管理及维护服务器而推出的，网络管理员可以使用远程桌面连接到网络上任意一台开启了终端服务的计算机上，成功登陆后就会象操作自己的电脑一样来操作主机了。这和远程控制软件甚至是木马程序实现的功能很相似，终端服务的连接非常稳定，而且任何杀毒软件都不会查杀，所以也深受黑客喜爱。黑客在入侵了一台主机后，通常都会想办法先添加一个属于自己的后门帐号，然后再开启对方的终端服务，这样，自己就随时可以使用终端服务来控制对方了，这样的主机，通常就会被叫做<code>3389</code>肉鸡。<code>Radmin</code>是一款非常优秀的远程控制软件，<code>4899</code>就是<code>Radmin</code>默认使以也经常被黑客当作木马来使用（正是这个原因，目前的杀毒软件也对<code>Radmin</code>查杀了）。有的人在使用的服务端口号。因为<code>Radmin</code>的控制功能非常强大，传输速度也比大多数木马快，而且又不被杀毒软件所查杀，所用Radmin管理远程电脑时使用的是空口令或者是弱口令，黑客就可以使用一些软件扫描网络上存在<code>Radmin</code>空口令或者弱口令的主机，然后就可以登陆上去远程控制对恶劣，这样被控制的主机通常就被成做<code>4899</code>肉鸡。</p>
+<h4 id="24、什么是免杀"><a href="#24、什么是免杀" class="headerlink" title="24、什么是免杀?"></a><strong>24、什么是免杀?</strong></h4><p>答案：就是通过加壳、加密、修改特征码、加花指令等等技术来修改程序，使其逃过杀毒软件的查杀。</p>
+<h4 id="25、什么是加壳？"><a href="#25、什么是加壳？" class="headerlink" title="25、什么是加壳？"></a><strong>25、什么是加壳？</strong></h4><p>答案：就是利用特殊的酸法，将<code>EXE</code>可执行程序或者<code>DLL</code>动态连接库文件的编码进行改变（比如实现压缩、加密），以达到缩小文件体积或者加密程序编码，甚至是躲过杀毒软件查杀的目的。目前较常用的壳有<code>UPX，ASPack、PePack、PECompact</code>、<code>UPack</code>、免疫<code>007</code>、木马彩衣等等。</p>
+<h4 id="26、什么是花指令？"><a href="#26、什么是花指令？" class="headerlink" title="26、什么是花指令？"></a><strong>26、什么是花指令？</strong></h4><p>答案：就是几句汇编指令，让汇编语句进行一些跳转，使得杀毒软件不能正常的判断病毒文件的构造。说通俗点就是：杀毒软件是从头到脚按顺序来查找病毒。如果我们把病毒的头和脚颠倒位置，杀毒软件就找不到病毒了。</p>
+<h1 id="等级保护三级要求网络拓扑（85分）含扩展设备"><a href="#等级保护三级要求网络拓扑（85分）含扩展设备" class="headerlink" title="等级保护三级要求网络拓扑（85分）含扩展设备"></a>等级保护三级要求网络拓扑（85分）含扩展设备</h1><p><img src="file:///C:/Users/%E9%BB%84%E6%99%BA%E5%8B%87/Desktop/%E5%90%AF%E6%98%8E%E6%98%9F%E8%BE%B0%E7%AD%89%E4%BF%9D%E4%B8%89%E7%BA%A7.jpg">七层检测对设备性能的消耗非常巨大！！！</p>
+<p><strong>等保测评必有设备：防火墙和终端杀毒软件</strong></p>
+<h3 id="三审"><a href="#三审" class="headerlink" title="三审"></a>三审</h3><p>数据库审计，运维审计（堡垒机），日志审计</p>
+<h3 id="等保三员"><a href="#等保三员" class="headerlink" title="等保三员"></a>等保三员</h3><p><strong>所有安全产品,都需要三员!!!!!!</strong></p>
+<p>安全员，审计员，系统管理员</p>
+<p>安全产品基本都支持远程管理</p>
+<h3 id="网络边界区："><a href="#网络边界区：" class="headerlink" title="网络边界区："></a>网络边界区：</h3><p>路由器到核心交换机是边界保护</p>
+<h3 id="旁路和主路"><a href="#旁路和主路" class="headerlink" title="旁路和主路"></a>旁路和主路</h3><p>在网络通信中，”旁路”（Bypass）和”主路”（Main Path）通常指的是网络数据传输的两种路径或通道。</p>
+<ol>
+<li><strong>主路（Main Path）：</strong> 主路是指正常的数据传输路径，也就是数据包按照设定的路由和规则从源端到目的端的传输路径。在主路上，数据包经过网络设备进行处理和转发，确保数据能够按照预期的路径传输到目的地。</li>
+<li><strong>旁路（Bypass）</strong>：旁路部署的设备以及其接口需要支持bypass功能模块（即使设备坏了也可以bypass）；旁路是指绕过正常数据传输路径的一种通道。旁路通常用于实现故障恢复、安全检测或性能优化等目的。当系统或网络出现故障时，通过旁路可以绕过有问题的设备或路径，确保数据传输的连续性和稳定性。一般主路设备都支持bypass功能，用来清除所有策略等属性变成类似于中继器或物理的线等直接转发设备，如果未生效则说明设备彻底损坏。只有透明模式可以bypass，否则路由模式变成一条线路后上下的IP无法正常连接。</li>
+</ol>
+<p>在网络设备中，旁路通常是指一种机制或技术，可以让数据流在设备出现故障或不可用时绕过该设备，直接传输到下一个设备或目的地，以保证服务的连续性和可靠性。旁路可以通过硬件设计或软件配置来实现，常见的应用场景包括网络防火墙、负载均衡器、入侵检测系统等网络设备。</p>
+<p>总的来说，主路和旁路代表了网络数据传输的两种路径概念，主要用于描述数据包在网络中传输时的正常路径和备用路径。通过合理设计和配置旁路机制，可以提高网络的可用性、安全性和性能。 </p>
+<h3 id="抗拒绝服务（抗DDos）"><a href="#抗拒绝服务（抗DDos）" class="headerlink" title="抗拒绝服务（抗DDos）"></a>抗拒绝服务（抗DDos）</h3><p><strong>DDoS（分布式拒绝服务攻击）</strong></p>
+<p>**异常流量清洗，**Dos攻击和DDos攻击对防火墙威胁大，游戏行业易受到Ddos攻击</p>
+<p>拒绝服务攻击， 抗DDos攻击。做流量清洗，扛流量数据大小。（如果流量过大，仍然防不住DDos攻击，取决于抗拒绝服务的性能；现在有云抗力服务）</p>
+<p>DDos主要目的：消耗服务器性能资源（CPU、内存、储存），消耗网络带宽（现在有云抗力）</p>
+<p>tcp&#x2F;udp&#x2F;Icmp&#x2F;dns&#x2F;http都可能发起DDos攻击</p>
+<p>DDos（分布式拒绝服务攻击，群殴）              Dos（拒绝服务攻击，单挑一对一）</p>
+<p>当一个时间段内访问同一目的的地址达到一个设定的阈值时，会启用源认证。</p>
+<ul>
+<li>源认证（Authenticity）：确保是可信的源发送了这些信息，而不是伪装源发送的消息。</li>
+</ul>
+<p><strong>云抗力服务：</strong></p>
+<p>编写策略，将指向自己的IP地址的流量，通过编写策略使其流向云抗力（虚拟云服务器）（或者需要被访问的服务器地址映射成云抗力地址），流量经过云抗力清洗后再传输给自己。</p>
+<h3 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h3><p>防火墙检测流量过程需要不断将包解封装，封装</p>
+<p>防火墙的两种部署模式：透明模式和路由模式</p>
+<p>边界防火墙一般必须为<strong>路由模式</strong>接口必须做<strong>NAT</strong>出网</p>
+<p><strong>防火墙的重要功能：网络特性  安全特性  系统管理</strong></p>
+<p>防火墙是位于内部网和外部网之间的屏障，它按照系统管理员预先定义好的规则来控制数据包的进出。防火墙是系统的第一道防线，其作用是防止非授权访问。</p>
+<h4 id="访问控制："><a href="#访问控制：" class="headerlink" title="访问控制："></a>访问控制：</h4><p>**（默认白名单）session(有Session则不执行策略)</p>
+<ul>
+<li>黑名单：黑名单阻止，其它放行</li>
+<li>白名单：白名单允许，其它拒绝</li>
+<li>防火墙防病毒的两种工作模式：网关防病毒和终端防病毒</li>
+<li>会话（Session），是一个双向的概念，一个会话通常关联两个方向的流，一个为会话发起方（Initiator），另外一个为会话响应方（Responder）。通过会话所属的任一方向的流特征都可以唯一确定该会话以及方向。</li>
+</ul>
+<h4 id="进入防火墙配置"><a href="#进入防火墙配置" class="headerlink" title="进入防火墙配置"></a>进入防火墙配置</h4><p>security-zone name Management   创建管理组<br>import interface GigabitEthernet  将接口加入管理组</p>
+<p><strong>line console 0   防止防火墙退出快</strong></p>
+<p>​            <strong>—-idle-timeout  0  0</strong></p>
+<p>security-policy  ip  进入安全策略</p>
+<p>​             rule   0 name   ***</p>
+<p>​             source-zone  trust   </p>
+<p>​             destination-zone   untrust</p>
+<p>​             action    pass       允许通过</p>
+<p>​             source-ip-subnet   192.168.10.0  24    允许的子网段</p>
+<p>​             service    telnet     允许的协议</p>
+<h4 id="工控网络防火墙："><a href="#工控网络防火墙：" class="headerlink" title="工控网络防火墙："></a>工控网络防火墙：</h4><p>接入网络边缘学习正常的行为流量访问等，以此建立访问控制允许，其他全部拒绝。以建立起来的模型做标准判断，人为进行判断是否正常取值。可做双引擎检测</p>
+<h4 id="RBM双机热备"><a href="#RBM双机热备" class="headerlink" title="RBM双机热备"></a>RBM双机热备</h4><remote-backup group>
+ backup-mode dual-active   更改双主（默认是主备）
+ data-channel interface GigabitEthernet1/0/2  建立数据通道
+ configuration sync-check interval 12  文档同步12小时
+ delay-time 1    回切时间
+ track interface GigabitEthernet1/0/0 监视上行
+ track interface GigabitEthernet1/0/1监视下行
+ local-ip 192.168.253.2  本地接口ip
+ remote-ip 192.168.253.1  对端接口ip
+ device-role primary/secondary   管理主从
+
+<h4 id="防火墙5个区域的默认优先级"><a href="#防火墙5个区域的默认优先级" class="headerlink" title="防火墙5个区域的默认优先级"></a>防火墙5个区域的默认优先级</h4><ul>
+<li>local  <strong>100</strong></li>
+<li>management  <strong>100</strong></li>
+<li>trust  <strong>85</strong></li>
+<li>dmz  <strong>50</strong>（非军事化管理区）</li>
+<li>untrust  <strong>5</strong></li>
+</ul>
+<h4 id="默认的安全区域访问控制策略"><a href="#默认的安全区域访问控制策略" class="headerlink" title="默认的安全区域访问控制策略"></a>默认的安全区域访问控制策略</h4><ul>
+<li>高优先级区域可以访问低优先级区域</li>
+<li>低优先级区域不能访问高优先级区域</li>
+<li>同优先级安全区域相互访问</li>
+<li>同安全区域内可以相互访问</li>
+<li>默认情况下， 其它所有安全区域都可以访问Local域</li>
+</ul>
+<h4 id="防火墙-session（会话）"><a href="#防火墙-session（会话）" class="headerlink" title="防火墙 session（会话）"></a>防火墙 session（会话）</h4><p><strong>只有防火墙有会话功能</strong></p>
+<p>双向的概念，一个为会话发起方向，一个为会话响应方向，<strong>可以将会话理解为在防火墙内建立一个通道</strong></p>
+<p>对于TCP流，发起方和响应方三次握手后建立稳定会话</p>
+<p>对于UDP&#x2F;ICMP&#x2F;Raw IP流，发起方和响应方完整交互一次报文后建立稳定会话</p>
+<p><strong>会话的作用提高转发效率，减少防火墙压力</strong></p>
+<p>display session table verbose(查看会话)</p>
+<h4 id="流：是一个单方向的概念"><a href="#流：是一个单方向的概念" class="headerlink" title="流：是一个单方向的概念"></a>流：是一个单方向的概念</h4><p>根据IP层协议的不同，流分为四大类：<br>TCP流：通过五元组唯一标识<br>UDP流：通过五元组唯一标识<br>ICMP流：通过三元组 + ICMP type + ICMP code唯一标识<br>RAW IP流：不属于上述协议的，通过三元组标识</p>
+<h4 id="会话：是一个双向的概念"><a href="#会话：是一个双向的概念" class="headerlink" title="会话：是一个双向的概念"></a>会话：是一个双向的概念</h4><h4 id="Bypass"><a href="#Bypass" class="headerlink" title="Bypass"></a>Bypass</h4><p>开启后，关闭所有功能,变成一根线,通常用于故障排查</p>
+<h4 id="防火墙的收费模块"><a href="#防火墙的收费模块" class="headerlink" title="防火墙的收费模块"></a>防火墙的收费模块</h4><ul>
+<li>AV</li>
+<li>IPS</li>
+<li>URL，<strong>URL就是Web页的地址</strong>（连接）</li>
+<li>上网行为管理</li>
+<li>SSL VPN</li>
+</ul>
+<h4 id="FW等设备的三种配置模式"><a href="#FW等设备的三种配置模式" class="headerlink" title="FW等设备的三种配置模式"></a>FW等设备的三种配置模式</h4><p><strong>路由模式、透明模式（网桥）、混合模式</strong></p>
+<p>如果防火墙以第三层对外连接（接口具有IP 地址），则认为防火墙工作在路由模式下；<br>若防火墙通过第二层对外连接（接口无IP 地址），则防火墙工作在透明模式下；<br>若防火墙同时具有工作在路由模式和透明模式的接口（某些接口具有IP 地址，某些接口无IP 地址），则防火墙工作在混合模式下。</p>
+<h5 id="路由模式"><a href="#路由模式" class="headerlink" title="路由模式"></a>路由模式</h5><p>当防火墙位于内部网络和外部网络之间时，需要将防火墙与内部网络、外部网络以及DMZ 三个区域相连的接口分别配置成不同网段的IP 地址，重新规划原有的网络拓扑，此时相当于一台路由器。</p>
+<h5 id="透明模式"><a href="#透明模式" class="headerlink" title="透明模式"></a>透明模式</h5><p>如果防火墙采用透明模式进行工作，则可以避免改变拓扑结构造成的麻烦，此时防火墙对于子网用户和路由器来说是完全透明的。也就是说，用户完全感觉不到防火墙的存在。</p>
+<p>采用透明模式时，只需在网络中像放置网桥（bridge）一样插入该防火墙设备即可，无需修改任何已有的配置。与路由模式相同，IP 报文同样经过相关的过滤检查（但是IP 报文中的源或目的地址不会改变），内部网络用户依旧受到防火墙的保护。</p>
+<h5 id="混合模式"><a href="#混合模式" class="headerlink" title="混合模式"></a>混合模式</h5><p>如果防火墙既存在工作在路由模式的接口（接口具有IP 地址），又存在工作在透明模式的接口（接口无IP 地址），则防火墙工作在混合模式下。混合模式主要用于透明模式作双机备份的情况，此时启动VRRP（Virtual Router Redundancy Protocol，虚拟路由冗余协议）功能的接口需要配置IP 地址，其它接口不配置IP地址。</p>
+<h3 id="NGFW"><a href="#NGFW" class="headerlink" title="NGFW"></a>NGFW</h3><p><strong>Next-Generation Firewall</strong></p>
+<p>下一代防火墙，传统防火墙工作在3,4层，NGFW工作在3~7层。</p>
+<p>作用：拒绝外网访问内网；</p>
+<p><strong>包含ips模块，av模块，上网行为管理，URL检测等。</strong></p>
+<p>NGFW中的URL可以设置禁止访问网站，URL理解为链接、域名。</p>
+<h3 id="AV（唯一一个能实现网关防病毒的设备，在FW上开AV模块）"><a href="#AV（唯一一个能实现网关防病毒的设备，在FW上开AV模块）" class="headerlink" title="AV（唯一一个能实现网关防病毒的设备，在FW上开AV模块）"></a>AV（唯一一个能实现网关防病毒的设备，在FW上开AV模块）</h3><p>AV：即防病毒（<strong>Antivirus</strong>）功能。它用于检测和阻止潜在的恶意软件、病毒、蠕虫等威胁，以保护网络免受恶意代码的侵害。<br>只能检测已知病毒，不能检测未知病毒。（及时更新病毒库，如果病毒库没有此类病毒，则无法防御）<br>杀毒软件根据病毒特征，来判断是不是病毒。</p>
+<p>病毒检测：对数据进行哈希，比对值（快）</p>
+<h3 id="IPS（入侵防御）"><a href="#IPS（入侵防御）" class="headerlink" title="IPS（入侵防御）"></a>IPS（入侵防御）</h3><p><strong>Intrusion Prevention System</strong></p>
+<p>定义：相对于防火墙来说，一般都具有防火墙的功能防御的对象更几有针对性，那就是攻击。防火墙是通过对五元组进行控制，达到包过滤的效果，而入侵防御 IPS，则是将数据包进行检测(深度包检测 DPI)对蠕虫、病毒、木马、拒绝服务等攻击进行查杀。</p>
+<p>在通过NGFW之后，IPS查看白名单，检测是否有<strong>威胁特征</strong>（比对特征库，IPS是基于特征的检测，只能对已知的威胁进行检测），南北向流量双向检测。</p>
+<ul>
+<li>入侵防御系统也需要对数据进行解封装、封装。</li>
+<li>入侵防御系统不仅可以检测入侵行为，还可以采取主动措施来阻止恶意活动。</li>
+<li>IPS 在检测到潜在威胁或入侵行为时，可以自动采取阻止措施，如阻断连接、禁止访问等，以减少对系统或网络的危害。<ul>
+<li>IPS 可以根据事先设定的策略主动响应并阻止威胁，而不仅仅是提供警报信息。</li>
+<li><strong>DPI：深度包检测技术</strong>，可以完整的检测数据包，防火墙一般只检测数据包的包头。</li>
+</ul>
+</li>
+</ul>
+<h3 id="IDS（入侵检测）"><a href="#IDS（入侵检测）" class="headerlink" title="IDS（入侵检测）"></a>IDS（入侵检测）</h3><p><strong>Intrusion Detection System</strong></p>
+<p>IPS只能检测南北方向流量，IDS既可以检测南北方向，也可以检测东西方向。<br>IDS<strong>旁路部署</strong>，只能通过<strong>镜像引流</strong>，抓取数据流量，IDS和IPS均是基于特征检测。</p>
+<ul>
+<li>入侵检测系统主要用于监视网络或系统中的活动，以检测潜在的安全事件或入侵行为。</li>
+<li>IDS 通过分析网络流量、日志文件或系统事件等方式来识别异常或可疑的活动，并生成警报通知管理员。</li>
+<li>IDS 可以被用来帮助发现网络中的威胁和攻击，但本身无法主动阻止这些攻击。</li>
+</ul>
+<h3 id="上网行为管理"><a href="#上网行为管理" class="headerlink" title="上网行为管理"></a>上网行为管理</h3><p>上网行为管理是指对企业或组织内部员工、访客等用户的上网行为：（http、ftp）文字图片等进行监控、控制和管理的过程。这种管理旨在确保网络安全、合规性和生产力，同时防止恶意行为和数据泄密，可以双向检测。（可以代替防火墙，支持防火墙的所有性能，可以开模块做nat上网等，BGP由于性能不太支持），对每一个ip进行绑定用户，进行批量操作 </p>
+<ul>
+<li><p><strong>访问控制</strong>：通过身份验证、权限设置等手段对用户访问网络资源的权限进行管理，确保只有授权用户可以访问特定的资源。</p>
+</li>
+<li><p><strong>流量监控</strong>：监控网络流量，分析用户的上网行为，及时发现异常活动和潜在威胁，并生成报告供管理员分析。还可以对用户进行限速。不支持镜像流量，需要引流操作旁挂。</p>
+</li>
+<li><p><strong>内容过滤</strong>：通过过滤技术对用户访问的网页内容、应用程序和下载文件进行筛选，阻止未经授权的网站访问、恶意软件下载等行为。上传文件类型过滤。</p>
+</li>
+<li><p><strong>应用程序控制</strong>：对用户使用的应用程序进行管控，限制或禁止某些危险或不必要的应用程序，防止应用程序带来的安全风险。</p>
+</li>
+<li><p><strong>行为分析</strong>：通过分析用户的上网行为，识别出潜在的风险行为模式，及时采取措施以防范安全威胁。</p>
+</li>
+<li><p><strong>合规性监测</strong>：确保员工的网络使用符合法律法规和公司政策，避免非法行为或违规操作。</p>
+</li>
+<li><h5 id="对用户进行限速"><a href="#对用户进行限速" class="headerlink" title="对用户进行限速"></a>对用户进行限速</h5></li>
+<li><p><strong>网站进行控制</strong></p>
+</li>
+</ul>
+<h4 id="内容过滤技术"><a href="#内容过滤技术" class="headerlink" title="内容过滤技术"></a>内容过滤技术</h4><h5 id="主要技术"><a href="#主要技术" class="headerlink" title="主要技术"></a>主要技术</h5><ol>
+<li><p><strong>文件过滤技术</strong>：承载文件的应用；文件传输方向；文件类型；文件扩展名</p>
+</li>
+<li><p><strong>内容过滤技术</strong>：文件内容过滤；应用内容过滤</p>
+</li>
+<li><p><strong>邮件过滤技术</strong>：基于ip过滤（有问题的垃圾邮件服务器ip）；基于邮件内容过滤</p>
+</li>
+<li><p><strong>应用行为控制</strong>：HTTP行为；FTP行为；游戏、视频、聊天、行为等进行控制</p>
+</li>
+</ol>
+<p><strong>技术原理：</strong></p>
+<p>对可识别的内容进行检查是否包含一些关键字违法信息等</p>
+<p><strong>关键字包括预定义关键字和自定义关键字</strong></p>
+<p>预定义关键字是系统默认存在的可以识别的关键字，包括：银行卡号、信用卡号、社会安全号、身份证号、机密关键字（包括“秘密”、“机密”、“绝密”）。<br>自定义关键字是管理员自定义的需要识别的关键字，有文本和正则表达式两种定义方式。</p>
+<p>内容安全过滤需要单独授权在防火墙或上网行为管理上单独开启</p>
+<p>若压缩隐藏拓展名，防火墙可以解压缩4层进行查看，压缩过多就丢弃</p>
+<p><strong>三种异常</strong>：<strong>文件扩展名不匹配格式</strong>、<strong>文件无法识别</strong>、<strong>文件损坏</strong>以上情况直接丢弃</p>
+<p><strong>对关键字响应动作</strong></p>
+<p>告警：识别出关键字后，记录日志但不阻断内容传输。</p>
+<p>阻断：识别出关键字后，阻断内容传输并记录日志。在用户看来则是无法显示网页、上传或下载文件失败、邮件发送或接收失败。</p>
+<p>按权重操作：设定阈值命中的次数，每个关键字都存在一个权重值，当设备检测的内容中出现关键字时，设备会将这些关键字的权重值按出现次数累加。如果权重值的和大于等于“告警阈值”小于“阻断阈值”，则设备会执行“告警”动作，“告警”动作仅执行一次；如果权重值的和大于等于“阻断阈值”，则设备会执行“阻断”动作。</p>
+<h5 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h5><table>
+<thead>
+<tr>
+<th align="center">字符</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">.</td>
+<td align="left">匹配任意非换行字符。（空格也是字符）</td>
+</tr>
+<tr>
+<td align="center">（ ）</td>
+<td align="left">标记一个子表达式的开始和结束位置。</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="left">匹配前面的字符或表达式零次或多次。</td>
+</tr>
+<tr>
+<td align="center">+</td>
+<td align="left">匹配前面的字符或表达式一次或多次。</td>
+</tr>
+<tr>
+<td align="center">|</td>
+<td align="left">等同于或。</td>
+</tr>
+<tr>
+<td align="center">[ ]</td>
+<td align="left">字符集。</td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="left">在字符集中用于创建范围表达式。</td>
+</tr>
+<tr>
+<td align="center">{n}</td>
+<td align="left">重复n次，n是一个小于等于20的非负整数。</td>
+</tr>
+<tr>
+<td align="center">\</td>
+<td align="left">要对上述任一特殊字符执行字面匹配，必须通过在这些字符前面加上\（反斜杠），对这些字符进行转义。例如:\ .、\（ 和 \ ）。</td>
+</tr>
+<tr>
+<td align="center">\d</td>
+<td align="left">匹配一个数字字符。等价于[0-9]。</td>
+</tr>
+<tr>
+<td align="center">\w</td>
+<td align="left">匹配数字、字母和下划线（a__b）。</td>
+</tr>
+</tbody></table>
+<h5 id="邮件传输"><a href="#邮件传输" class="headerlink" title="邮件传输"></a>邮件传输</h5><p>RBL服务器收集垃圾邮件服务器地址同步给邮件服务器</p>
+<p>发smtp 收POP3&#x2F;IMAP Server</p>
+<h3 id="APT-高级持续性威胁；高级未知威胁检测"><a href="#APT-高级持续性威胁；高级未知威胁检测" class="headerlink" title="APT 高级持续性威胁；高级未知威胁检测"></a>APT 高级持续性威胁；高级未知威胁检测</h3><p><strong>Advanced Persistent Threats</strong></p>
+<p>旁路部署，流量镜像，仅可以分析。</p>
+<p>APT一般会与回溯系统（回溯系统的两个作用：把流量储存起来，把流量回溯&#x2F;还原出来）、防火墙（一般同一品牌）进行联动。</p>
+<p><strong>动态检测，根据沙箱实现动态检测。</strong></p>
+<p><strong>病毒的动态检测</strong>是在受控环境中执行的更详细的恶意软件检测和分析过程，并且会监控整个过程以观察恶意软件的行为。 </p>
+<p><strong>病毒的静态检测</strong>是确定恶意文件的来源以了解其行为而无需实际执行恶意软件的过程。</p>
+<p>在防御 Advanced Persistent Threats (APT) 和未知威胁方面，除了传统的安全设备和解决方案外，还可以采用一些先进的技术和方法来进行未知威胁检测。以下是一些用于检测未知威胁的方法和技术：</p>
+<ol>
+<li><strong>行为分析</strong>：通过监控系统和用户的行为模式，及时发现异常活动和潜在的威胁行为。基于机器学习和人工智能的行为分析技术可以帮助识别未知的威胁。</li>
+<li><strong>沙箱（sandbox）分析</strong>：将未知文件或程序运行在安全的隔离环境中（模拟运算），观察其行为并分析潜在的威胁。沙箱分析可以帮助检测未知恶意软件和攻击方式；沙箱又称为测试环境或开发环境。</li>
+<li><strong>威胁情报分析</strong>：定期跟踪和分析最新的威胁情报，包括恶意软件样本、攻击方法和目标，以便及时调整安全策略和防御措施。</li>
+<li><strong>网络流量分析</strong>：监控和分析网络流量，查找异常的通信模式或数据传输，可能是未知威胁的迹象。</li>
+<li><strong>终端检测与响应（EDR）</strong>：使用终端检测与响应技术对终端设备进行实时监控和响应，以便及时发现和处理潜在的未知威胁。</li>
+<li><strong>漏洞挖掘和漏洞利用分析</strong>：定期进行漏洞挖掘和漏洞利用分析，及时修补系统和应用程序中的漏洞，减少未知威胁的入侵机会。</li>
+<li><strong>安全分析团队</strong>：建立专业的安全分析团队，负责监控和应对未知威胁，及时分析和应对安全事件。</li>
+</ol>
+<p>综合利用以上的技术和方法，可以提高组织对未知威胁和 APT 攻击的检测能力，加强网络安全防御，并及时应对潜在的安全威胁。</p>
+<h3 id="安管平台"><a href="#安管平台" class="headerlink" title="安管平台"></a>安管平台</h3><p>安管平台也叫网管软件，主要作用：对设备的集中管理（需要统一厂商才方便）。</p>
+<p><strong>SNMP</strong>（Simple Network Management Protocol，简单网络管理协议，基于UDP传输，协议号161）是一种用于管理网络设备的标准协议。它允许网络管理系统（NMS）通过网络监控和管理连接的设备，如路由器、交换机、服务器等（被管理的设备需开启SNMP协议）。SNMP主要用于监视网络设备的运行状态、收集性能数据、识别故障并进行远程配置。</p>
+<p>功能一：安管平台可以检查网络产品的硬件的基本环境信息（性能、运行状态等，性能包含内存、CPU和硬盘空间），进行监控，检测链路信息，辅助网管完成日常工作（需要定义资产类型）。</p>
+<p>功能二：所有设备开启此协议，安管平台会自动绘制网络拓扑图，并且能够标明连接故障点。 </p>
+<h3 id="跳板机"><a href="#跳板机" class="headerlink" title="跳板机"></a>跳板机</h3><p>一类可作为跳板批量操作远程设备的网络设备。（现在一定规模互联网企业，往往都拥有大量服务器，如何安全并高效的管理这些服务器是每个系统运维或安全运维人员必要工作。现在比较常见的方案是搭建堡垒机环境作为线上服务器的入口，所有服务器只能通过堡垒机进行登陆访问）</p>
+<h3 id="态势感知"><a href="#态势感知" class="headerlink" title="态势感知"></a>态势感知</h3><p><strong>综合数据分析的平台</strong></p>
+<p>通过收集数据,来做到数据可视化，将分析结果呈现出来，还可以进行威胁检测、威胁分析。</p>
+<p>**数据交换平台：**将不同厂商的信息统一格式（当其收到数据后，将数据规范成一个数据格式，交给其他平台使用，解决了数据的差异化）</p>
+<p>通过<strong>探针</strong>，收集信息。</p>
+<p><strong>最主要的功能：</strong></p>
+<p><strong>威胁检测</strong>：定期跟踪并分析最新的威胁情报，了解恶意软件样本、攻击趋势和攻击者的行为模式，分析行为，以便调整安全策略和防御措施。</p>
+<p>其他功能：</p>
+<p>在信息安全领域，通常将八大态势感知指南用于帮助组织全面了解其信息安全态势，从而采取有效的安全措施。这些八大态势感知包括：</p>
+<ol>
+<li><strong>网络感知</strong>：了解网络拓扑结构、流量特征、通信模式等，以便监控网络活动并检测异常行为。</li>
+<li><strong>主机感知</strong>：监测主机设备的运行状态、软件配置、用户行为等，及时发现主机上的异常活动和安全漏洞。</li>
+<li><strong>应用感知</strong>：了解应用程序的使用情况、漏洞信息、数据流动等，以便识别应用层面的安全风险和威胁。</li>
+<li><strong>数据感知</strong>：追踪敏感数据的存储、传输和使用情况，保护重要数据免受泄露和滥用。</li>
+<li><strong>终端感知</strong>：监控终端设备的安全状态和活动行为，保护终端用户免受恶意软件和攻击的威胁。</li>
+<li><strong>身份与访问感知</strong>：管理用户身份验证和访问控制，确保只有合法用户能够访问系统资源，并及时识别异常访问行为。</li>
+<li><strong>威胁情报感知</strong>：获取、分析和利用威胁情报，及时了解最新的安全威胁和攻击趋势，加强对潜在威胁的感知和预防能力。</li>
+<li><strong>响应与恢复感知</strong>：建立应急响应和恢复机制，及时应对安全事件和攻击，最小化安全事件造成的损失和影响。</li>
+</ol>
+<p>这些态势感知的要素相互关联，共同构成了一个全面的安全感知体系，有助于组织全面了解其信息安全状况，并及时采取相应的安全措施，保护信息资产的安全。</p>
+<p>**百度百科：**数据交换平台是指将分散建设的若干应用信息系统进行整合，通过计算机网络构建的信息交换平台，它使若干个应用子系统进行信息&#x2F;数据的传输及共享，提高信息资源的利用率，成为进行信息化建设的基本目标，保证分布异构系统之间互联互通，建立中心数据库，完成数据的抽取、集中、加载、展现，构造统一的数据处理和交换。</p>
+<h3 id="态势感知探针"><a href="#态势感知探针" class="headerlink" title="态势感知探针"></a>态势感知探针</h3><p>态势感知探针的主要作用：收集信息、数据，监测信息</p>
+<p>在网络安全领域，”态势感知探针“是一种用于网络安全的设备或软件，用于监测和收集网络中的数据流量、事件和行为信息，以便实时分析和识别潜在的安全威胁。它可以通过监控网络流量、日志、事件和其他相关数据源来获取关于网络环境的全面信息，包括网络拓扑、设备状态、用户行为、应用程序使用情况等。通过对这些数据进行分析和处理，态势感知探针可以帮助安全团队及时发现和应对网络攻击、异常行为和其他安全事件，提高网络安全防护能力。</p>
+<p>探针的功能包括但不限于：</p>
+<ol>
+<li><strong>流量监测：</strong> 探针可以监视网络流量，识别数据包的来源、目的地、协议类型等信息，帮助分析网络通信模式和流量状况。</li>
+<li><strong>协议识别：</strong> 探针可以识别网络流量中所使用的协议类型，包括常见的应用层协议（如HTTP、FTP）和传输层协议（如TCP、UDP），有助于分析网络应用和通信行为。</li>
+<li><strong>异常检测：</strong> 探针可以通过监控网络流量和系统数据来检测异常活动，如异常流量模式、未经授权的访问、恶意软件传播等，有助于及早发现潜在的安全威胁。</li>
+<li><strong>性能分析：</strong> 探针可以收集系统性能数据，如网络延迟、带宽利用率、连接数等，帮助管理员评估网络性能并进行优化。</li>
+<li><strong>安全日志记录：</strong> 探针可以记录网络活动和事件数据，生成安全日志和报告，用于事后分析、审计和合规需求。</li>
+</ol>
+<p>总的来说，探针在网络安全中扮演着重要角色，通过实时监测和数据收集，帮助组织提升对网络安全事件的感知能力，加强安全防护和响应能力。</p>
+<h3 id="数据库审计"><a href="#数据库审计" class="headerlink" title="数据库审计"></a>数据库审计</h3><p>可旁路部署，也可主路部署<br>对数据库（增删改查）的操作行为（管理员的）进行审计；数据库防篡改。<br>主动对数据库进行非法操作行为操作的审计。<br>审计管理员的。<br/>一个数据库需要一个授权，同时需要数据库审计能够识别该数据格式。</p>
+<h6 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h6><p>数据库是按照数据结构来组织、存储和管理数据的仓库（数据库管理系统(Database Management System，简称数据库)是一种操控和管理数据库的大型软件，需要装在服务器上）；其主要作用提供表单，储存数据。</p>
+<p><strong>数据库厂商：</strong></p>
+<p>国外的：Oracle（甲骨文）、SQL Server、MySQL<br/>国内的：达梦、OceanBase、腾讯TDSQL、Gauss DB、南大通用、人大金仓</p>
+<p><strong>数据库安全网关</strong>：</p>
+<p>数据库边界防火墙、用于细致地控制用户对数据的操作：如删除、更改数据等操作</p>
+<p><strong>CRM客户关系管理系统</strong></p>
+<h6 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h6><p>CDM内容发布网络，当你发起访问时会通过最近的运营商发布网络服务，并非真正的服务器，达到提升上网速度的目的</p>
+<h3 id="日志审计"><a href="#日志审计" class="headerlink" title="日志审计"></a>日志审计</h3><p>原来的名字叫日志服务器</p>
+<p>将重要设备的日志进行存储&#x2F;备份，只能旁路部署，**可以对日志的等级进行划分,**可以对收集来的日志进行泛式化（对日志格式进行统一）默认端口514，使用UDP协议</p>
+<p>日志审计对每天日志中记录的信息进行审计和检查，对于日志中涉及到的重要信息，对其真实性的完整性进行考察</p>
+<p>日志审计可以定义资产</p>
+<p>开启日志中心服务</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">info-center enable</span><br></pre></td></tr></table></figure>
+
+<p>将日志，指向日志审计（地址可达）</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">info-center loghost &lt;ip&gt;</span><br></pre></td></tr></table></figure>
+
+<p>路由器、交换机查看日志</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">display logbuffer</span><br></pre></td></tr></table></figure>
+
+<p>交换机和路由器的日志在设备重启后自动清除，所以需要将日志实时传输给日志审计。****</p>
+<h3 id="堡垒机-运维审计"><a href="#堡垒机-运维审计" class="headerlink" title="堡垒机(运维审计)"></a>堡垒机(运维审计)</h3><p><strong>等保测评重点！！！</strong></p>
+<p><strong>堡垒机</strong>（Bastion Host）即在一个特定的网络环境下，为了保障网络和数据不受入侵和破坏，运用各种技术手段对网络内的服务器、网络设备、安全设备、数据库等设备的操作行为，以便于集中报警、及时处理及审计定责。</p>
+<p><strong>部署方式</strong>：（管理所有设备的方式）核心交换机配置acl或防火墙，只允许访问堡垒机，最后通过堡垒机访问其他设备，导致控制所有设备都需要在堡垒机上进行。</p>
+<p><strong>抗抵赖性</strong>: 通过双因子认证,和录屏实现（堡垒机的<strong>抗抵赖性</strong>指的是其具有防止用户否认其访问或操作行为的能力。通过堡垒机记录和审计用户的访问和操作活动，并生成详细的审计日志，可以有效地提高用户的抗抵赖性。）</p>
+<p><strong>登陆方式</strong>：等保要求双因子认证（身份鉴别，准确是用户名密码加另外一种认证方式），多重认证方式（例如密码+<strong>USB key</strong>、数字令牌、短信验证码等）</p>
+<p><strong>管理资产</strong>：可以管理设备数，配置堡垒机时，对堡垒进行设置，定义设备资产的类别，堡垒机的资产管理需要授权，。</p>
+<p><strong>权限划分</strong>：对不同的账号分配不同的权限。</p>
+<h4 id="对运维人员的审计："><a href="#对运维人员的审计：" class="headerlink" title="对运维人员的审计："></a>对运维人员的审计：</h4><p>对运维人员的操作行为进行审计（远程管理的限制）</p>
+<p>方式：CLI命令行、GUI图形化、RDP远程桌面 录制过程</p>
+<p><strong>运维服务器,主机</strong><br>rdp,远程桌面,堡垒机进行录屏审计（RDP：Remote Desktop Protocol,远程桌面协议，端口号3389）</p>
+<p><strong>运维安全产品</strong><br> WEB管理,通过HTTP,HTTPS登录安全产品,进行审计（需安装<strong>应用发布服务器</strong>，应用发布服务器需安装在额外的服务器上，相当于找一台服务器装一个软件；如果设备无法安装应用发布服务器，则可通过RDP远程桌面协议控制其他电脑，通过该电脑的录屏行为对运维人员的操作行为进行审计）</p>
+<p><strong>运维网络产品</strong><br> 管理路由器，交换机设备（通过crt, Xshell等软件，crt, Xshell是帮助实现ssh&#x2F;telnet登陆的工具）,telnet,ssh记录操作命令</p>
+<ol>
+<li><strong>安全访问控制</strong>：堡垒机作为一道关卡，实施严格的访问控制策略，只允许经过身份验证和授权的用户或系统访问内部网络资源。</li>
+<li><strong>跳板连接</strong>：用户通过堡垒机进行跳板连接，从而间接访问内部网络中的其他资源，有效隔离了外部用户和内部资源之间的直接连接，提高了安全性。</li>
+<li><strong>审计和监控</strong>：堡垒机可以记录用户的访问行为和操作日志，并对访问活动进行实时监控和审计，以便及时发现异常行为或安全事件。</li>
+<li><strong>多因素身份验证</strong>：为了加强安全性，堡垒机通常支持多种身份验证方式，如用户名密码、证书、双因素认证等。</li>
+<li><strong>会话管理</strong>：堡垒机可以管理用户与目标系统之间的会话，包括会话录制、会话复制、会话监控等功能，以确保访问行为的可追溯性和可控性。</li>
+<li><strong>隔离与分段</strong>：堡垒机可以将内部网络划分为不同的安全区域，实施网络隔离和流量过滤，以防止横向移动攻击和网络内部的安全风险扩散。</li>
+<li><strong>高可用性和容错性</strong>：为了确保服务的可用性，堡垒机通常支持集群部署、负载均衡和故障转移等高可用性和容错性机制。</li>
+</ol>
+<h3 id="DLP"><a href="#DLP" class="headerlink" title="DLP"></a>DLP</h3><p>DLP 是数据丢失预防（Data Loss Prevention）的缩写，也称为数据泄露防护。DLP 是一种信息安全技术，旨在帮助组织监控、检测和防止敏感数据在网络中意外泄或被未经授权的人员访问、使用、共享的情况。水印系统。（水印是可以去除的）</p>
+<p>DLP的核心是以数据内容为控制对象，并对数据进行发现、分类、监控和阻断。</p>
+<p>DLP 基于三个基本原则运行：检测、执行和保护。</p>
+<h3 id="网络审计"><a href="#网络审计" class="headerlink" title="网络审计"></a>网络审计</h3><p>旁挂核心抓流量，放在核心管理区原因：两个线一个接在交换机，一个连接在运维区交换机管理口监控，</p>
+<p>功能类似于上网行为管理,（基于协议的检测）区别是旁路部署,抓取流量,检测内网用户的上网行为的网络审计,也就是东西流量（可以审计内部人员登陆自己的服务器）。</p>
+<h3 id="终端安全管理；防病毒服务器"><a href="#终端安全管理；防病毒服务器" class="headerlink" title="终端安全管理；防病毒服务器"></a>终端安全管理；防病毒服务器</h3><p>针对终端电脑或者服务器，防病毒服务可以算是终端管理的一项功能。</p>
+<p>企业版杀毒软件</p>
+<ul>
+<li>统一的集中管理，防病毒服务器管理在防病毒服务器下，下载杀毒软件的终端，收集终端</li>
+<li>应用管理：可以查看设备终端安装了什么软件</li>
+<li>准入控制：身份验证；权限划分。</li>
+<li>软件分发：下发软件</li>
+<li>资产管理</li>
+<li>下发策略：可以下发杀毒软件的管理策略</li>
+<li>移动存储介质管理：保护终端数据，禁用U盘，移动硬盘；可以识别存储介质，但无法拷贝</li>
+<li>违规外连管理：不允许上网；上网了就是违规外连，检测到上网，会关闭网卡，让网卡失效；如何测试是否违规外联：一直发包测试地址连通性</li>
+<li>系统修复、补丁管理等等，根据杀毒软件的不同，功能也不同</li>
+<li>终端基线配置核查：终端管理的基线核查只能针对终端设备，安全基线是指为满足安全规范要求，安全配置必需达到的标准，一般通过检查各安全配置参数是否符合标准来度量</li>
+<li>终端审计</li>
+</ul>
+<h3 id="EDR（终端IPS）"><a href="#EDR（终端IPS）" class="headerlink" title="EDR（终端IPS）"></a>EDR（终端IPS）</h3><p>终端入侵检测,通俗点说就是终端IPS，防止对终端的入侵行为，EDR可以包含终端管理和杀毒软件（有的厂家叫Host IDS）。</p>
+<h3 id="主机监控与审计"><a href="#主机监控与审计" class="headerlink" title="主机监控与审计"></a>主机监控与审计</h3><p>检测主机是否合规,比如开一个高威端口,会直接告警；对主机的操作行为（登录、拷贝、违规外联&#x2F;移动存储介质、打印等）进行审计，等保作用不大，分保重要</p>
+<ol>
+<li><strong>主机监控：</strong><ul>
+<li>主机监控是指对计算机系统的各种指标和活动进行实时监测和记录，以检测异常情况和威胁行为。</li>
+<li>监控的内容包括系统资源利用率（如CPU、内存、磁盘和网络）、进程活动、登录和注销事件、文件系统变更、安全日志等。</li>
+<li>主机监控工具通常提供实时警报功能，可以在发现异常情况时立即通知管理员。</li>
+</ul>
+</li>
+<li><strong>审计：</strong><ul>
+<li>主机审计是指对计算机系统的活动和事件进行记录、分析和审查，以确保系统的安全性和合规性。</li>
+<li>审计的内容包括用户操作记录、系统配置变更、安全策略执行情况、安全事件响应等。</li>
+<li>审计日志通常用于追踪和调查安全事件，以确定责任和采取必要的措施。</li>
+</ul>
+</li>
+</ol>
+<h3 id="WAF"><a href="#WAF" class="headerlink" title="WAF"></a>WAF</h3><p><strong>WAF（Web 应用防火墙）<strong>的工作原理基于对 Web 流量进行实时监控和分析，以识别和阻止潜在的恶意攻击，基于B&#x2F;S架构</strong>（WAF只能针对B&#x2F;S架构的应用进行防御）</strong>。（CS架构（Client-Server Architecture）是一种分布式计算模型，其中客户端和服务器之间通过网络进行通信。在这种架构中，客户端负责向服务器发送请求，并接收服务器返回的响应。服务器则负责处理客户端的请求，并返回相应的结果。CS架构通常用于构建大型的网络应用程序，如Web应用程序、电子邮件系统、数据库管理系统等。 BS架构（Browser-Server Architecture）是一种基于Web的分布式计算模型，其中浏览器作为客户端，服务器作为服务端。在这种架构中，浏览器负责向服务器发送请求，并接收服务器返回的响应。服务器则负责处理浏览器的请求，并返回相应的结果。BS架构通常用于构建Web应用程序，如在线购物网站、社交媒体平台、在线银行系统等。 相比之下，CS架构更加灵活，可以支持多种类型的客户端，如桌面应用程序、移动应用程序等。而BS架构则更加简单，只需要一个Web浏览器即可访问应用程序。此外，BS架构具有更好的跨平台性和可扩展性，因为所有的应用程序都运行在服务器端，可以通过增加服务器的数量来提高系统的性能和可靠性。）</p>
+<p><strong>WAF可以做流量清洗</strong>（WAF的流量清洗和云抗力的流量清洗不同，WAF的流量清洗针对B&#x2F;S架构的流量）。</p>
+<p><strong>B&#x2F;S</strong>架构：（Browser&#x2F;Server 架构）是一种常见的软件架构模式，用于构建 Web 应用程序。在 B&#x2F;S 架构中，应用程序被分为两个主要部分：浏览器端和服务器端。</p>
+<ol>
+<li><p><strong>流量检测：</strong> WAF 拦截所有进入和离开 Web 应用程序的网络流量，包括 HTTP 和 HTTPS 请求。它会对这些请求进行深度检查，以识别任何潜在的安全威胁。</p>
+</li>
+<li><p><strong>攻击识别：</strong> WAF 使用多种技术来识别常见的 Web 攻击模式，例如 SQL 注入、跨站脚本（XSS）、**防止绘话劫持、**跨站请求伪造（CSRF）、路径遍历等。这些技术可能包括基于签名的检测、基于行为的检测和正则表达式匹配等。</p>
+</li>
+<li><p><strong>规则检查：</strong> WAF 根据预定义的规则集或自定义的安全策略，对每个请求进行检查。这些规则可以包括允许的 HTTP 方法、URL 结构、cookie 标头、用户代理标头等，以及禁止的恶意模式和攻击特征。 </p>
+</li>
+<li><p><strong>实时防护：</strong> 如果 WAF 发现某个请求包含潜在的安全威胁，它将立即采取行动，例如拦截该请求、返回错误页面、重定向用户或记录安全事件等，以防止攻击继续进行。</p>
+</li>
+<li><p><strong>学习模式：</strong> 一些先进的 WAF 可以通过学习模式来自动学习正常的应用程序行为，以减少误报率，并帮助识别新的未知攻击模式。</p>
+</li>
+<li><p><strong>日志记录和分析：</strong> WAF 会记录所有的安全事件和处理结果，生成详细的日志和报告，以供安全管理员分析和调查，同时用于改进安全策略。<br>WAF的数据库就是<strong>规则库</strong>，类似于IPS的特征库的东西。WAF有两个库，特征库和规则库。</p>
+</li>
+</ol>
+<h3 id="漏洞扫描"><a href="#漏洞扫描" class="headerlink" title="漏洞扫描"></a>漏洞扫描</h3><p>非设备检查公司常用的基本工具，可安装在一台服务器上专门做此功能，·    ·    aa扫描终端系统漏洞&#x2F;服务器漏洞（基础功能），扫描web网站漏洞（Mysql注入3306,平台系统）（需要授权单独花钱，几个Web买几个授权，只能扫几次）,基线配置核查（针对服务器、安全设备、网络设备等，需要授权）</p>
+<p>漏洞扫描有漏洞库（有个别厂商的漏扫可以扫描安全设备和网络数通设备的漏洞）</p>
+<p>**开启漏洞扫描会被视作一种攻击，在金融行业（特殊行业）需提前沟通。**基线配置核查有也有软件版。</p>
+<h3 id="基线管理（基线配置核查）"><a href="#基线管理（基线配置核查）" class="headerlink" title="基线管理（基线配置核查）"></a>基线管理（基线配置核查）</h3><p>基线管理是指为了确保系统和网络的安全性和合规性而制定的一系列最低安全标准或配置要求。这些基线通常基于行业标准、最佳实践和组织内部的安全需求，用于规范和管理系统、网络和应用程序的安全配置。</p>
+<p>基线管理的主要目标包括：</p>
+<ol>
+<li><strong>确保一致性</strong>：确保系统和网络设备在部署和操作过程中遵循相同的安全配置，以降低安全漏洞和风险。</li>
+<li><strong>提高可管理性</strong>：简化安全管理任务，通过定义标准化的安全配置要求，减少管理人员的工作量和错误。</li>
+<li><strong>降低风险</strong>：通过强制执行安全基线要求，减少系统和网络面临的安全威胁和攻击风险。</li>
+<li><strong>符合合规性要求</strong>：确保系统和网络满足法律法规、行业标准和组织内部的安全政策要求，以避免违规行为和法律责任。</li>
+</ol>
+<p>基线管理通常涉及以下几个步骤：</p>
+<ol>
+<li><strong>确定基线标准</strong>：根据行业标准、最佳实践和组织的安全需求，确定适用于系统和网络的最低安全配置要求。</li>
+<li><strong>实施基线策略</strong>：将基线标准转化为具体的安全策略和配置要求，并在系统和网络设备上实施这些策略。</li>
+<li><strong>监视和审核</strong>：定期监视系统和网络的安全配置，确保其符合基线标准，并进行定期的安全审核和评估。</li>
+<li><strong>更新和调整</strong>：根据安全威胁和组织需求的变化，及时更新和调整基线标准和安全策略。</li>
+</ol>
+<p>通过基线管理，组织可以建立起一套持续的安全管理机制，有效降低系统和网络面临的安全风险，保护组织的信息资产安全。</p>
+<p><strong>比如,交换机的基线安全:</strong></p>
+<ul>
+<li><p>关闭不必要的服务</p>
+</li>
+<li><p>关闭不必要的端口</p>
+</li>
+<li><p>shutdown不适用的端口  </p>
+</li>
+<li><p>密码强度（弱口令）、防暴力破解</p>
+</li>
+<li><p>vty认证</p>
+</li>
+<li><p>账号管理（删除多余的、不用的账号）</p>
+</li>
+<li><p>接口绑定MAC地址</p>
+</li>
+<li><p>console口加验证（line console 0下）</p>
+</li>
+<li><p>打交换机版本补丁</p>
+</li>
+</ul>
+<p><strong>电脑的基线安全：</strong></p>
+<ul>
+<li>安装杀毒软件</li>
+<li>关闭不必要的端口&#x2F;服务</li>
+<li>密码强度、防暴力破解</li>
+<li>账号管理</li>
+<li>屏保&#x2F;自动锁屏</li>
+</ul>
+<h3 id="数据脱敏"><a href="#数据脱敏" class="headerlink" title="数据脱敏"></a>数据脱敏</h3><p>将重要的敏感数据进行遮挡（电话号、身份证号变***等）</p>
+<h3 id="热补丁"><a href="#热补丁" class="headerlink" title="热补丁"></a>热补丁</h3><p>补丁：解决系统漏洞的小程序</p>
+<p>在线补丁，在线修复漏洞，相当于给内存打补丁，重启后补丁消失。（厂商给打热补丁）</p>
+<p>**热补丁（Hot Patching）**是一种在系统运行时（不需要重启系统）动态应用的补丁程序，用于修复软件或操作系统中的漏洞、错误或安全问题。传统的补丁程序通常需要系统重启才能生效，而热补丁则可以实现在系统运行时实时应用，避免了系统停机时间，提高了系统的可用性和稳定性。</p>
+<h3 id="网闸-GAP"><a href="#网闸-GAP" class="headerlink" title="网闸(GAP)"></a>网闸(GAP)</h3><p><strong>安全隔离与信息交换系统（H3C的名字）</strong></p>
+<p><strong>网闸的主要特征：两网隔离。内网向外网传输数据是单向的。</strong></p>
+<p>传统网络防护设备很难兼顾安全隔离和信息交互两者的需求，极易导致攻击代码的流入和重要数据的泄露（所以一般网闸设置为外网可以单向流入内网）</p>
+<p>网闸是使用带有多种控制功能的固态开关读写介质，连接两个独立主机系统的信息安全设备。</p>
+<p>网闸的一个基本特征，就是内网与外网永远不连接，内网和外网在同一时间最多只有一个同隔离设备建立数据连接，可以是两个都不连接，但不能两个同时都连接。由于两个独立的主机系统通过网闸进行隔离，使系统间不存在通信的物理连接、逻辑连接及信息传输协议，因此网闸从物理上隔离、阻断了对内网具有潜在攻击可能的一切网络连接，保障了内部主机的安全。</p>
+<p><strong>网闸与防火墙的区别</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>隔离网闸</th>
+<th>防火墙</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>政策归类</td>
+<td>安全隔离与信息交换</td>
+<td>防火墙</td>
+</tr>
+<tr>
+<td>功能定位</td>
+<td>安全第一、通信第二</td>
+<td>通信第一、安全第二</td>
+</tr>
+<tr>
+<td>硬件体系</td>
+<td>多级系统</td>
+<td>单机系统</td>
+</tr>
+<tr>
+<td>通信协议</td>
+<td>专用私有协议</td>
+<td>公有协议</td>
+</tr>
+<tr>
+<td>安全级别</td>
+<td>隔离阻断（物理阻断）</td>
+<td>访问控制（逻辑阻断）</td>
+</tr>
+</tbody></table>
+<h3 id="光闸（FGAP）"><a href="#光闸（FGAP）" class="headerlink" title="光闸（FGAP）"></a>光闸（FGAP）</h3><p>光闸（FGAP）是一种由安全隔离网闸（GAP）基础上发展而成，基于光的单向性的单向隔离软硬件系统。</p>
+<p>光闸技术的产生是为了满足对安全性要求极高的网络的数据交换场景，如涉密网络与非涉密网络之间、行业内网与公共网络之间的单向隔离需求。 </p>
+<p>光闸系统由三部分组成，分别是内网单元、外网单元和分光单向传输单元。其中，内网单元和内网相连，外网单元与外网相连，分光单向传输单元是内外网之间唯一且安全的数据传输通道。</p>
+<h3 id="UTM"><a href="#UTM" class="headerlink" title="UTM"></a>UTM</h3><p>统一威胁管理UTM（Unified Threat Management）是一种功能全面的安全产品，作为单个产品能提供多种安全功能，包括<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/%E5%8F%8D%E7%97%85%E6%AF%92.html">反病毒</a>、反<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6.html">恶意软件</a>、防火墙、<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/%E5%85%A5%E4%BE%B5%E9%98%B2%E5%BE%A1.html">入侵防御</a>、<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/URL%E8%BF%87%E6%BB%A4.html">URL过滤</a>等功能。因此，可以通过单一管理平台监控所有威胁和安全相关活动，通过UTM，用户可以全面、简化地了解安全架构的所有要素。</p>
+<p><strong>为什么需要</strong>UTM？</p>
+<p>除了传统的<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%97%85%E6%AF%92.html">病毒</a>、<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/%E6%9C%A8%E9%A9%AC.html">木马</a>等威胁，以<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/%E9%AB%98%E7%BA%A7%E6%8C%81%E7%BB%AD%E6%80%A7%E5%A8%81%E8%83%81.html">APT</a>（Advanced Persistent Threat，<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/%E9%AB%98%E7%BA%A7%E6%8C%81%E7%BB%AD%E6%80%A7%E5%A8%81%E8%83%81.html">高级持续性威胁</a>）为代表的高级威胁不断演进，面对巨大的经济利益诱惑，<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/%E5%8B%92%E7%B4%A2%E8%BD%AF%E4%BB%B6.html">勒索软件</a>、M2M攻击等攻击行为越来越多样。混合威胁的出现，使统一威胁管理设备在行业内赢得了关注。这类威胁结合了不同类型的<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6.html">恶意软件</a>和攻击，会将目标同时瞄准网络的不同独立部分。若分别为单个特定的安全功能使用单独的设备，则很难抵御这类攻击，因为要面对最新形式的恶意软件和网络犯罪保持有效，就必须单独对每一种设备进行管理和更新。</p>
+<p>过去要为每个单独的安全功能分别配置不同的安全设备，现在通过UTM提供集中式管理，只需要一台设备就能有效的解决未知威胁攻击。</p>
+<p>UTM的优势</p>
+<p>UTM的主要优点是配置简单、网络的管理更加灵活和可视，并且能同时更新所有的安全功能或程序。虽然互联网威胁的性质和多样性变得越来越复杂，UTM产品能够提供多种技术在攻击链关键节点阻断攻击。这样就不需要管理员同时维护多种安全程序了，极大的降低了运维难度。</p>
+<p><strong>灵活性和适应性</strong></p>
+<p>借助UTM，用户可以根据自己的网络需求，使用灵活的解决方案，从一系列安全管理工具中挑选最合适的工具，来处理现代业务基础设施中各种复杂的网络设置。还可以选择使用包含用户所需的各种技术的模式，从而免去逐个购买解决方案的麻烦。</p>
+<p>由于UTM非常灵活，管理员可以自由部署合适的多种安全技术。此外，UTM还提供自动更新，让系统时刻准备好应对网络环境中的最新威胁。</p>
+<p><strong>集中式集成和管理</strong></p>
+<p>混合型威胁和新兴威胁可能同时针对一个网络的不同部分，如果涉及多种安全设备会引发管理噩梦。在没有UTM的正常设置中，管理员可能需要同时协调多个安全组件，包括防火墙、<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/%E5%BA%94%E7%94%A8%E8%AF%86%E5%88%AB.html">应用控制</a>、<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/VPN.html">VPN</a>等。这需要耗费团队的时间和资源。借助UTM提供集中式管理，管理员能够从单一控制台管理面向本地和远程环境的大量威胁。这样可以更轻松地监控系统，以及处理UTM中可能需要更新或检查的特定组件。因为只有一种或相对较少的设备需要修补、而不是多个不同设备，补丁管理工作也得以简化。</p>
+<p><strong>性价比高</strong></p>
+<p>由于采用集中式设置，中小企业管理员可以购买、部署及管理一种设备，或在较大规模的环境中管理员则管理少量设备，而不是多种设备。相较购买多台设备，UTM减少了组织保护网络所需的设备数量。这可能会大幅节省成本。此外，由于监控系统所需的人员减少，还可以节省人力成本。</p>
+<p><strong>提高对网络安全威胁的认识</strong></p>
+<p>UTM的集中化和更快的操作相结合，提高了管理员对网络安全威胁的认识，管理员能够实施<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/%E9%AB%98%E7%BA%A7%E6%8C%81%E7%BB%AD%E6%80%A7%E5%A8%81%E8%83%81.html">高级持续性威胁</a> (<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/%E9%AB%98%E7%BA%A7%E6%8C%81%E7%BB%AD%E6%80%A7%E5%A8%81%E8%83%81.html">APT</a>)。这样，IT团队可以更好地管理高级持续性威胁 (APT) 以及网络环境中的其他新型风险。</p>
+<p><strong>更快的<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/HiSec.html">安全解决方案</a></strong></p>
+<p>借助UTM，管理员可以简化数据处理方式，并减少使用资源。相对于多个组件彼此独立运行，UTM所需的资源较少。UTM带来的更高效率可以让管理员腾出资源，更好地管理其他依赖于网络的关键流程。</p>
+<p><strong>UTM的必备功能</strong></p>
+<p>理想的UTM解决方案必须具备以下主要功能。</p>
+<p><strong><a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/%E5%8F%8D%E7%97%85%E6%AF%92.html">反病毒</a></strong></p>
+<p>UTM包含反病毒软件，可以监控网络，检测并阻止<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%97%85%E6%AF%92.html">病毒</a>损害系统或与系统连接的设备。为此，需要利用签名数据库中的信息，检查系统中是否存在处于活动状态的病毒，或是否有病毒在试图获取访问权限。UTM中的反病毒软件可阻止的一些威胁，包括受感染的文件、<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/%E6%9C%A8%E9%A9%AC.html">特洛伊木马</a>、<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/%E8%A0%95%E8%99%AB.html">蠕虫</a>、间谍软件和其他<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6.html">恶意软件</a>。</p>
+<p><strong>反恶意软件</strong></p>
+<p>UTM通过检测并处理恶意软件来保护网络免受恶意软件的攻击。UTM可以预先配置为检测已知恶意软件，将恶意软件从数据流中过滤掉，并阻止其渗透系统。UTM还可以配置为使用启发式分析来检测新型恶意软件威胁，这个过程需要使用规则来分析文件的行为和特征。例如，如果某个程序被设计成会阻止计算机的摄像头正常工作，则启发式方法可以将该程序标记为恶意软件。UTM还可以联动沙箱作为反恶意软件措施。沙箱是一个<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/%E8%99%9A%E6%8B%9F%E7%B3%BB%E7%BB%9F.html">虚拟系统</a>程序，允许用户在虚拟环境中运行浏览器或其他程序。即使恶意软件能够运行，沙箱也会阻止它与计算机中的其他程序交互。</p>
+<p><strong>防火墙</strong></p>
+<p><a target="_blank" rel="noopener" href="https://e.huawei.com/cn/products/security">防火墙</a>能够扫描传入和传出流量，以确定是否存在病毒、恶意软件、<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/%E7%BD%91%E7%BB%9C%E9%92%93%E9%B1%BC.html">网络钓鱼攻击</a>、垃圾邮件、网络入侵攻击以及其他网络安全威胁。由于UTM防火墙会同时检查进出网络的数据，因此还可防止某个网络中的设备被用于将恶意软件传播到与该网络连接的其他网络。</p>
+<p><strong><a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/%E5%85%A5%E4%BE%B5%E9%98%B2%E5%BE%A1.html">入侵防御</a></strong></p>
+<p>UTM系统可以为企业提供入侵防御功能，常见的入侵方式包括大众熟悉的<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/%E6%9C%A8%E9%A9%AC.html">木马</a>、蠕虫、注入攻击、僵尸网络、DDoS攻击、跨站脚本攻击、<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3.html">暴力破解</a>等。UTM系统检测并防御攻击，保护企业信息系统和网络架构免受侵害。此功能通常称为<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/%E5%85%A5%E4%BE%B5%E9%98%B2%E5%BE%A1.html">入侵防御系统</a>（<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/%E5%85%A5%E4%BE%B5%E9%98%B2%E5%BE%A1.html">IPS</a>）。为了识别威胁，IPS会分析数据包，查找已知的威胁模式。当识别出任何一种已知的威胁模式时，IPS会阻止攻击。</p>
+<p>在某些情况下，IPS只会检测危险的数据包，由IT团队决定如何处理威胁。攻击制止措施可以自动执行，也可以手动执行。UTM还会记录恶意事件。然后，可以分析这些日志，并将其用于防御未来的其他攻击。</p>
+<p><strong>虚拟专用网络 (<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/VPN.html">VPN</a>)</strong></p>
+<p>UTM设备附带的虚拟专用网（VPN）功能类似于常规VPN基础设施，连接核心交换机。VPN会在公用网络上建立专用网络，使用户能够通过公用网络发送和接收数据，并避免自己的数据被别人看到。所有传输都是加密的，因此即使有人截获数据，也无法利用数据。</p>
+<p><strong><a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/URL%E8%BF%87%E6%BB%A4.html">URL过滤</a></strong></p>
+<p>UTM的URL过滤功能可防止用户查看特定URL，具体做法是，阻止用户的浏览器访问某些网站。可以根据特定的需求，将URL过滤器配置为针对某些网站。</p>
+<p>例如，如果管理员想防止员工被某些社交媒体网站分散注意力，可以在员工联网的情况下阻止他们的浏览器访问这些网站。</p>
+<p><strong>数据防泄露</strong></p>
+<p>UTM设备的数据丢失预防功能可以检测并防御数据泄露和数据窃取攻击。为此，<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/DLP.html">数据防泄漏</a>系统监控敏感数据，当发现有恶意攻击者试图窃取数据时，会阻止攻击，从而保护数据。</p>
+<h3 id="后门"><a href="#后门" class="headerlink" title="后门"></a>后门</h3><p>后门（Backdoor）是指一种被恶意植入系统中的隐藏功能或代码，允许攻击者绕过正常的安全控制手段来访问系统、获取信息或执行恶意操作的方法。后门可能以各种形式存在，例如在软件程序中、操作系统中或网络设备中。</p>
+<p>以下是关于后门的一些重要信息：</p>
+<ol>
+<li><strong>功能</strong>：后门可以使攻击者远程访问系统，绕过认证机制登录系统、监视用户活动、窃取数据、执行恶意操作等，而这些操作通常是未经授权的。</li>
+<li><strong>植入方式</strong>：后门可以通过各种途径被植入系统中，包括恶意软件感染、物理访问设备、远程攻击等。有时，甚至软件开发人员或系统管理员也可能在系统中植入后门。</li>
+<li><strong>发现和防范</strong>：发现后门的存在通常需要进行深入的安全审计和监控。为了防范后门的存在，需要采取严格的安全措施，包括定期更新软件、加强访问控制、使用防病毒软件、监控网络流量等。</li>
+<li><strong>合法性</strong>：在某些情况下，系统中可能存在合法的后门，用于管理和维护目的。然而，如果这些后门被滥用或未经授权使用，依然构成安全威胁。</li>
+</ol>
+<p>总的来说，后门是一种严重的安全漏洞，可能导致系统遭受未经授权的访问和操控。因此，保持系统安全、及时发现和清除潜在的后门非常重要。</p>
+<h3 id="零信任"><a href="#零信任" class="headerlink" title="零信任"></a>零信任</h3><p>更高级的sslvpn,经过一系列的计算,得出你的身份是否合法</p>
+<p>零信任和4A配合,通过分析零信任得分,赋予4A划分给你的身份,获得对应的访问控制权限.</p>
+<p>比如通过零信任得到70分,访问服务器需要80分,则没有权限访问服务器.</p>
+<h3 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h3><p>因为等价路由,导致来去路径不一致的问题。</p>
+<p>来去路径不一致,会导致源地址不一样,防火墙误以为数据包被劫持过,被二次修改,会拒绝掉一些服务。</p>
+<p>负载均衡设备是用于分发网络流量以平衡服务器或网络设备负载的重要组件。它可以确保网络服务的高可用性、可伸缩性和性能。</p>
+<p><strong>业务负载</strong>:基于应用的负载,进去的流量(大部分场景适用,比如对外提供服务的)</p>
+<p><strong>链路负载</strong>:出去的流量(小部分场景,目的是企业员工访问互联网)</p>
+<p>它的作用是,选择路线,防止一条链路的流量过大</p>
+<h3 id="流量分析"><a href="#流量分析" class="headerlink" title="流量分析"></a>流量分析</h3><p><strong>旁路部署</strong></p>
+<p>流量分析是指对网络中的数据流进行监视、捕获、分析和解释（<strong>探针</strong>），以便了解网络活动、识别异常行为、优化性能和提高安全性。</p>
+<p>可以收集谁访问谁的流量,分析流量的<strong>访问关系</strong>，有详细的访问关系,分析流量详情,便于写访问控制，还可以分析流量的大小。</p>
+<p>检测方式：异常（学习行为检测异常）；勿用</p>
+<h3 id="网络准入"><a href="#网络准入" class="headerlink" title="网络准入"></a>网络准入</h3><p>身份认证,身份正确,才可以访问相关网络资源。</p>
+<h3 id="安全认证网关"><a href="#安全认证网关" class="headerlink" title="安全认证网关"></a>安全认证网关</h3><p>它具有用户身份认证代理的功能，</p>
+<h3 id="网页防篡改"><a href="#网页防篡改" class="headerlink" title="网页防篡改"></a>网页防篡改</h3><p>只能针对静态网页进行防护（无法针对动态网页进行防护）</p>
+<p>网站锁，将网站锁起来，不解锁任何人都无法修改。</p>
+<h3 id="专业VPN"><a href="#专业VPN" class="headerlink" title="专业VPN"></a>专业VPN</h3><p>专业VPN可以减少对外资源的暴露面，VPN最好接在防火墙上，如果接在核心交换机上，黑客获得了VPN设备的权限，可以直接进入核心交换机。</p>
+<p>VPN技术是解决链路加密的问题，加密机也是链路加密（VPN不是给数据加密）</p>
+<p>加密机可以独立使用（成对使用，一端一个），VPN需配置AH、ESP等</p>
+<p>VPN可以取代加密机，加密机无法取代VPN（上图VPN放置位置并不理想，应该接在FW外侧，否则黑客可以通过SSL VPN进入内网）</p>
+<p>Ipsec VPN是点到点的VPN，SSL VPN是移动VPN，需要买授权。</p>
+<h3 id="云管平台"><a href="#云管平台" class="headerlink" title="云管平台"></a>云管平台</h3><p>云管平台是在服务器上安装的一种软件。</p>
+<h4 id="云平台和云管平台的区别："><a href="#云平台和云管平台的区别：" class="headerlink" title="云平台和云管平台的区别："></a>云平台和云管平台的区别：</h4><ul>
+<li><p><strong>定义不同</strong></p>
+<ul>
+<li>云平台：是指可以提供IaaS、PaaS、SaaS等各种云服务的平台。</li>
+<li>云管平台：云管平台是一种管理公有云、私有云和混合云的产品，为企业提供管理跨多个云基础设施的服务。</li>
+</ul>
+</li>
+<li><p><strong>架构不同</strong></p>
+<ul>
+<li>云平台（云计算平台）从底层向上分别包括基础架构、资源管理、服务交付和用户的接入和管理这个组成部分。</li>
+<li>除了最底层的基础架构之外，上面的三层统称为云管平台。</li>
+</ul>
+</li>
+<li><p><strong>用途不同</strong></p>
+<ul>
+<li>云平台主要提供的云服务。</li>
+<li>云管平台主要对云资源的管理，例如保障云安全，降低云成本，提高自动化运维能力等等。</li>
+</ul>
+</li>
+</ul>
+<p>从下往上第一层就是基础架构，也就是通过虚拟化来形成一个云的基础架构，这个基础架构不单单是服务器虚拟化，可能还有存储虚拟化、网络虚拟化，有这个基础架构做支撑才能把各种资源做成弹性的资源池。</p>
+<p>在其上的第二层是资源的生命周期管理，特别是资源的分级，即根据不同的业务(如生产、开发、测试，生产)分成重要的和非重要的，一级或者二级等。</p>
+<p>在此之上的第三层是把资源包装成服务。资源就像餐厅的后厨，厨房里有各种菜品、各种原料，需要组合再炒出菜来供客人享用，云平台要对外提供服务也需要服务的编排与交付。</p>
+<p>位于最上层的是门户，这是用户直接打交道的部分，也是一般用户唯一实际看得见、摸得着的东西。</p>
+<p>云管平台是依附于底层的虚拟化之上，是云平台的一部分，其发展也与整个云计算发展相一致。</p>
+<table>
+<thead>
+<tr>
+<th>目前市面的</th>
+<th>云管平台</th>
+<th>公司</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>行云管家</td>
+<td>骞云科技</td>
+<td>深信服</td>
+<td>新钛云服</td>
+<td>神州信息</td>
+<td>青云</td>
+<td>安畅网络</td>
+<td>华三云</td>
+</tr>
+</tbody></table>
+<h3 id="蜜罐技术"><a href="#蜜罐技术" class="headerlink" title="蜜罐技术"></a>蜜罐技术</h3><p>国际蜜罐技术研究组织Honeynet Project的创始人Lance Spitzner给出了蜜罐的权威定义:**蜜罐是一种安全资源，其价值在于被扫描、攻击和攻陷。**蜜罐并不向外界用户提供任何服务，所有进出蜜罐的网络流量都是非法的，都可能预示着一次扫描和攻击，<strong>蜜罐的核心价值在于对这些非法活动进行监视、检测和分析，可以溯源，主要作用就是诱捕。</strong></p>
+<p>蜜罐是用来吸引那些入侵者，目的在于了解这些攻击。蜜罐看起来就是一台有一个或者多个可以被攻击者利用漏洞的服务器或计算机主机。他们简单的就如同一个默认安装的操作系统充满了漏洞以及被攻破的可能性。</p>
+<h4 id="蜜罐的分类"><a href="#蜜罐的分类" class="headerlink" title="蜜罐的分类"></a>蜜罐的分类</h4><p>蜜罐可以运行任何操作系统和任意数量的服务。蜜罐根据交互程度（Level ofInvolvement）的不同可以分为高交互蜜罐和低交互蜜罐。蜜罐的交互程度是指攻击者与蜜罐相互作用的程度，高交互蜜罐提供给入侵者一个真实的可进行交互的系统。</p>
+<p>相反，低交互蜜罐只可以模拟部分系统的功能。高交互蜜罐和真实系统一样可以被完全攻陷，允许入侵者获得系统完全的访问权限，并可以以此为跳板实施进一步的网络攻击。相反的，低交互蜜罐只能模拟部分服务、端口、响应，入侵者不能通过攻击这些服务获得完全的访问权限。</p>
+<p>从实现方法上来分，蜜罐可分为物理蜜罐和虚拟蜜罐。物理蜜罐是网络上一台真实的完整计算机，虚拟蜜罐是由一台计算机模拟的系统，但是可以响应发送给虚拟蜜罐的网络流量。</p>
+<h4 id="蜜罐的优势"><a href="#蜜罐的优势" class="headerlink" title="蜜罐的优势"></a>蜜罐的优势</h4><ol>
+<li><p>检测隐藏的攻击：蜜罐可以帮助检测那些隐藏在正常网络流量中的攻击。由于蜜罐是故意设计成容易受到攻击的系统，攻击者往往会选择入侵蜜罐而不是正常的网络系统。</p>
+</li>
+<li><p>捕获攻击者的信息：蜜罐可以捕获攻击者的工具、技术和程序等信息，帮助安全专业人员更好地了解攻击者的行为和动机。</p>
+</li>
+<li><p>防止恶意软件传播：通过部署蜜罐，可以阻止恶意软件在正常网络系统中传播，从而保护企业的关键资产和数据。<br>四、蜜罐的部署方式</p>
+</li>
+<li><p>单机部署：单机部署是指在单个主机上安装蜜罐软件。这种部署方式适用于小型企业或个人用户，可以监测本地网络流量。但需要注意的是，单机部署可能无法覆盖整个网络流量，因此可能存在一定的盲区。</p>
+</li>
+<li><p>分布式部署：分布式部署是指在多个主机上安装蜜罐软件，以监测整个网络的流量。这种部署方式适用于大型企业和组织，可以全面监测网络流量并捕获更多的攻击信息。</p>
+</li>
+<li><p>云端部署：云端部署是指将蜜罐部署在云平台上，利用云平台的弹性扩展和高度可用性来提高监测效果。云端部署的优势在于可以快速响应网络威胁，同时避免硬件设备和维护成本。</p>
+</li>
+</ol>
+<h2 id="双向SSL"><a href="#双向SSL" class="headerlink" title="双向SSL"></a>双向SSL</h2><ul>
+<li><p>基于HTTPS的应用系统，在网络环境常规的设备无法识别传输的应用数据，更无法识别来自应用层的攻击。要对HTTPS应用进行应用防护，必须要求WAF能良好的支持HTTPS协议并能对SSL数据流进行中继。</p>
+</li>
+<li><p>有了地址组和端口组，我们可以把一个部门所有主机的IP地址定义到一个地址组中，或把一类服务加入端口组中</p>
+</li>
+<li><p>实现功能:</p>
+<ul>
+<li><p>需要导入的证书</p>
+</li>
+<li><p>实现HTTPS双向代理接入，无需改变网络</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="用户管理技术"><a href="#用户管理技术" class="headerlink" title="用户管理技术"></a>用户管理技术</h2><p>参考文献 [HCSCP1303 用户管理技术.pptx](HCIP-Sec\HCSCP1303 用户管理技术.pptx)</p>
+<ol>
+<li><p>用户通过网络接入设备接入网络，由第三方<strong>RADIUS服务器</strong>对用户进行认证和授权。认证流程如下：</p>
+<ul>
+<li>在RADIUS服务器上配置RADIUS认证和计费。</li>
+<li>将AC-Campus配置为RADIUS中继，接收设备发送的报文，并转发给RADIUS服务器。</li>
+<li>在设备侧配置RADIUS认证和计费。</li>
+<li>配置AC-Campus的RADIUS认证和授权。</li>
+</ul>
+</li>
+<li><p><strong>用户的认证报文发送到</strong>AC-Campus后，AC-Campus匹配认证规则发现该认证报文需要转发到RADIUS服务器。</p>
+<ul>
+<li>如果管理员配置了认证条件，AC-Campus检查用户的认证信息是否满足认证条件要求，满足则转发认证报文。</li>
+<li>如果没有配置认证条件，则直接转发认证报文。</li>
+</ul>
+</li>
+<li><p>RADIUS服务器返回授权报文后，AC-Campus匹配授权规则，如果授权规则定义了授权条件，AC-Campus检查用户的认证信息是否满足授权条件要求，满足则向设备下发授权结果，授权结果可以包括RADIUS服务器返回的授权结果，也可以包括管理员在AC-Campus定义的授权结果。</p>
+</li>
+</ol>
+<p>使用第三方Radius服务器对用户进行认证的时候存在一个弊端：登陆交换机需要通过Radius认证，如何链路不可达，则无法通过认证；所以需要配置双重认证，Radius认证和本地的AAA认证，同时将Redius认证设为第一认证方式，AAA认证设为第二认证方式。</p>
+<h2 id="终端安全管理"><a href="#终端安全管理" class="headerlink" title="终端安全管理"></a>终端安全管理</h2><p>参考文献 [HCSCP1309 终端安全管理.pptx](HCIP-Sec\HCSCP1309 终端安全管理.pptx)</p>
+<p>违规外连管理（不允许上网，上网了就是违规外连），原理是向外网发探测包，如果外网回报说明上网了，然后终端管理会报警。</p>
+<h4 id="终端管理功能-–-终端安全检查策略"><a href="#终端管理功能-–-终端安全检查策略" class="headerlink" title="终端管理功能 – 终端安全检查策略"></a>终端管理功能 – 终端安全检查策略</h4><p>终端安全是通过对终端下发<strong>安全策略（基线）</strong>，检查终端的设置是否符合安全要求，规范终端用户的行为。****</p>
+<p>**进程：**可以理解为安装在内存的程序；</p>
+<p>**本地安全策略：**审核策略、用户权限分配、安全选项</p>
+<p>审核策略：作用是确定是否将计算机与安全有关的事件记录到安全日志中，也可将用户登录的事件记录的日志中 等等</p>
+<p><img src="https://img-blog.csdnimg.cn/de8f090b57df46308bb0287e7ddcc93a.png" alt="img"></p>
+<p>用户权限分配：可以为某些用户和组授予或拒绝一些特殊的权限，如更改系统时间，拒绝本地登录等等</p>
+<p><img src="https://img-blog.csdnimg.cn/30a1918a69b7499facc23f79ad6952d8.png" alt="img"></p>
+<p>安全选项：主要设置一些系统的安全相关设置</p>
+<p><img src="https://img-blog.csdnimg.cn/5fd57a7571a94cf48ed8db3abaef2947.png" alt="img"></p>
+<p>**强制补丁：**系统不能存在高危漏洞，打补丁可能导致软件不兼容；打补丁需要让客户签署免责协议，</p>
+<p><strong>注册表保护：<strong>注册表是Windows的核心数据库，用于</strong>存储系统</strong>和<strong>应用程序</strong>的设置信息。（所有的应用软件都需要到注册表内注册，才能在Windows系统中启动，包括Windows自己的系统，这是微软的机制）</p>
+<h4 id="终端安全管理解决方案"><a href="#终端安全管理解决方案" class="headerlink" title="终端安全管理解决方案"></a>终端安全管理解决方案</h4><p>**合规性检查：**基线检查</p>
+<p>**零信任：**零信任是一种安全模型，基于访问主体身份、网络环境、终端状态等尽可能多的信任要素对所有用户进行持续验证和动态授权。（可以理解为高级的SSL VPN，现在的零信任基本上就针对出差人员使用）</p>
+<ul>
+<li>零信任与传统的安全模型存在很大不同，传统的安全模型通过“一次验证+静态授权”的方式评估实体风险，而零信任基于“持续验证+动态授权”的模式构筑企业的安全基石。</li>
+</ul>
+<p><strong>零信任核心原则</strong></p>
+<ul>
+<li>持续验证，永不信任，构建身份安全基石零信任对人、终端和应用进行统一身份化管理，建立以身份为中心的访问控制机制。以访问主体的身份、网络环境、终端状态等作为认证的动态考量因素，持续监测访问过程中的违规和异常行为，确保接入网络的用户和终端持续可信。</li>
+<li>动态授权，精细访问控制，权限随需而动零信任不依赖通过网络层面控制访问权限，而是将访问目标的权限细化到应用级、功能级、数据级，只对访问主体开放所需的应用、功能或数据，满足最小权限原则，极大收缩潜在攻击面。同时安全控制策略基于访问主体、目标客体、环境属性（终端状态、网络风险、用户行为等）进行权限动态判定，实现应用、功能、数据等维度的精细和动态控制。</li>
+<li>全局防御，网安协同联动，威胁快速处置零信任通过对终端风险、用户行为异常、流量威胁、应用鉴权行为进行多方面评估，创建一条完整的信任链。并对信任分低的用户或设备生成相应的处置策略，联动网络或安全设备进行威胁快速处置，为企业搭建一张“零信任+网安联动”的安全网络。</li>
+</ul>
+<h2 id="云计算：虚拟化"><a href="#云计算：虚拟化" class="headerlink" title="云计算：虚拟化"></a>云计算：虚拟化</h2><p>云计算：指在虚拟化平台上的计算，它是一种模型，它可以实现<strong>随时随地、便捷地</strong>、<strong>随需应变地</strong>从可配置计算资源共享池中获取所需的资源（例如，网络、服务器、存储、应用、及服务），<strong>资源能够快速供应并释放</strong>，<strong>使管理资源的工作量和与服务提供商的交互减小到最低限度</strong>。</p>
+<table>
+<thead>
+<tr>
+<th>定义</th>
+<th>优势</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>随时随地、便捷地</td>
+<td>广泛的网络接入</td>
+</tr>
+<tr>
+<td>随需应变的、资源能够快速供应并释放</td>
+<td>快速弹性伸缩</td>
+</tr>
+<tr>
+<td>使管理资源的工作量和与服务提供商的交互减小到最低限度</td>
+<td>按需自助服务</td>
+</tr>
+</tbody></table>
+<p>云虚拟网络（Cloud Virtual Network）是一种基于云计算技术的网络架构，它允许在云服务提供商的基础设施上创建和管理虚拟化的网络环境。</p>
+<p>虚拟化是一种资源管理技术，打破实体结构的不可分割的障碍，可以对数据中心的所有资源进行虚拟化和管理，可以实现服务虚拟化、存储虚拟化、网络虚拟化和桌面虚拟化；虚拟化就是资源池化（一虚多或者多虚一）；云安全有安全软件防护，例如防火墙池化。</p>
+<h3 id="公有云和私有云的区别"><a href="#公有云和私有云的区别" class="headerlink" title="公有云和私有云的区别"></a>公有云和私有云的区别</h3><p>公有云是由云服务提供商提供和管理的，而私有云则由企业或组织自行建设和管理。公有云的资源是共享的，多个用户可以共同使用同一套硬件设施，而私有云的资源是专有的，每个用户都有自己的硬件设施。公有云的成本更低，因为企业可以通过租用云计算资源来节省自己建设数据中心的成本，而私有云的成本更高，因为企业或组织需要自行建设和管理数据中心，并且需要购买和维护硬件和软件。公有云的优势在于方便访问、弹性伸缩、按需付费、无需维护等特点，而私有云的优势在于数据安全、定制化程度高、可控性强等特点。</p>
+<h2 id="TAP镜像交换机"><a href="#TAP镜像交换机" class="headerlink" title="TAP镜像交换机"></a>TAP镜像交换机</h2><p>网络TAP是一种外部网络设备，可启用端口镜像并创建流量副本，以供各种监视设备使用。（一台正常的交换机只有两个镜像口，但TAP镜像交换机有多个镜像端口，TAP交换机只用来镜像流量）</p>
+<h2 id="备份一体机"><a href="#备份一体机" class="headerlink" title="备份一体机"></a>备份一体机</h2><p>备份一体机不仅可以实时备份，还可以恢复（回复到某个时间节点）</p>
+<p>爱数的Any backup是知名设备;爱数主要针对大数据技术设施研发。</p>
+<h1 id="网络型攻击防范技术"><a href="#网络型攻击防范技术" class="headerlink" title="网络型攻击防范技术"></a>网络型攻击防范技术</h1><h3 id="计算机启动过程"><a href="#计算机启动过程" class="headerlink" title="计算机启动过程"></a>计算机启动过程</h3><p>BIOS（Basic Input Output System，基本输入输出系统，BIOS也叫只读存储器，不可修改，无法删除，但是可以升级，BIOS是固化在ROM芯片上的软件程序）</p>
+<p>计算机开机时BIOS先进行硬件自检，硬件自检没有问题，再启动Windows操作系统，（操作系统会读取到内存里，内存也叫随机存储器；Flash卡叫做闪存存储器）</p>
+<p>CIH属于恶性病毒，可以破坏硬件（破坏的是BIOS硬件），这个病毒产自中国台湾，1998年被发现，原集嘉通讯公司（技嘉子公司）手机研发中心主任工程师陈盈豪在其于台湾大同工学院念书期间制作。</p>
+<p>信息安全模型</p>
+<h3 id="WPDRRC（Warning-Protect-Detect-React-Restore-Counterattack）模型的具体环节如下："><a href="#WPDRRC（Warning-Protect-Detect-React-Restore-Counterattack）模型的具体环节如下：" class="headerlink" title="WPDRRC（Warning&#x2F;Protect&#x2F;Detect&#x2F;React&#x2F;Restore&#x2F;Counterattack）模型的具体环节如下："></a>WPDRRC（<strong>Warning&#x2F;Protect&#x2F;Detect&#x2F;React&#x2F;Restore&#x2F;Counterattack</strong>）模型的具体环节如下：</h3><ol>
+<li><p>‌预警‌：通过监测和分析潜在的安全威胁，提前发出警告，以便采取相应的预防措施。如建设蜜罐，APT平台等进行预警。</p>
+</li>
+<li><p>保护‌：采取各种技术和组织措施，确保信息系统的物理和逻辑安全。如防火墙，WAF等。</p>
+</li>
+<li><p>‌检测‌：通过技术和工具检测系统中的异常活动或潜在的攻击。病毒查杀，漏洞扫描等。</p>
+</li>
+<li><p>‌响应‌：一旦检测到安全问题，迅速采取措施进行应对，如隔离受影响的系统或启动应急计划。网络封禁，端口封禁等动作</p>
+</li>
+<li><p>恢复‌：在安全问题得到解决后，恢复系统的正常运作。</p>
+</li>
+<li><p>反击‌：对攻击者进行反击，减少未来的攻击风险。网络攻击都溯源等。</p>
+</li>
+</ol>
+<h3 id="流量型攻击"><a href="#流量型攻击" class="headerlink" title="流量型攻击"></a>流量型攻击</h3><p>流量型攻击是指网络安全领域中的一种攻击方式，旨在通过大量的网络流量对目标系统或网络发起攻击，以使其过载、崩溃或无法正常运行。这种类型的攻击通常会利用僵尸网络（botnet）或其他机器人网络来发送大量恶意流量，从而消耗目标系统的带宽、计算资源或其他重要资源。</p>
+<p><strong>针对流量型攻击，可以设定阈值，访问流量达到阈值可以启动源认证防范</strong></p>
+<p><strong>其主要目的：DDos耗尽服务资源，Flood耗尽带宽</strong></p>
+<p>流量型攻击可以分为多种形式，其中包括：</p>
+<ol>
+<li><strong>DDoS 攻击（分布式拒绝服务攻击）</strong>：利用分布在多个地理位置的大量受控主机（又称“肉鸡”）同时向目标系统发送大量请求，导致目标系统无法正常提供服务。</li>
+<li><strong>CC 攻击（HTTP Flood 攻击）</strong>：通过模拟大量合法的 HTTP 请求，使目标服务器资源耗尽，无法处理正常用户的请求。</li>
+<li><strong>UDP Flood 攻击</strong>：发送大量伪造的 UDP 数据包给目标服务器，造成网络拥堵和服务不可用。UDP分片攻击</li>
+<li><strong>TCP SYN Flood 攻击</strong>：发送大量伪造的 TCP 连接请求给目标服务器，消耗其资源并导致拒绝服务。</li>
+<li><strong>单包攻击</strong>：扫描窥探攻击，特殊报文攻击，畸形报文攻击</li>
+</ol>
+<p>为了应对流量型攻击，组织和个人可以部署防御性措施，如使用防火墙、入侵检测系统（IDS）、入侵防御系统（IPS）、内容分发网络（CDN）等技术来过滤恶意流量，减轻攻击对网络和系统的影响。</p>
+<h3 id="Ddos攻击方式"><a href="#Ddos攻击方式" class="headerlink" title="Ddos攻击方式"></a>Ddos攻击方式</h3><p>关于ddos攻击防范方式，攻击基于tcp、udp、http、dns等，而防御手段大多需要进行原检测分类正常用户和非法攻击者，分别之后将合法用户加入白名单，非法用户丢弃。</p>
+<ol>
+<li><strong>UDP Flood攻击：</strong> 攻击者向目标服务器发送大量的UDP数据包，消耗目标服务器的带宽和处理能力。由于UDP协议是无连接的，攻击者可以轻松伪造源IP地址，使得难以追踪攻击来源。</li>
+<li><strong>SYN Flood攻击：</strong> 攻击者发送大量伪造的TCP连接请求（SYN包），占用目标服务器上的TCP连接资源，导致服务器无法响应正常用户的请求。</li>
+<li><strong>HTTP Flood攻击：</strong> 攻击者利用大量合法的HTTP请求，向目标服务器发送大量的HTTP请求，消耗服务器的带宽和处理能力，使得服务器无法正常处理合法用户的请求。</li>
+<li><strong>ICMP Flood攻击：</strong> 攻击者发送大量的ICMP回显请求（ping请求），占用目标服务器的带宽和处理能力，可能导致服务器的网络连接变慢或不可用。</li>
+<li><strong>Slowloris攻击：</strong> 攻击者利用低带宽的连接，通过发送大量的部分HTTP请求，占用服务器的连接资源，使得服务器无法响应正常用户的请求。</li>
+<li><strong>DNS Amplification攻击：</strong> 攻击者利用存在放大效应的开放DNS服务器，向目标服务器发送大量的DNS查询请求，使得目标服务器收到大量的响应数据，消耗带宽和服务器资源。</li>
+<li><strong>NTP Amplification攻击：</strong> 攻击者利用存在放大效应的NTP（网络时间协议）服务器，向目标服务器发送大量的NTP查询请求，使得目标服务器收到大量的响应数据，消耗带宽和服务器资源。</li>
+</ol>
+<h3 id="畸形报文攻击"><a href="#畸形报文攻击" class="headerlink" title="畸形报文攻击"></a>畸形报文攻击</h3><h4 id="地址扫描攻击防范"><a href="#地址扫描攻击防范" class="headerlink" title="地址扫描攻击防范"></a>地址扫描攻击防范</h4><ul>
+<li><strong>攻击介绍</strong>：<br>运用ping程序探测目标地址，确定目标系统是否存活。也可使用TCP&#x2F;UDP报文对目标系统发起探测（如TCP ping）。</li>
+<li><strong>处理方法</strong>：<br>检测进入防火墙的ICMP、TCP和UDP报文，根据源IP地址获取统计表项的索引，如果目的IP地址与前一报文的IP地址不同，则将表项中的总报文个数增加1。如果在一定时间内报文的个数达到设置的值，记录日志，并根据配置决定是否将源IP地址自动加入黑名单。</li>
+</ul>
+<h4 id="端口扫描攻击防范"><a href="#端口扫描攻击防范" class="headerlink" title="端口扫描攻击防范"></a>端口扫描攻击防范</h4><ul>
+<li><p><strong>攻击介绍</strong>：<br>Port Scan攻击通常使用一些软件，向大范围主机的各个TCP&#x2F;UDP端口发起连接，根据应答报文判断主机是否使用这些端口提供服务。</p>
+</li>
+<li><p><strong>处理方法</strong>：<br>检测进入防火墙的TCP报文或UDP报文，根据源IP地址获取统计表项的索引l，如果目的端口与前一报文不同，将表项中的报文个数增1。如果报文的个数超过设置的值，记录日志，并根据配置决定是否将源IP地址加入黑名单。</p>
+</li>
+</ul>
+<h4 id="SMURF攻击"><a href="#SMURF攻击" class="headerlink" title="SMURF攻击"></a>SMURF攻击</h4><ul>
+<li><strong>攻击介绍</strong>：<br>Smurf攻击方法是发送ICMP请求，该请求包的目标地址设置为受害网络的广播地址，源地址为服务器地址。该网络的所有主机都回应此ICMP请求，回应报文全部发往服务器，导致服务器不能正常提供服务。</li>
+<li><strong>处理方法</strong>：<br>检查ICMP应答请求包的目的地址是否为子网广播地址或子网的网络地址，如果是，则直接拒绝，并将攻击记录到日志。</li>
+</ul>
+<h4 id="LAND攻击防范"><a href="#LAND攻击防范" class="headerlink" title="LAND攻击防范"></a>LAND攻击防范</h4><ul>
+<li><strong>攻击介绍</strong><br>把TCP 的源地址和目标地址都设置成某一个受害者的IP地址。这将导致受害者向它自己的地址发送SYN-ACK消息，结果这个地址又发回ACK消息并创建一个空连接，占用系统资源或使目的主机崩溃。</li>
+<li><strong>处理方法</strong><br>对每一个的IP报文进行检测，若其源地址与目的地址相同，或者源地址为环回地址（127.0.0.1），则直接拒绝，并将攻击记录到日志。</li>
+</ul>
+<h4 id="Fraggle攻击防范"><a href="#Fraggle攻击防范" class="headerlink" title="Fraggle攻击防范"></a>Fraggle攻击防范</h4><ul>
+<li><p><strong>攻击介绍</strong>：<br>Fraggle类似于Smurf攻击（发起广播），使用UDP应答消息而非ICMP。UDP端口7（ECHO）和端口19（Chargen）在收到UDP报文后，会产生大量无用的应答报文，占满网络带宽。<br><strong>源地址为服务器（伪装），目的地址为7和19（端口7和19会回复UDP请求报文，和icmp报文类似）</strong></p>
+</li>
+<li><p><strong>处理方法</strong>：<br>检查进入防火墙的UDP报文，若目的端口号为7或19，则直接拒绝，并将攻击记录到日志，否则允许通过。</p>
+</li>
+</ul>
+<h4 id="IP-Fragment攻击"><a href="#IP-Fragment攻击" class="headerlink" title="IP Fragment攻击"></a>IP Fragment攻击</h4><ul>
+<li><strong>攻击介绍</strong>：<br>IP报文中有几个字段与分片有关：DF位、MF位、Fragment Offset、Length。如果上述字段的值出现矛盾，而设备处理不当，会对设备造成一定的影响，甚至瘫痪。</li>
+<li>DF表示不分片位，MF表示分片位，Fragment Offset（分片偏移）表示分片的位置，Length表示总长度。</li>
+<li>ping报文为32个字节，windows系统ping包最大字节65000B。</li>
+<li><strong>处理方法</strong>：<br>检查IP报文中与分片有关的字段（DF位、MF位、片偏置量、总长度）是否有以下矛盾，若发现含有以下矛盾，则丢弃。将攻击记录到日志：<ul>
+<li>DF位为1(标明报文未分片)，而MF位也为1或Fragment Offset不为0(表示是分片报文)；</li>
+<li>DF位为0(标明是分片报文)，而Fragment Offset +Length &gt;65535（报文长度应该分片结果没有分片）。</li>
+</ul>
+</li>
+</ul>
+<h4 id="IP-Spoofing攻击防范"><a href="#IP-Spoofing攻击防范" class="headerlink" title="IP Spoofing攻击防范"></a>IP Spoofing攻击防范</h4><ul>
+<li><strong>攻击介绍</strong>：<br>为了获得访问权，或隐藏入侵者的身份信息，入侵者生成带有伪造源地址的报文，并使用该伪造源地址访问攻击目标，进行扫描、窥探等预备攻击（修改源地址）。</li>
+<li><strong>处理方法</strong>：<br>检测每个接口流入的IP报文的源地址与目的地址，并对报文的源地址<strong>反查路由表</strong>，入接口与以该IP地址为目的地址的最佳出接口不相同的IF报文被视为            IP Spoofing攻击，将被拒绝，并进行日志记录。</li>
+</ul>
+<h4 id="Ping-of-Death攻击"><a href="#Ping-of-Death攻击" class="headerlink" title="Ping of Death攻击"></a>Ping of Death攻击</h4><ul>
+<li><p><strong>攻击介绍</strong>：</p>
+<ul>
+<li><p>IP报文的长度字段为16位，即IP报文的最大长度为65535 B。Ping of Death利用一些长度超大的ICMP报文对系统进行攻击。</p>
+</li>
+<li><p>攻击原理：报文总长度超过65535时，电脑会超过自己的计算范围，无法识别，使其崩溃。</p>
+</li>
+<li><p>ping -L （可使用范围为0-65500）</p>
+</li>
+</ul>
+</li>
+<li><p><strong>处理方法</strong>：<br>检测ICMP请求报文长度是否超过65535 B，若超过，则丢弃报文并记录日志。</p>
+</li>
+</ul>
+<h4 id="TCP-Flag攻击"><a href="#TCP-Flag攻击" class="headerlink" title="TCP Flag攻击"></a>TCP Flag攻击</h4><ul>
+<li><strong>攻击介绍</strong>：<br>TCP报文包含6个标志位：URG（紧急开关）、ACK（确认位开关）、PSH（直接提交缓存数据）、RST（复位开关）、SYN（握手开关）、FIN（结束开关），不同的系统对这些标志位组合的应答是不同的，可用于操作系统探测。<ul>
+<li>URG（紧急开关）：当发送方希望一些数据尽快被接收方的上层拿到的时候，就需要用到这个标记位。通常需要搭配16位紧急指针使用，要传递的紧急数据混在普通数据里，16位紧急指针指明了紧急数据在普通数据中的具体位置。<strong>注意：紧急数据一般只能传递（或者说占用）一个字节，因为大多数情况下，报文都是按序到达然后被读取的，如果紧急数据太多，读取的时间太长，会破坏TCP按序到达的特性。</strong></li>
+<li>RST表示复位标记位，用于非正常的关闭连接。客户端因为主机崩溃或者网线断开，但是服务端认为对方还在。如果服务端长时间没有收到对方的数据，就会定期发送报文询问对方是否在线；客户端收到以后，由于连接不存在，此时就会发送携带RST标志位的报文来间接告诉服务端连接异常。</li>
+</ul>
+</li>
+<li><strong>处理方法</strong>：<br>检查TCP报文的各个标志位，若出现以下任意一种情况，直接丢弃该报文并记录日志：<ul>
+<li>6个标志位全为1或6个标志位全为0；</li>
+<li>SYN和FIN位同时为1；SYN和RST同时为1；</li>
+<li>FIN和URG同时为1；RST和FIN同时为1；</li>
+</ul>
+</li>
+</ul>
+<h4 id="Teardrop攻击"><a href="#Teardrop攻击" class="headerlink" title="Teardrop攻击"></a>Teardrop攻击</h4><ul>
+<li><strong>攻击介绍</strong>：<br>利用在TCP&#x2F;IP堆栈中信任IP分片报文头所包含的信息实现。</li>
+<li><strong>处理方法</strong>：<br>缓存分片信息，每一个源地址、目NORM的地址、分片ID相同的为一组，最大支持缓存10000组分片信息。</li>
+</ul>
+<h4 id="WinNuke攻击防范"><a href="#WinNuke攻击防范" class="headerlink" title="WinNuke攻击防范"></a>WinNuke攻击防范</h4><ul>
+<li><p><strong>攻击介绍</strong>：</p>
+<ul>
+<li><p>WinNuke攻击又称带外传输攻击，通常向装有Windows系统的特定目标的NetBIOS端口 （139） 发送00B（out-of-band）数据包，引起一个NetBIOS片断重叠，致使已与其他主机建立连接的目标主机崩溃。（NetBIOS协议是一个局域网协议，连接速率比TCP&#x2F;IP协议快，NetBIOS协议是一种在局域网上的程序可以使用的应用程序编程接口（API），为程序提供了请求低级服务的统一的命令集，作用是为了给局域网提供网络以及其他特殊功能，几乎所有的局域网都是在NetBIOS协议的基础上工作的；139属于高危端口）</p>
+</li>
+<li><p>还有一种是IGMP分片报文，一般情况下，IGMP报文是不会分片的，所以，不少系统对IGMP分片报文的处理有问题。(IGMP是组播管理协议，IGMP协议一般不分片，当收到分片报文时，系统无法识别)</p>
+</li>
+</ul>
+</li>
+<li><p><strong>处理方法</strong>：</p>
+<ul>
+<li><p>WinNuke攻击1：检测数据包目的端口是否为139，并且检查TCP-URG位是否被设置；</p>
+</li>
+<li><p>WinNuke攻击2：检测进入的IGMP报文是否为分片报文，如果是分片报文，则直接丢弃。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="HTTP攻击"><a href="#HTTP攻击" class="headerlink" title="HTTP攻击"></a>HTTP攻击</h4><p><strong>攻击原理</strong><br>攻击者通过代理服务器或僵尸主机向目标服务器发起大量的HTTP报文，请求涉及数据库操作的URI或其它消耗系统资源的URI，造成服务器资源耗尽，无法响应正常请求。</p>
+<p>防御HTTP Flood攻击的方法包括<strong>源认证</strong>、<strong>目的IP的URI检测</strong>和<strong>指纹学习</strong>。</p>
+<p><strong>防御原理</strong></p>
+<p><strong>HTTP Flood源认证</strong><br>源认证防御方式是防御HTTP Flood最常用的手段。这种防御方式适用于客户端为浏览器的HTTP服务器场景，因为浏览器支持完整的HTTP协议栈，可以正常回应重定向报文或者是验证码。Anti-DDoS设备基于目的IP地址对HTTP报文进行统计，当HTTP报文达到设定的告警阈值时，启动源认证防御功能，源认证防御包含以下三种方式：<br><strong>基本模式（META刷新）</strong><br>该模式可有效阻止来自非浏览器客户端的访问，如果僵尸工具没有实现完整的HTTP协议栈，不支持自动重定向，无法通过认证。而浏览器支持自动重定向，可以通过认证，处理过程如图所示。该模式不会影响用户体验，但防御效果低于增强模式。<br>当网络中有HTTP代理服务器时，只要有一次源认证通过，Anti-DDoS设备就会将代理服务器IP地址加入白名单，后续僵尸主机通过使用代理服务器就会绕开源认证，导致防御失效。在这种有代理服务器的网络中，建议开启代理检测功能，检测HTTP请求是否为通过代理发出的请求。如果是，Anti-DDoS设备会从HTTP报文中获取请求者的实际IP地址，将通过认证的真实IP地址和代理服务器IP地址加入白名单，后续只有此实际源IP地址发送的报文才能直接通过，其他源IP发送报文时，Anti-DDoS设备会对其进行源认证，达到防御效果。</p>
+<p><strong>增强模式（验证码认证）</strong></p>
+<p>有些僵尸工具实现了重定向功能，或者攻击过程中使用的免费代理支持重定向功能，导致基本模式的防御失效，通过推送验证码的方式可以避免此类防御失效。此时通过让用户输入验证码，可以判断HTTP访问是否由真实的用户发起，而不是僵尸工具发起的访问。因为僵尸网络攻击依靠自动植入PC的僵尸工具发起，无法自动响应随机变化的验证码，故可以有效的防御攻击。为避免防御对正常用户体验的影响，此防御方式仅对超过源访问阈值的异常源实施。<br><strong>302重定向模式HTTP源统计</strong><br>基本模式中的重定向功能只能对整个网页进行重定向，不能针对网页中的内嵌资源（比如：图片）进行重定向。当用户请求的页面与页面内嵌资源不在同一个服务器上，内嵌资源所在服务器发生异常时，可以对嵌套资源服务器启动302重定向防御，探测访问源是否为真实浏览器。真实浏览器支持重定向功能，可以自动完成重定向过程，不会影响客户体验。</p>
+<p><strong>HTTP源统计</strong></p>
+<p>HTTP源统计是在基于目的IP流量异常的基础上，再启动针对源IP流量进行统计。Anti-DDoS设备首先对到达目的IP的流量进行统计，当目的IP流量触发告警阈值时，再启动到达这个目的IP的每个源的流量进行统计，判定具体哪个源流量异常，并对源IP的流量进行防御。<br>HTTP源统计功能可以更准确的定位异常源，并对异常源发出的流量进行防御。</p>
+<p><strong>URI监测</strong></p>
+<p>URI监测是HTTP源认证防御的补充功能，当通过HTTP源认证的流量还是超过阈值时，可以启用URI监测。Anti-DDoS设备对HTTP源认证过程中加入白名单的源IP也会进行URI监测。<br>在指定时间内，某个URI的访问流量超过一定阈值时，Anti-DDoS设备启动针对源IP的URI行为监测。当这个源IP地址对某个URI的访问数与总访问数的比例超过阈值时，则将该源IP地址作为攻击源并加入动态黑名单。在配置URI监测时，可将消耗内存或占用计算资源多、容易受攻击的URI加入“重点监测URI”列表。</p>
+<p><strong>URI源指纹学习功能</strong></p>
+<p>指纹学习方法适用于攻击源访问的URI比较固定的场景。因为如果要形成攻击效果，攻击者一般都事先进行探测，找到容易消耗系统资源的URI作为攻击目标，然后一个攻击源的一个会话上会有多个针对该URI的请求，最终呈现为该源对选定的URI发送大量的请求报文。动态指纹学习正是基于这个原理，Anti-DDoS设备对源访问的URI进行指纹学习，找到攻击目标URI指纹，如果对该URI指纹的命中次数高于设置的阈值就将该源加入黑名单。</p>
+<p><strong>HTTP慢速攻击</strong></p>
+<p><strong>攻击原理</strong></p>
+<p>HTTP慢速攻击是利用HTTP现有合法机制，在建立了与HTTP服务器的连接后，尽量长时间保持该连接，不释放，达到对HTTP服务器的攻击。</p>
+<p><strong>防御方式</strong></p>
+<p>针对HTTP慢速攻击的特点，Anti-DDoS设备对每秒钟HTTP并发连接数进行检查，当每秒钟HTTP并发连接数超过设定值时，会触发HTTP报文检测，检测出Slow POST和Slow headers的任意一种情况，都认定受到HTTP慢速连接攻击，则将该源IP地址判定为攻击源，加入动态黑名单，同时断开此IP地址与HTTP服务器的连接。</p>
+<h3 id="特殊报文攻击"><a href="#特殊报文攻击" class="headerlink" title="特殊报文攻击"></a>特殊报文攻击</h3><h4 id="超大ICMP报文攻击防范"><a href="#超大ICMP报文攻击防范" class="headerlink" title="超大ICMP报文攻击防范"></a>超大ICMP报文攻击防范</h4><ul>
+<li><p><strong>攻击介绍</strong>：<br>超大ICMP报文攻击是指利用长度超大的ICMP报文对目标系统进行攻击。对于有些系统，在接收到超大ICMP报文后，由于处理不当，会造成系统崩溃、死机或重启。</p>
+</li>
+<li><p><strong>处理方法</strong>：<br>用户可以根据实际网络需要配置允许通过的ICMP报文的最大长度，当实际ICMP报文的长度超过该值时，防火墙认为发生了超大ICMP报文攻击，将丢弃该报文。</p>
+</li>
+</ul>
+<h4 id="ICMP不可达报文攻击防范"><a href="#ICMP不可达报文攻击防范" class="headerlink" title="ICMP不可达报文攻击防范"></a>ICMP不可达报文攻击防范</h4><ul>
+<li><p><strong>攻击介绍</strong>：<br>不同的系统对ICMP不可达报文的处理方式不同，有的系统在收到网络或主机不可达的ICMP报文后，对后续发往此目的地址的报文直接认为不可达，从而切断了目的地与主机的连接。攻击者利用这一点，伪造不可达ICMP报文，切断受害者与目的地的连接，造成攻击。</p>
+</li>
+<li><p><strong>处理方法</strong>：<br>启动ICMP不可达报文攻击防范功能，防火墙对ICMP不可达报文进行丢弃并记录攻击日志。</p>
+</li>
+</ul>
+<h4 id="Tracert报文攻击防范"><a href="#Tracert报文攻击防范" class="headerlink" title="Tracert报文攻击防范"></a>Tracert报文攻击防范</h4><ul>
+<li><p><strong>攻击介绍</strong>：<br>Tracert报文攻击是一种利用Tracert（Trace Route）命令或类似工具的攻击手段。Tracert是一种网络诊断工具，用于跟踪数据包从源主机到目标主机的路径，并测量每一跳（hop）的延迟。但是，攻击者可以利用Tracert命令发送特定的数据包来对目标系统进行侦察、收集信息或干扰网络通信。</p>
+</li>
+<li><p><strong>处理方法</strong>：<br>对于检测到的超时的ICMP报文或UDP报文，或者目的端口不可达的报文，给予丢弃处理。</p>
+</li>
+</ul>
+<h3 id="水坑攻击"><a href="#水坑攻击" class="headerlink" title="水坑攻击"></a>水坑攻击</h3><p>水坑攻击（Watering Hole Attack）是一种网络攻击方法，其名称来源于自然界的捕食方式，即很多捕食者会守候在水源旁边，伏击来饮水的其他动物，提高捕食的成功率。攻击者会通过前期的调查或各种社会工程手段，确定受害者（往往是一个特定群体）经常访问的一些网站，并在网站上部署恶意程序，当受害者访问被部署了恶意程序的网站时即会被感染。<br>通常来说，水坑攻击的目的是通过感染受害者的电脑，以获得对受害者公司网络的访问权。与其他社会工程手段，例如网络钓鱼相比，水坑攻击的危险性来源于其利用的是不会被列入黑名单的合法网站，因此更难被发现。访问者出于对这些网站的一贯信任，更容易放松警惕，继而落入水坑陷阱之中。</p>
+<h3 id="捕鲸攻击"><a href="#捕鲸攻击" class="headerlink" title="捕鲸攻击"></a>捕鲸攻击</h3><p>捕鲸攻击指的是，网络犯罪分子伪装成组织的高层人员，并直接对组织的目标高层人员或其他重要人员发起攻击，旨在窃取钱财或敏感数据，或者获取电脑系统访问权限来达到犯罪目的。捕鲸攻击也称为首席执行官诈骗，它与网络钓鱼类似，都是通过电子邮件和网站诈骗等手段来诱骗目标受害者执行特定操作（如泄露敏感数据或转账）。</p>
+<h3 id="URPF场景说明"><a href="#URPF场景说明" class="headerlink" title="URPF场景说明"></a>URPF场景说明</h3><p>用于防范IP地址伪造和反射型DDoS攻击。URPF通过验证数据包的源IP地址，确保数据包进入网络时从合法的路径到达，防止利用伪造IP地址进行攻击或欺骗的行为。</p>
+<p>内容过多，参考ppt： [HCSCP1207 网络型攻击防范技术.pptx](HCIP-Sec\HCSCP1207 网络型攻击防范技术.pptx) </p>
+<h2 id="反病毒技术"><a href="#反病毒技术" class="headerlink" title="反病毒技术"></a>反病毒技术</h2><p> [HCSCP1206 反病毒技术.pptx](HCIP-Sec\HCSCP1206 反病毒技术.pptx) </p>
+<h3 id="病毒的基本概念："><a href="#病毒的基本概念：" class="headerlink" title="病毒的基本概念："></a>病毒的基本概念：</h3><p>病毒是一种恶意代码，附着在可执行文件中，<strong>病毒进入内存才会发挥作用</strong>。（病毒和威胁并不相干）</p>
+<p><strong>CIH属于恶性病毒，可以破坏硬件</strong>（破坏的是BIOS硬件），这个病毒产自中国台湾，1998年被发现，原集嘉通讯公司（技嘉子公司）手机研发中心主任工程师陈盈豪在其于台湾大同工学院念书期间制作。</p>
+<h3 id="病毒的程序组成："><a href="#病毒的程序组成：" class="headerlink" title="病毒的程序组成："></a>病毒的程序组成：</h3><ul>
+<li>感染标记</li>
+<li>感染程序模块</li>
+<li>破坏程序模块</li>
+<li>触发程序模块</li>
+</ul>
+<h3 id="蠕虫病毒："><a href="#蠕虫病毒：" class="headerlink" title="蠕虫病毒："></a>蠕虫病毒：</h3><p>蠕虫是一个能传染自身拷贝到另一台计算机上的程序，<strong>一般使用固定的漏洞进入传播</strong>；与计算机病毒不同，它不需要附加到现有的程序。</p>
+<p><strong>蠕虫病毒的主流、具有代表性：勒索</strong></p>
+<h4 id="组成部分"><a href="#组成部分" class="headerlink" title="组成部分"></a>组成部分</h4><p><strong>蠕虫由两部分组成：一个主程序和一个引导程序。</strong> 主程序一旦在机器上建立就会去收集与当前机器联网的其它机器的信息。它能通过读取公共配置文件并运行显示当前网上联机状态信息的系统实用程序而做到这一点。随后，它尝试利用前面所描述的那些缺陷去在这些远程机器上建立其引导程序。</p>
+<h4 id="入侵方法"><a href="#入侵方法" class="headerlink" title="入侵方法"></a>入侵方法</h4><p>蠕虫程序常驻于一台或多台机器中，并有自动重新定位(autoRelocation)的能力。如果它检测到网络中的某台机器未被占用，它就把自身的一个拷贝（一个程序段）发送给那台机器。每个程序段都能把自身的拷贝重新定位于另一台机器中，并且能识别它占用的哪台机器。蠕虫侵入一台计算机后，首先获取其他计算机的IP地址，然后将自身副本发送给这些计算机。蠕虫病毒也使用存储在染毒计算机上的邮件客户端地址簿里的地址来传播程序。虽然有的蠕虫程序也在被感染的计算机中生成文件，但一般情况下，蠕虫程序只占用内存资源而不占用其它资源。蠕虫还会蚕食并破坏系统，最终使整个系统瘫痪。</p>
+<h3 id="特洛伊木马："><a href="#特洛伊木马：" class="headerlink" title="特洛伊木马："></a>特洛伊木马：</h3><p>木马系统软件一般由木马配置程序、控制程序和木马程序（服务器程序）三部分组成；现在基本上分为客户（控制）端和服务端（服务器端是被种植木马的设备）</p>
+<p>木马病毒是一种后门程序，它会潜伏在操作系统中，窃取用户资料比如QQ、网上银行密码、账号、游戏账号密码等；木马病毒只需要被执行一次即可，被执行过后源文件被删除也无所谓。</p>
+<h4 id="木马的特点：可以远端记录键盘（敲过什么可以记录）"><a href="#木马的特点：可以远端记录键盘（敲过什么可以记录）" class="headerlink" title="木马的特点：可以远端记录键盘（敲过什么可以记录）"></a>木马的特点：可以远端记录键盘（敲过什么可以记录）</h4><ul>
+<li><strong>隐蔽性：</strong><br>特洛伊木马的隐蔽性是其最重要的特征，如果一种特洛伊木马不能很好地隐藏在目标计算机或网络中就会被用户或安全软件发现和查杀，也就无法生存下去了。 </li>
+<li><strong>自动运行性：</strong><br>特洛伊木马必须是自动启动和运行的程序，因此其采取的方法可能是嵌入在启动配置文件或者注册表中。 </li>
+<li><strong>欺骗性：</strong><br>特洛伊木马要想不被用户或安全软件发现和查杀，常常将自己伪装成一般的文件或系统和程序的图标，其名字往往伪装成一般的文件或程序名字，例如 win、dll、sys 等。 </li>
+<li><strong>顽固性：</strong><br>特洛伊木马一旦被发现就会面临被清除的危险，此时部分特洛伊木马能够在用户或安全软件查杀的过程中潜伏下来而不被清除掉。 </li>
+<li><strong>易植入性：</strong><br>特洛伊木马实现其控制或监视目的的前提是能渗透进入目标计算机，所以特洛伊木马必须具备神不知鬼不觉地进入目标计算机的能力。</li>
+</ul>
+<h3 id="病毒、蠕虫和木马对比"><a href="#病毒、蠕虫和木马对比" class="headerlink" title="病毒、蠕虫和木马对比"></a>病毒、蠕虫和木马对比</h3><table>
+<thead>
+<tr>
+<th align="left">项目</th>
+<th align="left">病毒</th>
+<th align="left">蠕虫</th>
+<th>木马</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">存在形式</td>
+<td align="left">寄生</td>
+<td align="left">独立个体</td>
+<td>有寄生性（可独立，需独立运行）</td>
+</tr>
+<tr>
+<td align="left">复制机制</td>
+<td align="left">插入宿主程序中</td>
+<td align="left">自我复制、自身拷贝</td>
+<td>不自我复制</td>
+</tr>
+<tr>
+<td align="left">传染性</td>
+<td align="left">宿主程序运行</td>
+<td align="left">系统存在漏洞</td>
+<td>依据载体或功能</td>
+</tr>
+<tr>
+<td align="left">传染目标</td>
+<td align="left">主要是针对本地文件</td>
+<td align="left">针对网络上其它计算机</td>
+<td>肉机或僵尸</td>
+</tr>
+<tr>
+<td align="left">触发机制</td>
+<td align="left">计算机使用者</td>
+<td align="left">程序自身</td>
+<td>远程控制</td>
+</tr>
+<tr>
+<td align="left">影响重点</td>
+<td align="left">文件系统</td>
+<td align="left">网络性能、系统性能</td>
+<td>信息窃取或拒绝服务</td>
+</tr>
+<tr>
+<td align="left">防治措施</td>
+<td align="left">从宿主程序中摘除</td>
+<td align="left">为系统打补丁、补漏洞</td>
+<td>防止木马植入</td>
+</tr>
+</tbody></table>
+<p>知名的国外杀毒软件：卡巴斯基、赛门铁克</p>
+<h3 id="肉鸡、肉机："><a href="#肉鸡、肉机：" class="headerlink" title="肉鸡、肉机："></a>肉鸡、肉机：</h3><ul>
+<li>肉鸡也称傀儡机，是指可以被黑客远程控制的机器。比如用”灰鸽子”等诱导客户点击或者电脑被黑客攻破或用户电脑有漏洞<strong>被种植了木马</strong>，黑客可以随意操纵它并利用它做任何事情。</li>
+</ul>
+<h3 id="僵尸主机"><a href="#僵尸主机" class="headerlink" title="僵尸主机:"></a>僵尸主机:</h3><ul>
+<li><p>没人管的主机或服务器，年久失修，系统不更新，不安全，管理员不敢触碰，因为不清楚有无业务。</p>
+</li>
+<li><p>如何处理僵尸主机或者僵尸网络：抓包，分析流量，分析数据包</p>
+</li>
+</ul>
+<ul>
+<li>电脑被植入病毒、木马后应该做些什么：断网杀毒、查看应用进程（使用Procexp等）、查看&#x2F;关闭端口服务</li>
+</ul>
+<h3 id="僵尸网络："><a href="#僵尸网络：" class="headerlink" title="僵尸网络："></a>僵尸网络：</h3><ul>
+<li><p>网中网，类似于僵尸主机；</p>
+</li>
+<li><p>僵尸网络（ Botnet） 是指黑客采用一种或多种传播手段，将大量主机感染僵尸程序<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%97%85%E6%AF%92.html">病毒</a>，被感染的主机通过控制协议接收黑客的指令，从而在黑客和被感染主机之间所形成的可一对多控制的网络 。僵尸网络这个名字，是为了更形象地让人们认识到这类危害的特点：众多的计算机在不知不觉中如同僵尸群一样被人驱赶和指挥着，成为被人利用的一种工具。</p>
+</li>
+</ul>
+<h3 id="反病毒技术的分类（至于以下两种）："><a href="#反病毒技术的分类（至于以下两种）：" class="headerlink" title="反病毒技术的分类（至于以下两种）："></a>反病毒技术的分类（至于以下两种）：</h3><h4 id="单机反病毒（终端防病毒）"><a href="#单机反病毒（终端防病毒）" class="headerlink" title="单机反病毒（终端防病毒）"></a>单机反病毒（终端防病毒）</h4><h5 id="检测工具"><a href="#检测工具" class="headerlink" title="检测工具"></a>检测工具</h5><p>单机反病毒可以通过安装杀毒软件实现，也可以通过专业的防病毒工具实现。</p>
+<p>病毒检测工具用于检测病毒、木马、蠕虫等恶意代码，有些检测工具同时提供修复的功能。</p>
+<h5 id="杀毒软件"><a href="#杀毒软件" class="headerlink" title="杀毒软件"></a>杀毒软件</h5><p>杀毒软件主要通过一些引擎技术来实现病毒的查杀，比如以下主流技术：</p>
+<ul>
+<li><strong>特征码技术</strong><ul>
+<li>杀毒软件存在病毒特征库，包含了各种病毒的特征码，特征码是一段特殊的程序，从病毒样本中抽取而来，与正常的程序不太一样。把被扫描的信息与特征库进行对比，如果匹配到了特征库，则认为该被扫描信息为病毒。</li>
+</ul>
+</li>
+<li><strong>行为查杀技术</strong><ul>
+<li>除了对静态文件进行检测，还能对内存进行检测；</li>
+<li>病毒在运行的时候会有各种行为特征，比如会在系统里增加有特殊后缀的文件，监控用户行为等，当检测到某被检测信息有这些特征行为时，则认为该被检测信息为病毒。</li>
+</ul>
+</li>
+</ul>
+<h4 id="网关反病毒（网关防病毒）"><a href="#网关反病毒（网关防病毒）" class="headerlink" title="网关反病毒（网关防病毒）"></a>网关反病毒（网关防病毒）</h4><p>防火墙（访问控制）+AV模块</p>
+<p>传输的数据流，先拆包（一层解封装至七层），再还原文件，然后进行防病毒检查。</p>
+<h5 id="反病毒工作原理"><a href="#反病毒工作原理" class="headerlink" title="反病毒工作原理"></a>反病毒工作原理</h5><p>上端实时更新病毒库，在FireHunter进行文件碰撞比对</p>
+<h3 id="防火墙反病毒主流实现方式"><a href="#防火墙反病毒主流实现方式" class="headerlink" title="防火墙反病毒主流实现方式"></a>防火墙反病毒主流实现方式</h3><h4 id="代理扫描方式"><a href="#代理扫描方式" class="headerlink" title="代理扫描方式"></a>代理扫描方式</h4><ul>
+<li>将所有经过防火墙的需要进行病毒检测的数据报文透明的转交给防火墙自身的协议栈，通过防火墙自身的协议栈将文件全部缓存下来后，再送入病毒检测引擎进行病毒检测。</li>
+</ul>
+<h4 id="流扫描方式"><a href="#流扫描方式" class="headerlink" title="流扫描方式"></a>流扫描方式</h4><ul>
+<li>依赖于状态检测技术以及协议解析技术，提取文件的特征与本地签名库进行匹配（可以理解为类似于哈希值比对）。</li>
+</ul>
+<h3 id="防火墙反病毒典型技术"><a href="#防火墙反病毒典型技术" class="headerlink" title="防火墙反病毒典型技术"></a>防火墙反病毒典型技术</h3><h4 id="防火墙引擎通过各种不同的检测技术检测出病毒："><a href="#防火墙引擎通过各种不同的检测技术检测出病毒：" class="headerlink" title="防火墙引擎通过各种不同的检测技术检测出病毒："></a>防火墙引擎通过各种不同的检测技术检测出病毒：</h4><ul>
+<li>首包检测技术（一般是大文件分段，只检测整个文件的首包，断点续传后分块传输不再扫描）</li>
+<li>启发式检测技术</li>
+<li>文件信誉检测技术<ul>
+<li>文件信誉是通过计算待测文件全文MD5，并与本地信誉MD5缓存进行匹配来进行检测。</li>
+<li>本地信誉MD5缓存包括静态缓存和动态缓存。静态缓存来自于文件信誉库，动态缓存来自于沙箱联动。</li>
+</ul>
+</li>
+</ul>
+<h3 id="网关反病毒配置"><a href="#网关反病毒配置" class="headerlink" title="网关反病毒配置"></a>网关反病毒配置</h3><p>参考文档</p>
+<p> [HCSCP1206 反病毒技术.pptx](HCIP-Sec\HCSCP1206 反病毒技术.pptx) </p>
+<h2 id="安全厂商的明星产品"><a href="#安全厂商的明星产品" class="headerlink" title="安全厂商的明星产品"></a>安全厂商的明星产品</h2><table>
+<thead>
+<tr>
+<th>安全厂商</th>
+<th>亚信，360</th>
+<th>科来</th>
+<th>绿盟（2000年成立）</th>
+<th>深信服（2000年成立）</th>
+<th>启明星辰（1996年成立）</th>
+<th>安恒（2007年成立）</th>
+<th>山石（2007年成立）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>明星产品</td>
+<td>终端安全</td>
+<td>回溯系统</td>
+<td>漏扫产品，WAF</td>
+<td>上网行为管理，VPN</td>
+<td>IDS，IPS,WAF</td>
+<td>日志审计，堡垒机，态势感知，数据库审计</td>
+<td>防火墙</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>安全厂商</th>
+<th>奇安信（360分离出来的，2014年成立）</th>
+<th>天融信（1995年成立）</th>
+<th>360侧重于软件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>明星产品</td>
+<td>APT，态势感知</td>
+<td>FW（第一台自主研发的FW）</td>
+<td>360安全大脑（简单理解：APT，复杂理解：态势感知）</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>安全厂商</th>
+<th>长亭科技（新兴厂商，偏重于渗透、攻防）</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>明星产品</td>
+<td>谛听（伪装欺骗系统，蜜罐）</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p><strong>火绒专注于终端杀毒，行业认可（病毒剥离，无捆绑，易用性，占用内存小）</strong></p>
+<p>亚信科技成立于1993年，2018年12月9日在香港交易所重新上市，<strong>亚信收购了美国趋势杀毒科技中国业务，包括趋势科技在中国的核心技术和著作权100多项，趋势科技主要研究杀毒（导致根不正）</strong></p>
+<h2 id="入侵检测与防御技术基础"><a href="#入侵检测与防御技术基础" class="headerlink" title="入侵检测与防御技术基础"></a>入侵检测与防御技术基础</h2><h3 id="网络入侵简介"><a href="#网络入侵简介" class="headerlink" title="网络入侵简介"></a>网络入侵简介</h3><h4 id="入侵"><a href="#入侵" class="headerlink" title="入侵"></a>入侵</h4><blockquote>
+<p>入侵是指未经授权而尝试访问信息系统资源、篡改信息系统中的数据，使信息系统不可靠或不能使用的行为；入侵企图破坏信息系统的完整性、机密性、可用性以及可控性。</p>
+<p>完整性（安全角度）：之文件数据没有被篡改；</p>
+</blockquote>
+<h5 id="典型的入侵行为："><a href="#典型的入侵行为：" class="headerlink" title="典型的入侵行为："></a>典型的入侵行为：</h5><ul>
+<li>篡改Web网页（内容，政治色彩浓厚）；</li>
+<li>破解系统密码（两种：暴力破解；弱口令）；</li>
+<li>复制&#x2F;查看敏感数据；</li>
+<li>使用网络嗅探工具获取用户密码（网络嗅探工具：wireshark、tcpdump、dsniff、ettercap、bettercap、netsniff-ng、cain；能抓包的）；</li>
+<li>访问未经允许的服务器（没有授权的服务器）；</li>
+<li>其他特殊硬件获得原始网络包；</li>
+<li>向主机植入特洛伊木马程序。</li>
+</ul>
+<h5 id="常见入侵方式"><a href="#常见入侵方式" class="headerlink" title="常见入侵方式:"></a>常见入侵方式:</h5><table>
+<thead>
+<tr>
+<th align="center">风险</th>
+<th align="center">机密性</th>
+<th align="center">完整性</th>
+<th align="center">可用性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">未授权访问</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">拒绝服务</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="center">假冒和欺诈</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">线路窃听</td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">计算机病毒</td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="center">特洛伊木马</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">后门和陷阱</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="center">电磁辐射</td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">盗窃</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+</tbody></table>
+<p>电磁辐射：<strong>UTP</strong>（非屏蔽双绞线）、电源、显示器</p>
+<p><strong>网络分析的两种手段：网络分析和数据流分析</strong></p>
+<h4 id="系统漏洞"><a href="#系统漏洞" class="headerlink" title="系统漏洞"></a>系统漏洞</h4><ul>
+<li><strong>漏洞</strong><ul>
+<li>几乎所有的黑客入侵行为都依靠漏洞。</li>
+<li>漏洞是在硬件、软件、协议的具体实现或系统安全策略上存在的缺陷，从而可以使攻击者能够在未授权的情况下访问或破坏系统。</li>
+<li>漏洞会影响到很大范围的软硬件设备，包括操作系统本身及支撑软件，路由器、防火墙等。</li>
+</ul>
+</li>
+<li>在不同的软、硬件设备中，不同系统，或同种系统在不同的设置条件下，都会存在各自不同的安全漏洞问题（漏洞基本上一定存在）。</li>
+</ul>
+<h3 id="入侵检测系统"><a href="#入侵检测系统" class="headerlink" title="入侵检测系统"></a>入侵检测系统</h3><h4 id="入侵检测"><a href="#入侵检测" class="headerlink" title="入侵检测"></a>入侵检测</h4><ul>
+<li>通过监视各种操作，分析、审计各种数据和现象来实时检测入侵行为的过程，它是一种积极的和动态的安全防御技术；</li>
+<li>入侵检测的内容涵盖了授权的和非授权的各种入侵行为。</li>
+<li>IPS、IDS主要操作方式和防火墙相似（路由透明模式等）。</li>
+</ul>
+<h4 id="入侵检测系统（IDS，Intrusion-Detection-System）"><a href="#入侵检测系统（IDS，Intrusion-Detection-System）" class="headerlink" title="入侵检测系统（IDS，Intrusion Detection System）"></a>入侵检测系统（IDS，Intrusion Detection System）</h4><ul>
+<li>用于入侵检测的所有软硬件系统；</li>
+<li>发现有违反安全策略的行为或系统存在被攻击的痕迹，立即启动有关安全机制进行应对。</li>
+</ul>
+<h4 id="入侵检测的技术实现"><a href="#入侵检测的技术实现" class="headerlink" title="入侵检测的技术实现"></a>入侵检测的技术实现</h4><ul>
+<li><p><strong>异常检测模型</strong>（Anomaly Detection）</p>
+<ul>
+<li>异常检测模型常用于工控行业</li>
+<li>首先总结正常操作应该具有的特征（用户轮廓，构建（正常行为的模型）模型），当用户活动与正常行为有重大偏离时即被认为是入侵</li>
+<li>优点：可以检测未知威胁</li>
+</ul>
+</li>
+<li><p><strong>误用检测模型</strong>（Misuse Detection）</p>
+<ul>
+<li><p>收集非正常操作的行为特征，建立相关的特征库，当检测的用户或系统行为与库中的记录相匹配时，系统就认为这种行为是入侵</p>
+</li>
+<li><p>误用检测模型也称为特征检测（Signature-based detection）</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="入侵防御系统"><a href="#入侵防御系统" class="headerlink" title="入侵防御系统"></a>入侵防御系统</h3><p>参考文献 [HCSCP1204 入侵检测与防御技术基础.pptx](HCIP-Sec\HCSCP1204 入侵检测与防御技术基础.pptx) </p>
+<p>入侵防御是种既能发现又能阻止入侵行为的新安全防御技术。通过检测发现网络入侵后，能自动丢弃入侵报文或者阻断攻击源（阻断攻击源：封禁源IP地址等），从而从根本上避免攻击行为。</p>
+<p>IPS也可以做访问控制。</p>
+<p><strong>为什么要用IDS而不用IPS：</strong></p>
+<p>与部署方式、部署位置、防御特点的不同有关，IPS必须部署在主路防御外网流量，而在互联网边界无法控制东西流量，IDS进行横向流量监测，旁挂在某个区域，若IPS做横向流量检测将会由于带宽瓶颈和必须主路部署则需要部署多台造成麻烦。</p>
+<p>签名：特征库，特征代码</p>
+<h2 id="内容安全过滤技术"><a href="#内容安全过滤技术" class="headerlink" title="内容安全过滤技术"></a>内容安全过滤技术</h2><p>参考文献 [HCSCP1202 内容安全过滤技术.pptx](HCIP-Sec\HCSCP1202 内容安全过滤技术.pptx)<br><strong>HTTP行为控制技术</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>控制项</strong></th>
+<th><strong>说明</strong></th>
+<th><strong>动作</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>POST操作</td>
+<td>HTTP POST一般用于通过网页向服务器发送信息，例如论坛发帖、表单提交、用户名&#x2F;密码登录。</td>
+<td>允许&#x2F;禁止</td>
+</tr>
+<tr>
+<td>浏览网页</td>
+<td>采用浏览器进行网页浏览。</td>
+<td>允许&#x2F;禁止</td>
+</tr>
+<tr>
+<td>代理上网</td>
+<td>代理上网是指用户使用代理服务器访问特定网站，使用该功能时FW需部署在内网用户和代理服务器之间。</td>
+<td>允许&#x2F;禁止</td>
+</tr>
+<tr>
+<td>文件上传&#x2F;下载</td>
+<td>上传或下载文件。</td>
+<td>允许&#x2F;禁止</td>
+</tr>
+<tr>
+<td>POST操作的内容大小(告警&#x2F;阻断阈值)</td>
+<td>当允许HTTP POST操作时，可以配置告警阈值和阻断阈值，对POST操作的内容大小进行控制。</td>
+<td>告警&#x2F;阻断</td>
+</tr>
+<tr>
+<td>文件上传&#x2F;下载大小(告警&#x2F;阻断阈值)</td>
+<td>当允许文件上传操作时，可以配置告警阈值和阻断阈值，对上传&#x2F;下载的文件大小进行控制。</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="HTTP交互过程"><a href="#HTTP交互过程" class="headerlink" title="HTTP交互过程"></a>HTTP交互过程</h2><ol>
+<li><p>GET 发送请求获取服务器上的资源，请求体中不会包含请求数据，请求数据放在协议头中。</p>
+</li>
+<li><p>POST 向服务端提交数据进行处理请求（例如提交表单或者上传文件），数据被包含在请求体中。POST请求可能会导致新的资源的建立和&#x2F;或已有资源的修改。</p>
+</li>
+<li><p>HEAD 类似于get请求，只不过返回的响应中没有具体的内容，用于获取报头</p>
+</li>
+<li><p>PUT (修改)向服务器提交资源，并使用提交的新资源，替换掉服务器对应的旧资源。</p>
+</li>
+<li><p>DELETE (删除)请求服务器删除指定的资源。</p>
+</li>
+<li><p>CONNECT 建立一个到由目标资源标识的服务器的隧道。</p>
+</li>
+<li><p>OPTIONS 获取http服务器支持的http请求方法，允许客户端查看服务器的性能，比如ajax跨域时的预检等</p>
+</li>
+<li><p>TRACE 是对 PUT 方法的补充，用来对已知资源进行局部更新 。</p>
+</li>
+</ol>
+<h2 id="内容安全"><a href="#内容安全" class="headerlink" title="内容安全"></a>内容安全</h2><p>参考文献：  [HCSCP1201 内容安全概述.pptx](HCIP-Sec\HCSCP1201 内容安全概述.pptx) </p>
+<h3 id="信息安全主要风险"><a href="#信息安全主要风险" class="headerlink" title="信息安全主要风险"></a>信息安全主要风险</h3><h4 id="“机密性、完整性和可用性”（Confidentiality-Integrity-Availability，简称CIA）"><a href="#“机密性、完整性和可用性”（Confidentiality-Integrity-Availability，简称CIA）" class="headerlink" title="“机密性、完整性和可用性”（Confidentiality, Integrity, Availability，简称CIA）"></a>“机密性、完整性和可用性”（Confidentiality, Integrity, Availability，简称CIA）</h4><p>是信息安全领域中的三个核心概念，也被称为信息安全三要素。</p>
+<ol>
+<li><strong>机密性（Confidentiality）</strong>：指确保只有授权的用户能够访问信息，防止未经授权的访问、查看或泄露敏感信息。在保持机密性的情况下，信息只能被授权的用户、系统或实体所访问和使用。</li>
+<li><strong>完整性（Integrity）</strong>：指确保数据在存储、传输或处理过程中不被篡改、损坏或未经授权的修改。保持完整性意味着数据的准确性和一致性得到保护，任何未经授权的修改都将被检测到并加以防止或纠正。</li>
+<li><strong>可用性（Availability）</strong>：指确保信息和系统在需要时可用且正常运行，能够满足用户的合法访问需求。保持可用性意味着信息和服务能够及时可靠地提供给授权用户，而不受意外事件、故障或恶意攻击的影响。</li>
+</ol>
+<p>这三个概念是构成信息安全的基石，通常被用来评估和指导信息安全控制措施的设计、实施和评估。在信息安全管理中，通常会采取一系列技术、政策、流程和培训等措施来确保信息的机密性、完整性和可用性。</p>
+<table>
+<thead>
+<tr>
+<th><strong>风险</strong></th>
+<th><strong>机密性</strong></th>
+<th><strong>完整性</strong></th>
+<th><strong>可用性</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>自然灾害</td>
+<td></td>
+<td>●</td>
+<td>●</td>
+</tr>
+<tr>
+<td>硬件故障</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+</tr>
+<tr>
+<td>软件缺陷</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+</tr>
+<tr>
+<td>未授权访问</td>
+<td>●</td>
+<td>●</td>
+<td></td>
+</tr>
+<tr>
+<td>拒绝服务</td>
+<td></td>
+<td></td>
+<td>●</td>
+</tr>
+<tr>
+<td>数据泄露</td>
+<td>●</td>
+<td></td>
+<td>●</td>
+</tr>
+<tr>
+<td>假冒和欺诈</td>
+<td>●</td>
+<td>●</td>
+<td></td>
+</tr>
+<tr>
+<td>线路窃听</td>
+<td>●</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>计算机病毒</td>
+<td></td>
+<td>●</td>
+<td>●</td>
+</tr>
+<tr>
+<td>特洛伊木马</td>
+<td>●</td>
+<td>●</td>
+<td></td>
+</tr>
+<tr>
+<td>后门和陷阱</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+</tr>
+<tr>
+<td>电磁辐射</td>
+<td>●</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>盗窃</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+</tr>
+</tbody></table>
+<h1 id="Web安全防护"><a href="#Web安全防护" class="headerlink" title="Web安全防护"></a>Web安全防护</h1><p>参考文献 [HCSCP1203 Web安全防护.pptx](HCIP-Sec\HCSCP1203 Web安全防护.pptx) </p>
+<p><strong>常用的服务器架构：Linux + 阿帕奇 + PHP（web开发使用较多语言） + MySQL</strong>（四者均免费）</p>
+<p><strong>目录遍历：扫描网站的结构，可以理解为一种Web攻击</strong></p>
+<p><strong>Web代码审计：审计web页面编写的程序的逻辑漏洞</strong></p>
+<p>服务器漏洞：程序漏洞、应用软件漏洞、数据库漏洞、服务平台漏洞</p>
+<p>**IIS是Internet Information Services的缩写，**是微软公司开发的一种Web服务器软件。它是Windows操作系统上的一个组件，用于托管和发布Web应用程序和网站32。它还能提供FTP，SMTP，NNTP等服务，分别用于文件传输，邮件发送，新闻服务等方面。IIS是ASP语言运行的环境，也支持其他编程语言。</p>
+<p><strong>阿帕奇Apache是Linux的一种Web服务器软件，是世界使用排名第一的Web服务器软件。</strong></p>
+<p>OWASP TOP 10 web攻击排行榜</p>
+<p>国家互联网应急中心 CNCERT</p>
+<p><strong>HTML(HyperText Mark-up Language)是一种网页语言，所有web的语言都是HTML，打开网站连接是打开一个服务器下的某个资源文件</strong></p>
+<p>**检查页面源代码（web页空白处右键）**就是查看网页的HTML语言，可以保存并且修改编程语言，但修改的只是我们自己电脑缓存的内容，并不是该网站真实的内容</p>
+<p>服务器漏洞：mysql、web软件漏洞，平台漏洞</p>
+<p>授权、认证攻击</p>
+<p>SSL重定向：通过错误的ssl协商，导致无限访问但是永远无法访问正确的地址，从而消耗带宽</p>
+<h4 id="URL工作过程"><a href="#URL工作过程" class="headerlink" title="URL工作过程"></a>URL工作过程</h4><ul>
+<li><p>nslookup：主机解析各域名地址</p>
+</li>
+<li><p>URL（Uniform Resource Locator）统一资源定位符，可以理解为一个链接；URI（Uniform Resource Identifer）统一资源标识符，uri包括url</p>
+</li>
+<li><p>Internet 上的每一个网页都具有一个唯一的标识，称为URL（Uniform Resource Locator）地址。</p>
+</li>
+</ul>
+<p>HTTP（Hypertext Transfer Protocol）是一种无状态的协议，基于简单的请求 - 响应模式（requests&#x2F;responses）</p>
+<p>HTTP 有两类报文：</p>
+<ul>
+<li>请求报文—从客户端向服务器发送请求报文。</li>
+<li>响应报文—从服务器到客户端的回答。</li>
+</ul>
+<h3 id="Web应用的基本组成"><a href="#Web应用的基本组成" class="headerlink" title="Web应用的基本组成"></a>Web应用的基本组成</h3><p><strong>Web基于浏览端（Brower）／服务器（Server）架构实现，包含三个部分：</strong></p>
+<ul>
+<li><p>使用HTML（HyperText Mark-up Language）描述网页文件</p>
+</li>
+<li><p>使用URL（Uniform Resource Locator）指定网页文件在web服务器上的所在位置</p>
+</li>
+<li><p>透过HTTP（HyperText Transfer Protocol）协议与服务器沟通</p>
+</li>
+</ul>
+<h4 id="Cookies"><a href="#Cookies" class="headerlink" title="Cookies"></a>Cookies</h4><ul>
+<li>有时也用其复数形式 Cookies，类型为“小型文本文件”，是某些网站为了辨别用户身份，进行Session跟踪而储存在用户本地终端上的数据（通常经过加密），由用户客户端计算机暂时或永久保存的信息 。</li>
+<li>通俗来讲就是指<strong>缓存数据、数据信息</strong>，包括用户名、密码、注册账户、手机号等公民的<strong>登陆状态信息</strong>。</li>
+</ul>
+<h4 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h4><ul>
+<li><p>Session在网络应用中称为会话，它是由应用服务器维持的一个服务器端的存储空间，用户在连接服务器时，会由服务器生成一个唯一的SessionID，用该SessionID为标识符来存取服务器端的Session存储空间进行交互，防火墙中类似于建立一个通道，作为一个有效的链接。</p>
+</li>
+<li><p>**Session对象存储特定用户会话所需的属性及配置信息。**这样，当用户在应用程序的Web页之间跳转时，存储在Session对象中的变量将不会丢失，而是在整个用户会话中一直存在下去。当用户请求来自应用程序的 Web页时，如果该用户还没有会话，则Web服务器将自动创建一个 Session对象。当会话过期或被放弃后，服务器将终止该会话。Session 对象最常见的一个用法就是存储用户的首选项。</p>
+</li>
+<li><p>Session存储在服务器端。</p>
+</li>
+</ul>
+<h4 id="Cookie和Session的关系"><a href="#Cookie和Session的关系" class="headerlink" title="Cookie和Session的关系"></a>Cookie和Session的关系</h4><ul>
+<li>用户请求使用Session页面时，Web服务器产生Session和一个Session-id并返回临时Cookie（Key&#x3D;sessionid），用户第二次请求Session页面会自动带上Cookie信息，Web服务器接收请求并通过Sessionid读取Session，把信息返回用户。SessionID是保存到客户端，用Cookie保存的，用户提交页面时，会将这一SessionID提交到服务器端，来存取Session数据。这一过程，是不用开发人员干预的。所以一旦客户端禁用Cookie，那么Session也会失效。</li>
+</ul>
+<h4 id="服务器漏洞"><a href="#服务器漏洞" class="headerlink" title="服务器漏洞"></a>服务器漏洞</h4><ul>
+<li>可以使用漏扫发现服务器的漏洞</li>
+<li>服务器漏洞主要有：程序漏洞、应用软件漏洞、数据库漏洞、服务器平台漏洞（Windows-IIS，Linux-阿帕奇Apache）</li>
+</ul>
+<h3 id="注入漏洞"><a href="#注入漏洞" class="headerlink" title="注入漏洞"></a>注入漏洞</h3><ul>
+<li>注入漏洞发生在应用程序将不可信的数据发送到解释器时。注入漏洞的本质就是<strong>混淆数据和执行代码(核心)</strong>，使输入的数据变成可执行的语句。</li>
+<li>其中，SQL注入攻击是最常见、危害最严重的注入攻击。注入能导致数据丢失或数据破坏、缺乏可审计性或是拒绝服务。</li>
+<li>注入漏洞有时甚至能导致完全主机接管。</li>
+</ul>
+<h4 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h4><p>前闭合、中查询、后注释</p>
+<h5 id="寻找注入点"><a href="#寻找注入点" class="headerlink" title="寻找注入点"></a>寻找注入点</h5><p>1.正常输入id&#x3D;1，正常回显。</p>
+<p>2.id&#x3D;pikachu，无回显。</p>
+<p>3.id&#x3D;-1，无回显。</p>
+<p>4.id&#x3D;1%27，报错。</p>
+<p>‘     ‘    1    ‘    ‘ LIMIT 0,1’</p>
+<p>5.猜测原sql语句</p>
+<p>select login name,password from table where id&#x3D;’our-input’</p>
+<p><strong>构造注入语句、注入语句和原语句结合成新的SQL语句</strong></p>
+<p><strong>1.order by</strong></p>
+<p>？id&#x3D;1%27%20order%20by%201–+</p>
+<p>判断有几个字段。</p>
+<p>？id&#x3D;1%27%20order%20by%204–+</p>
+<p><strong>2.union select</strong></p>
+<p>?id&#x3D;1%27%20union%20select%201,2,3–+</p>
+<p>?id&#x3D;-1%27%20union%20select%201,2,3–+</p>
+<p><strong>3.系统函数</strong></p>
+<p>version()                               MySQL版本</p>
+<p>user()                                    数据库用户</p>
+<p>database()                           数据库名</p>
+<p>@@datadir                          数据库路径</p>
+<p>@@version_compile_os    操作系统版本</p>
+<p><strong>4.字符串连接函数</strong></p>
+<p>concat(str1,str2…)没有分隔符连接字符串</p>
+<p>concat_ws(separator,str1,str2…)含有分隔符连接字符串</p>
+<p>group_concat(str1,str2…)连接一个组的所有字符串，用逗号分隔</p>
+<p><strong>5.爆库表列信息</strong></p>
+<p>1.id&#x3D;-1’ union select 1,2,group_concat(schema_name) from information_schema.schemata–+</p>
+<p>2.id&#x3D;-1’ union select 1,2,group_concat(table_name) from information_schema.tables where table_schema&#x3D;’security’–+</p>
+<p>3.id&#x3D;-1’ union select 1,2,group_concat(column_name) from information_schema.columns where table_schema&#x3D;’security’ and table_name&#x3D;’users’–+</p>
+<p>4.id&#x3D;-1’ union select 1,(select group_concat(concat_ws(0x7e,username,password))from security.users),3–+</p>
+<p><strong>新的SQL语句被提交到数据库执行</strong></p>
+<p><strong>执行了新的SQL语句，引发了SQL注入攻击</strong></p>
+<h5 id="盲注"><a href="#盲注" class="headerlink" title="盲注"></a>盲注</h5><p><strong>1.基于布尔的盲注</strong></p>
+<p>left(database(),1)&gt;’s’                     &#x2F;&#x2F;left()函数</p>
+<p>database()显示数据库名称,left(a,b)从a的左侧截取b位</p>
+<p>pikachu</p>
+<p>ascii(substr((select table_name from  information_schema.tables where table_schema&#x3D;database()limit 0,1),1,1))&#x3D;101#</p>
+<p>substr(a,b,c)从b位置开始，截取字符串a的c长度</p>
+<p>Ascii（）将某个字符转换为ascii值</p>
+<p><strong>2.基于时间的盲注</strong></p>
+<p>If(ascii(substr(database(),1,1))&gt;115,0,sleep(5))%23  </p>
+<p><strong>3.基于报错的盲注</strong></p>
+<p>例：</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.1.3:82/Less-5/?id=1%27%20and%20left(version(),3)=5.7%23">http://192.168.1.3:82/Less-5/?id=1%27%20and%20left(version(),3)=5.7%23</a></p>
+<p><a target="_blank" rel="noopener" href="http://192.168.1.3:82/Less-5/?id=1%27%20and%20length(database())=8%23">http://192.168.1.3:82/Less-5/?id=1%27%20and%20length(database())=8%23</a></p>
+<p><a target="_blank" rel="noopener" href="http://192.168.1.3:82/Less-5/?id=1%27%20and%20left(database(),1)%3E%27a%27--+">http://192.168.1.3:82/Less-5/?id=1%27%20and%20left(database(),1)&gt;&#39;a&#39;--+</a></p>
+<p>%27 是  ’   %20 是空格  %23 是#</p>
+<h4 id="SQL注入攻击"><a href="#SQL注入攻击" class="headerlink" title="SQL注入攻击"></a>SQL注入攻击</h4><p>所谓 SQL 注入，就是通过把 SQL 命令插入到 Web 表单提交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的 SQL 命令。它是利用现有应用程序，将（恶意的）SQL 命令注入到后台数据库引擎执行的能力，它可以通过在 Web 表单中输入（恶意）SQL 语句得到一个存在安全漏洞的网站上的数据库，而不是按照设计者意图去执行 SQL 语句。<br>　　<br>　　SQL 注入一般按照注入方式可以分为普通注入和盲注。普通注入就是注入的页面是直接显示数据库中的字段内容的，我们可以通过 SQL 注入一步一步把数据库中我们想要的内容显示在页面中。而盲注则要困难很多，页面并没有直接显示数据库字段内容，显示的可能只是一个判断结果（是或者否），页面只能告诉你你构造的 SQL 语句对还是错，你要查询的内容存在还是不存在。这种情况下，我们只能全部靠猜。更有甚者，连是否的结果都不显示，我们可能还需要通过返回数据的延迟来判断是否猜对。<br>　　<br>　　SQL 注入按照注入的数据类型还可以分为数字型注入和字符型注入。SQL 注入一般都需要利用 Web 站点现有的查询语句。当现有的查询语句 Where 筛选条件匹配的字段是数值类型，那么就是数字型注入；如果匹配的字段是字符类型，那么就是字符型注入。一般字符型注入需要构造单引号用于闭合语法，还需要加入注释符使原本的单引号无效。</p>
+<p>流程如下所示：</p>
+<ul>
+<li>找出SQL漏洞的注入点</li>
+<li>判断数据库的类型以及版本</li>
+<li>猜解用户名和密码</li>
+<li>利用工具查找Web后台管理入口</li>
+<li>入侵和破坏</li>
+</ul>
+<p>预防方式如下：</p>
+<ul>
+<li>严格检查输入变量的类型和格式</li>
+<li>过滤和转义特殊字符</li>
+<li>对访问数据库的Web应用程序采用Web应用防火墙</li>
+</ul>
+<h3 id="跨站脚本"><a href="#跨站脚本" class="headerlink" title="跨站脚本"></a>跨站脚本</h3><ul>
+<li><p>跨站脚本（XSS）是近年来最为流行的网络攻击方式之一，已经占到了网络攻击相当大的比例，众多网站，如著名的Facebook等都遭遇过此类攻击。国内知名的新浪微博遭遇的网络病毒实际上也是跨站脚本漏洞所导致的。</p>
+</li>
+<li><p>从本质上看，跨站脚本实际上是一种恶意代码执行的方式。主要原因在于网站对于用户提交的数据过滤不严格，导致问题产生。</p>
+</li>
+<li><p>基本跨站类型</p>
+<h5 id="反射型（JavaScript：Web的编程语言）"><a href="#反射型（JavaScript：Web的编程语言）" class="headerlink" title="反射型（JavaScript：Web的编程语言）"></a>反射型（JavaScript：Web的编程语言）</h5><p><strong>反射型 XSS 的攻击步骤（反射性攻击客户端）：</strong></p>
+<ul>
+<li><p>攻击者构造出特殊的 URL，其中包含恶意代码</p>
+</li>
+<li><p>用户打开带有恶意代码的 URL 时，网站服务端将恶意代码从 URL 中取出，拼接在 HTML 中返回给浏览器</p>
+</li>
+<li><p>用户浏览器接收到响应后解析执行，混在其中的恶意代码也被执行</p>
+</li>
+<li><p>恶意代码窃取用户数据并发送到攻击者的网站，或者冒充用户的行为，调用目标网站接口执行攻击者指定的操作</p>
+</li>
+<li><p><strong>反射型攻击只能获取主动点击连接的用户的信息</strong></p>
+</li>
+</ul>
+<h5 id="存储型"><a href="#存储型" class="headerlink" title="存储型"></a>存储型</h5><p><strong>存储型 XSS 的攻击步骤（存储性攻击服务器）：</strong></p>
+<ul>
+<li>攻击者将恶意代码提交到目标网站的数据库中</li>
+<li>用户打开目标网站时，网站服务端将恶意代码从数据库取出，拼接在 HTML 中返回给浏览器</li>
+<li>用户浏览器接收到响应后解析执行，混在其中的恶意代码也被执行</li>
+<li>恶意代码窃取用户数据并发送到攻击者的网站，或者冒充用户的行为，调用目标网站接口执行攻击者指定的操作</li>
+<li>这种攻击常见于带有用户保存数据的网站功能，如论坛发帖、商品评论、用户私信等，<strong>存储型攻击可以获得大量用户账号信息</strong></li>
+</ul>
+<p><strong>反射型 XSS 跟存储型 XSS 的区别是：存储型 XSS 的恶意代码存在数据库里，反射型 XSS 的恶意代码存在 URL 里。</strong><br>反射型 XSS 漏洞常见于通过 URL 传递参数的功能，如网站搜索、跳转等。由于需要用户主动打开恶意的 URL 才能生效，攻击者往往会结合多种手段诱导用户点击。</p>
+</li>
+</ul>
+<h3 id="跨站请求伪造CSRF"><a href="#跨站请求伪造CSRF" class="headerlink" title="跨站请求伪造CSRF"></a>跨站请求伪造CSRF</h3><blockquote>
+<p>CSRF（Cross-site request forgery）跨站请求伪造，也被称成为one click attack或者session riding，通常缩写为CSRF或者XSRF，是一种对网站的恶意利用。尽管听起来像跨站脚本（XSS），但它与XSS非常不同，并且攻击方式几乎相左。XSS利用站点内的信任用户，而CSRF则通过伪装来自受信任用户的请求来利用受信任的网站。</p>
+</blockquote>
+<h4 id="跨站请求伪造攻击原理"><a href="#跨站请求伪造攻击原理" class="headerlink" title="跨站请求伪造攻击原理"></a>跨站请求伪造攻击原理</h4><p>CSRF（Cross-site request forgery）跨站请求伪造：攻击者诱导受害者进入第三方网站，在第三方网站中，向被攻击网站发送跨站请求；</p>
+<p>利用受害者在被攻击网站已经获取的注册凭证，绕过后台的用户验证，达到冒充用户对被攻击的网站执行某项操作的目</p>
+<ul>
+<li>一个典型的CSRF攻击有着如下的流程：<ul>
+<li>受害者登录a.com，并保留了登录凭证（Cookie）</li>
+<li>攻击者引诱受害者访问了b.com</li>
+<li>b.com 向 a.com 发送了一个请求：a.com&#x2F;act&#x3D;xx。浏览器会默认携带a.com的Cookie</li>
+<li>a.com接收到请求后，对请求进行验证，并确认是受害者的凭证，误以为是受害者自己发送的请求</li>
+<li>a.com以受害者的名义执行了act&#x3D;xx</li>
+<li>攻击完成，攻击者在受害者不知情的情况下，冒充受害者，让a.com执行了自己定义的操作</li>
+</ul>
+</li>
+</ul>
+<p><strong>CC攻击</strong>： 针对web的ddos攻击</p>
+<p>WAF可以做流量清洗（WAF的流量清洗和云抗力的流量清洗不同，WAF的流量清洗针对B&#x2F;S架构的流量）。</p>
+<h3 id="Web信誉体系工作流程"><a href="#Web信誉体系工作流程" class="headerlink" title="Web信誉体系工作流程"></a>Web信誉体系工作流程</h3><p>还原文件：放入沙箱检测文件，类似于病毒放进沙箱的运行</p>
+<h1 id="分级保护测评（分保）"><a href="#分级保护测评（分保）" class="headerlink" title="分级保护测评（分保）"></a>分级保护测评（分保）</h1><p>要求BMBxx-xxxxx（涉密）</p>
+<p>涉及保密局；国安局  测评单位不收钱 国家保密测评中心派人检查当地保密局配合 </p>
+<p>保密文件最开始中央以书面形式在保密局储存、后传送各地由机要局（机要通道）护送</p>
+<p>所在单位按照i处理信息最高级别分为：秘密级&lt;机密级&lt;绝密级 机密级分为一般和增强</p>
+<p>适用系统：存储使用或产生涉密信息的计算机网络系统、处理涉密信息的单独计算机不参与测评</p>
+<p>电脑要求：不允许有物理网卡、不允许外接u盘、安装违规外连不停探测是否联网等直接告警到保密局</p>
+<p>专门场所三铁一器：铁窗、铁门、铁栅栏、红外报警器</p>
+<p>适用单位：党政机关、国防军工、非公有制企业</p>
+<p>涉密系统建立流程：系统定级、方案设计、工程实施</p>
+<p>要求终止项（一票否决项）：</p>
+<p>技术要求70分</p>
+<p>基本测评项：物理隔离（禁止两张网络中连线；或安装网闸） 安全保密产品选择（有涉密证书，在有效期内）安全边界防护（出口必须要有加密机锁起来，成对存在） 密级标识 （标签）</p>
+<ol>
+<li>信息安全保密：用户身份鉴别（账号认证，做准入）访问控制颗粒度（做到端口） 信息输出（不可网络通过其他介质传输） 信息存储 （涉密管理软件）信息设备电磁泄露发射防护（电源：红黑电源；双绞线：屏蔽双绞线、隐蔽布线、屏蔽线槽、光纤、一进一出加装线路干扰器；设备：屏蔽机柜；显示器：视频干扰器） 边界控制（涉及到边界的地方必须有防火墙等边界控制设备）违规外联监控（软件：有联网行为报告到保密局）</li>
+</ol>
+<p>管理要求30分</p>
+<ol>
+<li><p>集成资源单位选择</p>
+</li>
+<li><p>管理机构</p>
+</li>
+<li><p>管理制度</p>
+</li>
+<li><p>管理人员</p>
+</li>
+</ol>
+<h1 id="-3"><a href="#-3" class="headerlink" title=""></a></h1>
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2025/02/11/SQL%E6%B3%A8%E5%85%A5/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+              2025-02-11 15:22:51
+            </span>
+            
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E5%AE%89"><span class="toc-text">网安</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6"><span class="toc-text">密码学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95"><span class="toc-text">加密算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E7%AE%97%E6%B3%95"><span class="toc-text">对称算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E5%AF%B9%E7%A7%B0%E7%AE%97%E6%B3%95"><span class="toc-text">非对称算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0-%E9%9D%9E%E5%AF%B9%E7%A7%B0%E7%AE%97%E6%B3%95%EF%BC%88%E6%B7%B7%E5%90%88%E5%8A%A0%E5%AF%86%EF%BC%89"><span class="toc-text">对称+非对称算法（混合加密）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8%E5%AE%9E%E9%99%85%E5%BA%94%E7%94%A8%E4%B8%AD%EF%BC%8C%E9%80%9A%E5%B8%B8%E4%BC%9A%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E5%92%8C%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%EF%BC%8C%E5%88%A9%E7%94%A8%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E7%9A%84%E9%AB%98%E6%95%88%E6%80%A7%E5%AF%B9%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E5%8A%A0%E5%AF%86%EF%BC%8C%E5%86%8D%E4%BD%BF%E7%94%A8%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E5%AF%B9%E5%AF%B9%E7%A7%B0%E5%AF%86%E9%92%A5%E8%BF%9B%E8%A1%8C%E5%8A%A0%E5%AF%86%E5%92%8C%E4%BC%A0%E8%BE%93%EF%BC%8C%E4%BB%A5%E4%BF%9D%E8%AF%81%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%E5%92%8C%E5%AE%8C%E6%95%B4%E6%80%A7%E3%80%82%E8%BF%99%E7%A7%8D%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8%E7%9A%84%E6%96%B9%E5%BC%8F%E8%A2%AB%E7%A7%B0%E4%B8%BA%E6%B7%B7%E5%90%88%E5%8A%A0%E5%AF%86%E3%80%82"><span class="toc-text">在实际应用中，通常会结合使用对称加密算法和非对称加密算法，利用对称加密算法的高效性对数据进行加密，再使用非对称加密算法对对称密钥进行加密和传输，以保证数据的安全性和完整性。这种结合使用的方式被称为混合加密。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BD%E5%AF%86%E7%AE%97%E6%B3%95"><span class="toc-text">国密算法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95"><span class="toc-text">哈希算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95%E5%88%86%E7%B1%BB"><span class="toc-text">哈希算法分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86"><span class="toc-text">哈希算法原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">哈希算法的应用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D"><span class="toc-text">数字签名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6"><span class="toc-text">数字证书</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E7%BB%84%E6%88%90"><span class="toc-text">数字证书组成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PKI%E6%9E%B6%E6%9E%84%EF%BC%88Public-Key-Infrastructure%EF%BC%8C%E5%85%AC%E9%92%A5%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%EF%BC%89"><span class="toc-text">PKI架构（Public Key Infrastructure，公钥基础设施）</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#VMware"><span class="toc-text">VMware</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#VMware%E7%AE%80%E4%BB%8B"><span class="toc-text">VMware简介</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux"><span class="toc-text">Linux</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-text">Linux的优点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BA%94%E7%94%A8"><span class="toc-text">Linux嵌入式应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E5%88%86%E5%8C%BA%E8%A7%84%E5%88%92"><span class="toc-text">Linux分区规划</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E6%96%87%E4%BB%B6%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="toc-text">Linux文件命名规则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4"><span class="toc-text">Linux操作命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B"><span class="toc-text">文件类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#bin"><span class="toc-text">bin</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E9%93%BE%E6%8E%A5%EF%BC%8C%E7%A1%AC%E9%93%BE%E6%8E%A5"><span class="toc-text">软链接，硬链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E9%93%BE%E6%8E%A5"><span class="toc-text">软链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AC%E9%93%BE%E6%8E%A5"><span class="toc-text">硬链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%BE%91%E6%96%87%E4%BB%B6"><span class="toc-text">编辑文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vi"><span class="toc-text">vi</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#echo"><span class="toc-text">echo</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E4%BF%AE%E6%94%B9"><span class="toc-text">权限修改</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#chomd%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="toc-text">chomd（重点）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#chown"><span class="toc-text">chown</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#chgrp"><span class="toc-text">chgrp</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE"><span class="toc-text">查找</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#which"><span class="toc-text">which</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#find%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="toc-text">find（重点）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#locate"><span class="toc-text">locate</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#grep"><span class="toc-text">grep</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3"><span class="toc-text">帮助文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gzip"><span class="toc-text">gzip</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%8B%E7%BC%A9"><span class="toc-text">压缩</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%8E%8B%E7%BC%A9"><span class="toc-text">解压缩</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tar-%E9%87%8D%E7%82%B9"><span class="toc-text">tar(重点)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%8B%E7%BC%A9-1"><span class="toc-text">压缩</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%8E%8B%E7%BC%A9-1"><span class="toc-text">解压缩</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B-tar-%E5%BD%92%E6%A1%A3%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%EF%BC%9A"><span class="toc-text">查看 tar 归档文件内容：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tar%E5%B8%B8%E7%94%A8%E9%80%89%E9%A1%B9%EF%BC%9A"><span class="toc-text">tar常用选项：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#zip"><span class="toc-text">zip</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAzip%E5%BD%92%E6%A1%A3%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="toc-text">创建zip归档文件：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%96%87%E4%BB%B6%E5%88%B0%E5%B7%B2%E5%AD%98%E5%9C%A8%E7%9A%84zip%E5%BD%92%E6%A1%A3%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="toc-text">添加文件到已存在的zip归档文件：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%A3%E5%8E%8B%E7%BC%A9zip%E5%BD%92%E6%A1%A3%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="toc-text">解压缩zip归档文件：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8Bzip%E5%BD%92%E6%A1%A3%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%EF%BC%9A"><span class="toc-text">查看zip归档文件内容：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B0%86%E7%9B%AE%E5%BD%95%E5%8F%8A%E5%85%B6%E5%86%85%E5%AE%B9%E5%8E%8B%E7%BC%A9%E6%88%90zip%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="toc-text">将目录及其内容压缩成zip文件：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#write"><span class="toc-text">write</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#alias"><span class="toc-text">alias</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-text">输入输出重定向</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%A1%E9%81%93%E7%AC%A6"><span class="toc-text">管道符 |</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#-1"><span class="toc-text">&amp;&amp;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#-2"><span class="toc-text">||</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%9B%BF%E6%8D%A2%E7%AC%A6"><span class="toc-text">命令替换符  &#96;&#96;</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vim"><span class="toc-text">vim</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%95%E8%AF%8D"><span class="toc-text">单词</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3%E5%8F%B7%EF%BC%8C%E5%8D%8F%E8%AE%AE%E5%8F%B7"><span class="toc-text">端口号，协议号</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3%E5%8F%B7%E5%92%8C%E5%8D%8F%E8%AE%AE%E5%8F%B7%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">端口号和协议号的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E5%8D%B1%E7%AB%AF%E5%8F%A3"><span class="toc-text">高危端口</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E8%AF%86"><span class="toc-text">常识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#WannaCry%E5%8B%92%E7%B4%A2%E7%97%85%E6%AF%92"><span class="toc-text">WannaCry勒索病毒</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%80%9C%E9%93%B6%E8%A1%8C%E4%B8%A4%E5%9C%B0%E4%B8%89%E4%B8%AD%E5%BF%83%E2%80%9D%EF%BC%9A"><span class="toc-text">“银行两地三中心”：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CIA-%E7%BE%8E%E5%9B%BD%E4%B8%AD%E5%A4%AE%E6%83%85%E6%8A%A5%E5%B1%80"><span class="toc-text">CIA 美国中央情报局</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%B1%E9%95%9C%E9%97%A8%E4%BA%8B%E4%BB%B6"><span class="toc-text">棱镜门事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9C%87%E7%BD%91Stuxnet-%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B7%A5%E6%8E%A7%E8%A0%95%E8%99%AB%E7%97%85%E6%AF%92"><span class="toc-text">震网Stuxnet 第一个工控蠕虫病毒</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%B3%95%E9%A2%81%E5%B8%83"><span class="toc-text">网络安全法颁布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AD%89%E7%BA%A7%E4%BF%9D%E6%8A%A4"><span class="toc-text">网络安全等级保护</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E5%88%86%E7%B1%BB"><span class="toc-text">网络安全技术分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AAA%E5%92%8CAAAA"><span class="toc-text">AAA和AAAA</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Radius%EF%BC%8C%E8%AE%A4%E8%AF%81%E6%9C%8D%E5%8A%A1%E5%99%A8%E3%80%82"><span class="toc-text">Radius，认证服务器。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E8%AE%BE%E5%A4%87-%E6%8A%80%E6%9C%AFRaid"><span class="toc-text">存储设备 技术Raid</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Raid-0"><span class="toc-text">Raid 0</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Raid-1"><span class="toc-text">Raid 1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Raid-5"><span class="toc-text">Raid 5</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#26%E4%B8%AA%E9%BB%91%E5%AE%A2%E6%9C%AF%E8%AF%AD"><span class="toc-text">26个黑客术语</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%A8%E9%A9%AC%EF%BC%9F"><span class="toc-text">1、什么是木马？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E5%90%8E%E9%97%A8%EF%BC%9F"><span class="toc-text">2、什么是后门？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E6%BA%A2%E5%87%BA%EF%BC%9F"><span class="toc-text">3、什么是溢出？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%E3%80%81%E4%BB%80%E4%B9%88%E5%8F%AB%E6%B3%A8%E5%85%A5%EF%BC%9F"><span class="toc-text">4、什么叫注入？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E6%B3%A8%E5%85%A5%E7%82%B9%EF%BC%9F"><span class="toc-text">5、什么是注入点？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6%E3%80%81%E4%BB%80%E4%B9%88%E5%8F%AB%E6%97%81%E6%B3%A8%EF%BC%9F"><span class="toc-text">6、什么叫旁注？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7%E3%80%81%E4%BB%80%E4%B9%88%E5%8F%AB%E8%82%89%E9%B8%A1%EF%BC%9F"><span class="toc-text">7、什么叫肉鸡？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8%E3%80%81%E4%BB%80%E4%B9%88%E5%8F%AB%E8%B7%B3%E6%9D%BF%EF%BC%9F"><span class="toc-text">8、什么叫跳板？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9%E3%80%81%E4%BB%80%E4%B9%88%E5%8F%ABshell-%EF%BC%9F"><span class="toc-text">9、什么叫shell ？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AFroot%EF%BC%9F"><span class="toc-text">10、什么是root？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AFadmin%EF%BC%9F"><span class="toc-text">12、什么是admin？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AFrootshell%EF%BC%9F"><span class="toc-text">13、什么是rootshell？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14%E3%80%81%E4%BB%80%E4%B9%88%E5%8F%ABwebshell%EF%BC%9F"><span class="toc-text">14、什么叫webshell？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#15%E3%80%81%E4%BB%80%E4%B9%88%E5%8F%AB%E7%BD%91%E9%A1%B5%E6%9C%A8%E9%A9%AC%EF%BC%9F"><span class="toc-text">15、什么叫网页木马？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#16%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E6%8C%82%E9%A9%AC%EF%BC%9F"><span class="toc-text">16、什么是挂马？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#17%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AFrootkit%EF%BC%9F"><span class="toc-text">17、什么是rootkit？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#18%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E5%BC%B1%E5%8F%A3%E4%BB%A4%EF%BC%9F"><span class="toc-text">18、什么是弱口令？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#19%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E9%BB%98%E8%AE%A4%E5%85%B1%E4%BA%AB%EF%BC%9F"><span class="toc-text">19、什么是默认共享？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E5%86%85%E7%BD%91%EF%BC%9F"><span class="toc-text">20、什么是内网？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%96%E7%BD%91%EF%BC%9F"><span class="toc-text">21、什么是外网？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#22%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E7%AB%AF%E5%8F%A3%EF%BC%88Port%EF%BC%89%EF%BC%9F"><span class="toc-text">22、什么是端口（Port）？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#23%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF3389%E3%80%814899%E8%82%89%E9%B8%A1%EF%BC%9F"><span class="toc-text">23、什么是3389、4899肉鸡？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#24%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E5%85%8D%E6%9D%80"><span class="toc-text">24、什么是免杀?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E5%8A%A0%E5%A3%B3%EF%BC%9F"><span class="toc-text">25、什么是加壳？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#26%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E8%8A%B1%E6%8C%87%E4%BB%A4%EF%BC%9F"><span class="toc-text">26、什么是花指令？</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AD%89%E7%BA%A7%E4%BF%9D%E6%8A%A4%E4%B8%89%E7%BA%A7%E8%A6%81%E6%B1%82%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%EF%BC%8885%E5%88%86%EF%BC%89%E5%90%AB%E6%89%A9%E5%B1%95%E8%AE%BE%E5%A4%87"><span class="toc-text">等级保护三级要求网络拓扑（85分）含扩展设备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E5%AE%A1"><span class="toc-text">三审</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%89%E4%BF%9D%E4%B8%89%E5%91%98"><span class="toc-text">等保三员</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E8%BE%B9%E7%95%8C%E5%8C%BA%EF%BC%9A"><span class="toc-text">网络边界区：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%81%E8%B7%AF%E5%92%8C%E4%B8%BB%E8%B7%AF"><span class="toc-text">旁路和主路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%97%E6%8B%92%E7%BB%9D%E6%9C%8D%E5%8A%A1%EF%BC%88%E6%8A%97DDos%EF%BC%89"><span class="toc-text">抗拒绝服务（抗DDos）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B2%E7%81%AB%E5%A2%99"><span class="toc-text">防火墙</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%EF%BC%9A"><span class="toc-text">访问控制：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E5%85%A5%E9%98%B2%E7%81%AB%E5%A2%99%E9%85%8D%E7%BD%AE"><span class="toc-text">进入防火墙配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A5%E6%8E%A7%E7%BD%91%E7%BB%9C%E9%98%B2%E7%81%AB%E5%A2%99%EF%BC%9A"><span class="toc-text">工控网络防火墙：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RBM%E5%8F%8C%E6%9C%BA%E7%83%AD%E5%A4%87"><span class="toc-text">RBM双机热备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%B2%E7%81%AB%E5%A2%995%E4%B8%AA%E5%8C%BA%E5%9F%9F%E7%9A%84%E9%BB%98%E8%AE%A4%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-text">防火墙5个区域的默认优先级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E7%9A%84%E5%AE%89%E5%85%A8%E5%8C%BA%E5%9F%9F%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E7%AD%96%E7%95%A5"><span class="toc-text">默认的安全区域访问控制策略</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%B2%E7%81%AB%E5%A2%99-session%EF%BC%88%E4%BC%9A%E8%AF%9D%EF%BC%89"><span class="toc-text">防火墙 session（会话）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%81%EF%BC%9A%E6%98%AF%E4%B8%80%E4%B8%AA%E5%8D%95%E6%96%B9%E5%90%91%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">流：是一个单方向的概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%9A%E8%AF%9D%EF%BC%9A%E6%98%AF%E4%B8%80%E4%B8%AA%E5%8F%8C%E5%90%91%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">会话：是一个双向的概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Bypass"><span class="toc-text">Bypass</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84%E6%94%B6%E8%B4%B9%E6%A8%A1%E5%9D%97"><span class="toc-text">防火墙的收费模块</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#FW%E7%AD%89%E8%AE%BE%E5%A4%87%E7%9A%84%E4%B8%89%E7%A7%8D%E9%85%8D%E7%BD%AE%E6%A8%A1%E5%BC%8F"><span class="toc-text">FW等设备的三种配置模式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E6%A8%A1%E5%BC%8F"><span class="toc-text">路由模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%8F%E6%98%8E%E6%A8%A1%E5%BC%8F"><span class="toc-text">透明模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B7%B7%E5%90%88%E6%A8%A1%E5%BC%8F"><span class="toc-text">混合模式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NGFW"><span class="toc-text">NGFW</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AV%EF%BC%88%E5%94%AF%E4%B8%80%E4%B8%80%E4%B8%AA%E8%83%BD%E5%AE%9E%E7%8E%B0%E7%BD%91%E5%85%B3%E9%98%B2%E7%97%85%E6%AF%92%E7%9A%84%E8%AE%BE%E5%A4%87%EF%BC%8C%E5%9C%A8FW%E4%B8%8A%E5%BC%80AV%E6%A8%A1%E5%9D%97%EF%BC%89"><span class="toc-text">AV（唯一一个能实现网关防病毒的设备，在FW上开AV模块）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IPS%EF%BC%88%E5%85%A5%E4%BE%B5%E9%98%B2%E5%BE%A1%EF%BC%89"><span class="toc-text">IPS（入侵防御）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IDS%EF%BC%88%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%EF%BC%89"><span class="toc-text">IDS（入侵检测）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E7%BD%91%E8%A1%8C%E4%B8%BA%E7%AE%A1%E7%90%86"><span class="toc-text">上网行为管理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%B9%E7%94%A8%E6%88%B7%E8%BF%9B%E8%A1%8C%E9%99%90%E9%80%9F"><span class="toc-text">对用户进行限速</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E8%BF%87%E6%BB%A4%E6%8A%80%E6%9C%AF"><span class="toc-text">内容过滤技术</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E6%8A%80%E6%9C%AF"><span class="toc-text">主要技术</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">正则表达式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%82%AE%E4%BB%B6%E4%BC%A0%E8%BE%93"><span class="toc-text">邮件传输</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#APT-%E9%AB%98%E7%BA%A7%E6%8C%81%E7%BB%AD%E6%80%A7%E5%A8%81%E8%83%81%EF%BC%9B%E9%AB%98%E7%BA%A7%E6%9C%AA%E7%9F%A5%E5%A8%81%E8%83%81%E6%A3%80%E6%B5%8B"><span class="toc-text">APT 高级持续性威胁；高级未知威胁检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E7%AE%A1%E5%B9%B3%E5%8F%B0"><span class="toc-text">安管平台</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%B3%E6%9D%BF%E6%9C%BA"><span class="toc-text">跳板机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%81%E5%8A%BF%E6%84%9F%E7%9F%A5"><span class="toc-text">态势感知</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%81%E5%8A%BF%E6%84%9F%E7%9F%A5%E6%8E%A2%E9%92%88"><span class="toc-text">态势感知探针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%A1%E8%AE%A1"><span class="toc-text">数据库审计</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">数据库</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#CDN"><span class="toc-text">CDN</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E5%BF%97%E5%AE%A1%E8%AE%A1"><span class="toc-text">日志审计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A0%A1%E5%9E%92%E6%9C%BA-%E8%BF%90%E7%BB%B4%E5%AE%A1%E8%AE%A1"><span class="toc-text">堡垒机(运维审计)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E8%BF%90%E7%BB%B4%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%A1%E8%AE%A1%EF%BC%9A"><span class="toc-text">对运维人员的审计：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DLP"><span class="toc-text">DLP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%AE%A1%E8%AE%A1"><span class="toc-text">网络审计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%88%E7%AB%AF%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%EF%BC%9B%E9%98%B2%E7%97%85%E6%AF%92%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">终端安全管理；防病毒服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EDR%EF%BC%88%E7%BB%88%E7%AB%AFIPS%EF%BC%89"><span class="toc-text">EDR（终端IPS）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E6%9C%BA%E7%9B%91%E6%8E%A7%E4%B8%8E%E5%AE%A1%E8%AE%A1"><span class="toc-text">主机监控与审计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WAF"><span class="toc-text">WAF</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F"><span class="toc-text">漏洞扫描</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%BA%BF%E7%AE%A1%E7%90%86%EF%BC%88%E5%9F%BA%E7%BA%BF%E9%85%8D%E7%BD%AE%E6%A0%B8%E6%9F%A5%EF%BC%89"><span class="toc-text">基线管理（基线配置核查）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F"><span class="toc-text">数据脱敏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%83%AD%E8%A1%A5%E4%B8%81"><span class="toc-text">热补丁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E9%97%B8-GAP"><span class="toc-text">网闸(GAP)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%89%E9%97%B8%EF%BC%88FGAP%EF%BC%89"><span class="toc-text">光闸（FGAP）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UTM"><span class="toc-text">UTM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E9%97%A8"><span class="toc-text">后门</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%B6%E4%BF%A1%E4%BB%BB"><span class="toc-text">零信任</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1"><span class="toc-text">负载均衡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90"><span class="toc-text">流量分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%87%86%E5%85%A5"><span class="toc-text">网络准入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E8%AE%A4%E8%AF%81%E7%BD%91%E5%85%B3"><span class="toc-text">安全认证网关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E9%A1%B5%E9%98%B2%E7%AF%A1%E6%94%B9"><span class="toc-text">网页防篡改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%93%E4%B8%9AVPN"><span class="toc-text">专业VPN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%91%E7%AE%A1%E5%B9%B3%E5%8F%B0"><span class="toc-text">云管平台</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%91%E5%B9%B3%E5%8F%B0%E5%92%8C%E4%BA%91%E7%AE%A1%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9A"><span class="toc-text">云平台和云管平台的区别：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%9C%9C%E7%BD%90%E6%8A%80%E6%9C%AF"><span class="toc-text">蜜罐技术</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%9C%9C%E7%BD%90%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-text">蜜罐的分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%9C%9C%E7%BD%90%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="toc-text">蜜罐的优势</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8C%E5%90%91SSL"><span class="toc-text">双向SSL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF"><span class="toc-text">用户管理技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%88%E7%AB%AF%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86"><span class="toc-text">终端安全管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%88%E7%AB%AF%E7%AE%A1%E7%90%86%E5%8A%9F%E8%83%BD-%E2%80%93-%E7%BB%88%E7%AB%AF%E5%AE%89%E5%85%A8%E6%A3%80%E6%9F%A5%E7%AD%96%E7%95%A5"><span class="toc-text">终端管理功能 – 终端安全检查策略</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%88%E7%AB%AF%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">终端安全管理解决方案</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%91%E8%AE%A1%E7%AE%97%EF%BC%9A%E8%99%9A%E6%8B%9F%E5%8C%96"><span class="toc-text">云计算：虚拟化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E6%9C%89%E4%BA%91%E5%92%8C%E7%A7%81%E6%9C%89%E4%BA%91%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">公有云和私有云的区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TAP%E9%95%9C%E5%83%8F%E4%BA%A4%E6%8D%A2%E6%9C%BA"><span class="toc-text">TAP镜像交换机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%87%E4%BB%BD%E4%B8%80%E4%BD%93%E6%9C%BA"><span class="toc-text">备份一体机</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%9E%8B%E6%94%BB%E5%87%BB%E9%98%B2%E8%8C%83%E6%8A%80%E6%9C%AF"><span class="toc-text">网络型攻击防范技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B"><span class="toc-text">计算机启动过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WPDRRC%EF%BC%88Warning-Protect-Detect-React-Restore-Counterattack%EF%BC%89%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%85%B7%E4%BD%93%E7%8E%AF%E8%8A%82%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="toc-text">WPDRRC（Warning&#x2F;Protect&#x2F;Detect&#x2F;React&#x2F;Restore&#x2F;Counterattack）模型的具体环节如下：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E9%87%8F%E5%9E%8B%E6%94%BB%E5%87%BB"><span class="toc-text">流量型攻击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ddos%E6%94%BB%E5%87%BB%E6%96%B9%E5%BC%8F"><span class="toc-text">Ddos攻击方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%95%B8%E5%BD%A2%E6%8A%A5%E6%96%87%E6%94%BB%E5%87%BB"><span class="toc-text">畸形报文攻击</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%B0%E5%9D%80%E6%89%AB%E6%8F%8F%E6%94%BB%E5%87%BB%E9%98%B2%E8%8C%83"><span class="toc-text">地址扫描攻击防范</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F%E6%94%BB%E5%87%BB%E9%98%B2%E8%8C%83"><span class="toc-text">端口扫描攻击防范</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SMURF%E6%94%BB%E5%87%BB"><span class="toc-text">SMURF攻击</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LAND%E6%94%BB%E5%87%BB%E9%98%B2%E8%8C%83"><span class="toc-text">LAND攻击防范</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Fraggle%E6%94%BB%E5%87%BB%E9%98%B2%E8%8C%83"><span class="toc-text">Fraggle攻击防范</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IP-Fragment%E6%94%BB%E5%87%BB"><span class="toc-text">IP Fragment攻击</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IP-Spoofing%E6%94%BB%E5%87%BB%E9%98%B2%E8%8C%83"><span class="toc-text">IP Spoofing攻击防范</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Ping-of-Death%E6%94%BB%E5%87%BB"><span class="toc-text">Ping of Death攻击</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TCP-Flag%E6%94%BB%E5%87%BB"><span class="toc-text">TCP Flag攻击</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Teardrop%E6%94%BB%E5%87%BB"><span class="toc-text">Teardrop攻击</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#WinNuke%E6%94%BB%E5%87%BB%E9%98%B2%E8%8C%83"><span class="toc-text">WinNuke攻击防范</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP%E6%94%BB%E5%87%BB"><span class="toc-text">HTTP攻击</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E6%8A%A5%E6%96%87%E6%94%BB%E5%87%BB"><span class="toc-text">特殊报文攻击</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B6%85%E5%A4%A7ICMP%E6%8A%A5%E6%96%87%E6%94%BB%E5%87%BB%E9%98%B2%E8%8C%83"><span class="toc-text">超大ICMP报文攻击防范</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ICMP%E4%B8%8D%E5%8F%AF%E8%BE%BE%E6%8A%A5%E6%96%87%E6%94%BB%E5%87%BB%E9%98%B2%E8%8C%83"><span class="toc-text">ICMP不可达报文攻击防范</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Tracert%E6%8A%A5%E6%96%87%E6%94%BB%E5%87%BB%E9%98%B2%E8%8C%83"><span class="toc-text">Tracert报文攻击防范</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B0%B4%E5%9D%91%E6%94%BB%E5%87%BB"><span class="toc-text">水坑攻击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8D%95%E9%B2%B8%E6%94%BB%E5%87%BB"><span class="toc-text">捕鲸攻击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#URPF%E5%9C%BA%E6%99%AF%E8%AF%B4%E6%98%8E"><span class="toc-text">URPF场景说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E7%97%85%E6%AF%92%E6%8A%80%E6%9C%AF"><span class="toc-text">反病毒技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%97%85%E6%AF%92%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%EF%BC%9A"><span class="toc-text">病毒的基本概念：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%97%85%E6%AF%92%E7%9A%84%E7%A8%8B%E5%BA%8F%E7%BB%84%E6%88%90%EF%BC%9A"><span class="toc-text">病毒的程序组成：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A0%95%E8%99%AB%E7%97%85%E6%AF%92%EF%BC%9A"><span class="toc-text">蠕虫病毒：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86"><span class="toc-text">组成部分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%A5%E4%BE%B5%E6%96%B9%E6%B3%95"><span class="toc-text">入侵方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%B4%9B%E4%BC%8A%E6%9C%A8%E9%A9%AC%EF%BC%9A"><span class="toc-text">特洛伊木马：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%A8%E9%A9%AC%E7%9A%84%E7%89%B9%E7%82%B9%EF%BC%9A%E5%8F%AF%E4%BB%A5%E8%BF%9C%E7%AB%AF%E8%AE%B0%E5%BD%95%E9%94%AE%E7%9B%98%EF%BC%88%E6%95%B2%E8%BF%87%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E8%AE%B0%E5%BD%95%EF%BC%89"><span class="toc-text">木马的特点：可以远端记录键盘（敲过什么可以记录）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%97%85%E6%AF%92%E3%80%81%E8%A0%95%E8%99%AB%E5%92%8C%E6%9C%A8%E9%A9%AC%E5%AF%B9%E6%AF%94"><span class="toc-text">病毒、蠕虫和木马对比</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%82%89%E9%B8%A1%E3%80%81%E8%82%89%E6%9C%BA%EF%BC%9A"><span class="toc-text">肉鸡、肉机：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%83%B5%E5%B0%B8%E4%B8%BB%E6%9C%BA"><span class="toc-text">僵尸主机:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%83%B5%E5%B0%B8%E7%BD%91%E7%BB%9C%EF%BC%9A"><span class="toc-text">僵尸网络：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E7%97%85%E6%AF%92%E6%8A%80%E6%9C%AF%E7%9A%84%E5%88%86%E7%B1%BB%EF%BC%88%E8%87%B3%E4%BA%8E%E4%BB%A5%E4%B8%8B%E4%B8%A4%E7%A7%8D%EF%BC%89%EF%BC%9A"><span class="toc-text">反病毒技术的分类（至于以下两种）：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E6%9C%BA%E5%8F%8D%E7%97%85%E6%AF%92%EF%BC%88%E7%BB%88%E7%AB%AF%E9%98%B2%E7%97%85%E6%AF%92%EF%BC%89"><span class="toc-text">单机反病毒（终端防病毒）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A3%80%E6%B5%8B%E5%B7%A5%E5%85%B7"><span class="toc-text">检测工具</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9D%80%E6%AF%92%E8%BD%AF%E4%BB%B6"><span class="toc-text">杀毒软件</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E5%85%B3%E5%8F%8D%E7%97%85%E6%AF%92%EF%BC%88%E7%BD%91%E5%85%B3%E9%98%B2%E7%97%85%E6%AF%92%EF%BC%89"><span class="toc-text">网关反病毒（网关防病毒）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%8D%E7%97%85%E6%AF%92%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-text">反病毒工作原理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B2%E7%81%AB%E5%A2%99%E5%8F%8D%E7%97%85%E6%AF%92%E4%B8%BB%E6%B5%81%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F"><span class="toc-text">防火墙反病毒主流实现方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%90%86%E6%89%AB%E6%8F%8F%E6%96%B9%E5%BC%8F"><span class="toc-text">代理扫描方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%81%E6%89%AB%E6%8F%8F%E6%96%B9%E5%BC%8F"><span class="toc-text">流扫描方式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B2%E7%81%AB%E5%A2%99%E5%8F%8D%E7%97%85%E6%AF%92%E5%85%B8%E5%9E%8B%E6%8A%80%E6%9C%AF"><span class="toc-text">防火墙反病毒典型技术</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%B2%E7%81%AB%E5%A2%99%E5%BC%95%E6%93%8E%E9%80%9A%E8%BF%87%E5%90%84%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E6%A3%80%E6%B5%8B%E6%8A%80%E6%9C%AF%E6%A3%80%E6%B5%8B%E5%87%BA%E7%97%85%E6%AF%92%EF%BC%9A"><span class="toc-text">防火墙引擎通过各种不同的检测技术检测出病毒：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E5%85%B3%E5%8F%8D%E7%97%85%E6%AF%92%E9%85%8D%E7%BD%AE"><span class="toc-text">网关反病毒配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E5%8E%82%E5%95%86%E7%9A%84%E6%98%8E%E6%98%9F%E4%BA%A7%E5%93%81"><span class="toc-text">安全厂商的明星产品</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E4%B8%8E%E9%98%B2%E5%BE%A1%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80"><span class="toc-text">入侵检测与防御技术基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%85%A5%E4%BE%B5%E7%AE%80%E4%BB%8B"><span class="toc-text">网络入侵简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%A5%E4%BE%B5"><span class="toc-text">入侵</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%B8%E5%9E%8B%E7%9A%84%E5%85%A5%E4%BE%B5%E8%A1%8C%E4%B8%BA%EF%BC%9A"><span class="toc-text">典型的入侵行为：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%85%A5%E4%BE%B5%E6%96%B9%E5%BC%8F"><span class="toc-text">常见入侵方式:</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E6%BC%8F%E6%B4%9E"><span class="toc-text">系统漏洞</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F"><span class="toc-text">入侵检测系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B"><span class="toc-text">入侵检测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F%EF%BC%88IDS%EF%BC%8CIntrusion-Detection-System%EF%BC%89"><span class="toc-text">入侵检测系统（IDS，Intrusion Detection System）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E7%9A%84%E6%8A%80%E6%9C%AF%E5%AE%9E%E7%8E%B0"><span class="toc-text">入侵检测的技术实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A5%E4%BE%B5%E9%98%B2%E5%BE%A1%E7%B3%BB%E7%BB%9F"><span class="toc-text">入侵防御系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8%E8%BF%87%E6%BB%A4%E6%8A%80%E6%9C%AF"><span class="toc-text">内容安全过滤技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP%E4%BA%A4%E4%BA%92%E8%BF%87%E7%A8%8B"><span class="toc-text">HTTP交互过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8"><span class="toc-text">内容安全</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E4%B8%BB%E8%A6%81%E9%A3%8E%E9%99%A9"><span class="toc-text">信息安全主要风险</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%80%9C%E6%9C%BA%E5%AF%86%E6%80%A7%E3%80%81%E5%AE%8C%E6%95%B4%E6%80%A7%E5%92%8C%E5%8F%AF%E7%94%A8%E6%80%A7%E2%80%9D%EF%BC%88Confidentiality-Integrity-Availability%EF%BC%8C%E7%AE%80%E7%A7%B0CIA%EF%BC%89"><span class="toc-text">“机密性、完整性和可用性”（Confidentiality, Integrity, Availability，简称CIA）</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Web%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4"><span class="toc-text">Web安全防护</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#URL%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B"><span class="toc-text">URL工作过程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web%E5%BA%94%E7%94%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90"><span class="toc-text">Web应用的基本组成</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Cookies"><span class="toc-text">Cookies</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Session"><span class="toc-text">Session</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cookie%E5%92%8CSession%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">Cookie和Session的关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%BC%8F%E6%B4%9E"><span class="toc-text">服务器漏洞</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E"><span class="toc-text">注入漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SQL%E6%B3%A8%E5%85%A5"><span class="toc-text">SQL注入</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%BB%E6%89%BE%E6%B3%A8%E5%85%A5%E7%82%B9"><span class="toc-text">寻找注入点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%9B%B2%E6%B3%A8"><span class="toc-text">盲注</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SQL%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB"><span class="toc-text">SQL注入攻击</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC"><span class="toc-text">跨站脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84%E5%9E%8B%EF%BC%88JavaScript%EF%BC%9AWeb%E7%9A%84%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%EF%BC%89"><span class="toc-text">反射型（JavaScript：Web的编程语言）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%9E%8B"><span class="toc-text">存储型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0CSRF"><span class="toc-text">跨站请求伪造CSRF</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%E6%94%BB%E5%87%BB%E5%8E%9F%E7%90%86"><span class="toc-text">跨站请求伪造攻击原理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web%E4%BF%A1%E8%AA%89%E4%BD%93%E7%B3%BB%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-text">Web信誉体系工作流程</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E7%BA%A7%E4%BF%9D%E6%8A%A4%E6%B5%8B%E8%AF%84%EF%BC%88%E5%88%86%E4%BF%9D%EF%BC%89"><span class="toc-text">分级保护测评（分保）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-3"><span class="toc-text"></span></a></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        
+<div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          
+              <a title="github" target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">
+                <i class="iconfont icon-github"></i>
+              </a>
+              
+        </li>
+        
+    </ul>
+  </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2025 Oranges</a>
+        
+    </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+  
+</div>
+
+      </div>
+
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="Search...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>First search, index file loading, please wait...<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>No result<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The search.xml file was not found, please refer to：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The request failed, Try to refresh the page or try again later.<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E7%BD%91%E5%AE%89%E7%AC%94%E8%AE%B0 + '&url=' + http%3A%2F%2Fexample.com%2F2025%2F02%2F11%2F%25E7%25BD%2591%25E5%25AE%2589%25E7%259F%25A5%25E8%25AF%2586%25E7%2582%25B9%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://example.com/2025/02/11/%E7%BD%91%E5%AE%89%E7%9F%A5%E8%AF%86%E7%82%B9/" target="_blank" title="Facebook">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        
+      </div>
+    </div>
+  
+  
+<script src="/js/shares.js"></script>
+
+
+
+      </div>
+    </div>
+  </body>
+</html>
