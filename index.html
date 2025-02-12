@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>汪の收藏</title>
-    <meta name="author" content="John Doe" />
+    <title>X汪Z</title>
+    <meta name="author" content="WXZ" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta
@@ -68,7 +68,7 @@
         <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
     <nav id="desktop-menu">
         <a class="title" href="/">
-            <span>汪の收藏</span>
+            <span>X汪Z</span>
         </a>
         
         <a href="/">
@@ -100,7 +100,7 @@
     <nav id="mobile-menu">
         <div class="title" @click="showMenuItems = !showMenuItems">
             <i class="fa-solid fa-bars fa-fw"></i>
-            <span>&emsp;汪の收藏</span>
+            <span>&emsp;X汪Z</span>
         </div>
         <transition name="slide">
             <div class="items" v-show="showMenuItems">
@@ -172,7 +172,7 @@
         <span class="loop"></span>
         <span class="info">
             <div class="wrap">
-                <h1>汪の收藏</h1>
+                <h1>X汪Z</h1>
                 <h3></h3>
                 <h5></h5>
             </div>
@@ -186,135 +186,6 @@
 >
     <div id="home-posts">
         
-
-<div class="post">
-    <a href="/2025/02/11/docker-%E7%8E%AF%E5%A2%83%E5%A4%87%E5%BF%98/">
-        <h2 class="post-title">docker环境备忘</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/2/11
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h1 id="docker环境备忘"><a href="#docker环境备忘" class="headerlink" title="docker环境备忘"></a>docker环境备忘</h1><h1 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h1><pre><code>curl -sSL https://get.daocloud.io/docker | sh
-
-service docker start
-</code></pre>
-<ul>
-<li>[官方某版]安装docker-compose *</li>
-</ul>
-<pre><code>curl -L https://get.daocloud.io/docker/compose/releases/download/1.25.5/docker-compose-`uname -s`-`uname -m` &gt; /usr/bin/docker-compose
-
-chmod +x /usr/bin/docker-compose
-</code></pre>
-<p><em>[实测带依赖]安装docker&#x2F;docker-compose</em></p>
-<pre><code>sudo apt-get install python3.7-distutils   3.7 是对应你的版本
-curl -s https://bootstrap.pypa.io/get-pip.py | python3
-curl -s https://get.docker.com/ | sh
-systemctl start docker
-pip install docker-compose
-</code></pre>
-<h2 id="安装ping"><a href="#安装ping" class="headerlink" title="安装ping"></a><em>安装ping</em></h2><pre><code>apt-get install inetutils-ping net-tools
-</code></pre>
-<h2 id="安装hfish"><a href="#安装hfish" class="headerlink" title="安装hfish"></a><em>安装hfish</em></h2><pre><code class="language-运行版本">docker run -itd --name hfish \
--v /usr/share/hfish:/usr/share/hfish \
---network host \
---privileged=true \
-threatbook/hfish-server:latest
-</code></pre>
-<pre><code class="language-自动升级版">docker run -d    \
- --name watchtower \
- --restart unless-stopped \
-  -v /var/run/docker.sock:/var/run/docker.sock  \
-  --label=com.centurylinklabs.watchtower.enable=false \
---privileged=true \
-  containrrr/watchtower  \
-  --cleanup  \
-  hfish \
-  --interval 3600
-</code></pre>
-<h2 id="awvs-nessus镜像"><a href="#awvs-nessus镜像" class="headerlink" title="awvs&#x2F;nessus镜像"></a><em>awvs&#x2F;nessus镜像</em></h2><pre><code># 拉取镜像
-  docker pull leishianquan/awvs-nessus:v1
-  # 启动
-  docker run -it -d -p 13443:3443 -p 8834:8834 leishianquan/awvs-nessus:v1
-  # 查看容器
-  docker ps –a
-  # 启动容器
-  docker start container-id
-  # 进入容器
-  docker exec –it container-id /bin/bash
-
-  # 进入容器后，启动nessus
-  /etc/init.d/nessusd start
-
-  # 访问扫描器地址和账号密码
-  Nessus:
-  https://127.0.0.1:8834/#/
-  account:leishi/leishianquan
-
-  Awvs13:
-  https://127.0.0.1:13443/
-  account:admin@admin.com/Admin123
-</code></pre>
-<ul>
-<li><h2 id="安装postgresql"><a href="#安装postgresql" class="headerlink" title="安装postgresql"></a>安装postgresql</h2></li>
-</ul>
-<pre><code>sudo docker pull postgres:latest
-</code></pre>
-<pre><code>docker volume create postgres-volume
-</code></pre>
-<pre><code>docker run -d --name=postgres -p 5432:5432 -v postgres_docker_db:/var/lib/postgresql/data -e POSTGRES_PASSWORD=123456 postgres
-</code></pre>
-<ul>
-<li><h2 id="安装minio"><a href="#安装minio" class="headerlink" title="安装minio"></a>安装minio</h2></li>
-</ul>
-<pre><code>docker run -dit --name minio -p 9000:9000 -p 9001:9001 -v ./minio/data/:/data -e MINIO_ROOT_USER=&quot;admin&quot; -e MINIO_ROOT_PASSWORD=&quot;Pass@123123&quot; bitnami/minio:2023.3.13
-</code></pre>
-<ul>
-<li><h2 id="安装dm8数据库"><a href="#安装dm8数据库" class="headerlink" title="安装dm8数据库"></a>安装dm8数据库</h2></li>
-</ul>
-<p>新版本 Docker 镜像中数据库默认用户名&#x2F;密码为 SYSDBA&#x2F;SYSDBA001</p>
-<pre><code>docker run -d -p 5236:5236 --restart=always --name dm8_01 --privileged=true -e PAGE_SIZE=16 -e LD_LIBRARY_PATH=/opt/dmdbms/bin -e INSTANCE_NAME=dm8_01 -v /data/dm8_01:/opt/dmdbms/data dm8_single:v8.1.2.128_ent_x86_64_ctm_pack4
-</code></pre>
-<ul>
-<li><h2 id="部署MySQL"><a href="#部署MySQL" class="headerlink" title="部署MySQL"></a>部署MySQL</h2></li>
-</ul>
-<p>部署5.7</p>
-<pre><code>sudo docker run --name mysql-server -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306  mysql:5.7
-</code></pre>
-<p>导入sql文件</p>
-<pre><code>sudo docker cp /tmp/apikiller.sql bteye-mysql:/tmp/apikiller.sql
-sudo docker exec -it mysql-server mysql -uroot -p123456
-source /tmp/apikiller.sql
-</code></pre>
-<h2 id="部署nsqd"><a href="#部署nsqd" class="headerlink" title="部署nsqd"></a><em>部署nsqd</em></h2><pre><code>docker run -d --name nsqadmin -p 4151:4151 nsqio/nsq /nsqadmin --lookupd-http-address=121.37.175.222:4151
-docker run --name nsqd -p 4150:4150  -d nsqio/nsq /nsqd --broadcast-address=121.37.175.222 --lookupd-tcp-address=121.37.175.222:4150
-</code></pre>
-<h2 id="部署phpmyadmin"><a href="#部署phpmyadmin" class="headerlink" title="部署phpmyadmin"></a><em>部署phpmyadmin</em></h2><pre><code>docker run --name pma -dit -e PMA_HOST=192.168.20.46 -e PMA_PORT=49153 -e PMA_USER和PMA_PASSWORD=123456 -P phpmyadmin
-</code></pre>
-<h2 id="部署nginx-反代知识星球"><a href="#部署nginx-反代知识星球" class="headerlink" title="部署nginx 反代知识星球"></a><em>部署nginx 反代知识星球</em></h2><pre><code>
-docker run  --name zsxq -d -e YOUR_ACCESS_TOKEN=&quot;xxxxx&quot; -e YOUR_IP_OR_DOMAIN=&quot;xx.xx.xx.xx:9090&quot; -p 9090:80 zgao/zsxq
-</code></pre>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2025/02/11/docker-%E7%8E%AF%E5%A2%83%E5%A4%87%E5%BF%98/" class="go-post">阅读全文</a>
-</div>
 
 <div class="post">
     <a href="/2025/02/11/SQL%E6%B3%A8%E5%85%A5/">
@@ -459,6 +330,135 @@ X-forwarded-For
     <a href="/2025/02/11/SQL%E6%B3%A8%E5%85%A5/" class="go-post">阅读全文</a>
 </div>
 
+<div class="post">
+    <a href="/2025/02/11/docker-%E7%8E%AF%E5%A2%83%E5%A4%87%E5%BF%98/">
+        <h2 class="post-title">docker环境备忘</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/2/11
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h1 id="docker环境备忘"><a href="#docker环境备忘" class="headerlink" title="docker环境备忘"></a>docker环境备忘</h1><h1 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h1><pre><code>curl -sSL https://get.daocloud.io/docker | sh
+
+service docker start
+</code></pre>
+<ul>
+<li>[官方某版]安装docker-compose *</li>
+</ul>
+<pre><code>curl -L https://get.daocloud.io/docker/compose/releases/download/1.25.5/docker-compose-`uname -s`-`uname -m` &gt; /usr/bin/docker-compose
+
+chmod +x /usr/bin/docker-compose
+</code></pre>
+<p><em>[实测带依赖]安装docker&#x2F;docker-compose</em></p>
+<pre><code>sudo apt-get install python3.7-distutils   3.7 是对应你的版本
+curl -s https://bootstrap.pypa.io/get-pip.py | python3
+curl -s https://get.docker.com/ | sh
+systemctl start docker
+pip install docker-compose
+</code></pre>
+<h2 id="安装ping"><a href="#安装ping" class="headerlink" title="安装ping"></a><em>安装ping</em></h2><pre><code>apt-get install inetutils-ping net-tools
+</code></pre>
+<h2 id="安装hfish"><a href="#安装hfish" class="headerlink" title="安装hfish"></a><em>安装hfish</em></h2><pre><code class="language-运行版本">docker run -itd --name hfish \
+-v /usr/share/hfish:/usr/share/hfish \
+--network host \
+--privileged=true \
+threatbook/hfish-server:latest
+</code></pre>
+<pre><code class="language-自动升级版">docker run -d    \
+ --name watchtower \
+ --restart unless-stopped \
+  -v /var/run/docker.sock:/var/run/docker.sock  \
+  --label=com.centurylinklabs.watchtower.enable=false \
+--privileged=true \
+  containrrr/watchtower  \
+  --cleanup  \
+  hfish \
+  --interval 3600
+</code></pre>
+<h2 id="awvs-nessus镜像"><a href="#awvs-nessus镜像" class="headerlink" title="awvs&#x2F;nessus镜像"></a><em>awvs&#x2F;nessus镜像</em></h2><pre><code># 拉取镜像
+  docker pull leishianquan/awvs-nessus:v1
+  # 启动
+  docker run -it -d -p 13443:3443 -p 8834:8834 leishianquan/awvs-nessus:v1
+  # 查看容器
+  docker ps –a
+  # 启动容器
+  docker start container-id
+  # 进入容器
+  docker exec –it container-id /bin/bash
+
+  # 进入容器后，启动nessus
+  /etc/init.d/nessusd start
+
+  # 访问扫描器地址和账号密码
+  Nessus:
+  https://127.0.0.1:8834/#/
+  account:leishi/leishianquan
+
+  Awvs13:
+  https://127.0.0.1:13443/
+  account:admin@admin.com/Admin123
+</code></pre>
+<ul>
+<li><h2 id="安装postgresql"><a href="#安装postgresql" class="headerlink" title="安装postgresql"></a>安装postgresql</h2></li>
+</ul>
+<pre><code>sudo docker pull postgres:latest
+</code></pre>
+<pre><code>docker volume create postgres-volume
+</code></pre>
+<pre><code>docker run -d --name=postgres -p 5432:5432 -v postgres_docker_db:/var/lib/postgresql/data -e POSTGRES_PASSWORD=123456 postgres
+</code></pre>
+<ul>
+<li><h2 id="安装minio"><a href="#安装minio" class="headerlink" title="安装minio"></a>安装minio</h2></li>
+</ul>
+<pre><code>docker run -dit --name minio -p 9000:9000 -p 9001:9001 -v ./minio/data/:/data -e MINIO_ROOT_USER=&quot;admin&quot; -e MINIO_ROOT_PASSWORD=&quot;Pass@123123&quot; bitnami/minio:2023.3.13
+</code></pre>
+<ul>
+<li><h2 id="安装dm8数据库"><a href="#安装dm8数据库" class="headerlink" title="安装dm8数据库"></a>安装dm8数据库</h2></li>
+</ul>
+<p>新版本 Docker 镜像中数据库默认用户名&#x2F;密码为 SYSDBA&#x2F;SYSDBA001</p>
+<pre><code>docker run -d -p 5236:5236 --restart=always --name dm8_01 --privileged=true -e PAGE_SIZE=16 -e LD_LIBRARY_PATH=/opt/dmdbms/bin -e INSTANCE_NAME=dm8_01 -v /data/dm8_01:/opt/dmdbms/data dm8_single:v8.1.2.128_ent_x86_64_ctm_pack4
+</code></pre>
+<ul>
+<li><h2 id="部署MySQL"><a href="#部署MySQL" class="headerlink" title="部署MySQL"></a>部署MySQL</h2></li>
+</ul>
+<p>部署5.7</p>
+<pre><code>sudo docker run --name mysql-server -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306  mysql:5.7
+</code></pre>
+<p>导入sql文件</p>
+<pre><code>sudo docker cp /tmp/apikiller.sql bteye-mysql:/tmp/apikiller.sql
+sudo docker exec -it mysql-server mysql -uroot -p123456
+source /tmp/apikiller.sql
+</code></pre>
+<h2 id="部署nsqd"><a href="#部署nsqd" class="headerlink" title="部署nsqd"></a><em>部署nsqd</em></h2><pre><code>docker run -d --name nsqadmin -p 4151:4151 nsqio/nsq /nsqadmin --lookupd-http-address=121.37.175.222:4151
+docker run --name nsqd -p 4150:4150  -d nsqio/nsq /nsqd --broadcast-address=121.37.175.222 --lookupd-tcp-address=121.37.175.222:4150
+</code></pre>
+<h2 id="部署phpmyadmin"><a href="#部署phpmyadmin" class="headerlink" title="部署phpmyadmin"></a><em>部署phpmyadmin</em></h2><pre><code>docker run --name pma -dit -e PMA_HOST=192.168.20.46 -e PMA_PORT=49153 -e PMA_USER和PMA_PASSWORD=123456 -P phpmyadmin
+</code></pre>
+<h2 id="部署nginx-反代知识星球"><a href="#部署nginx-反代知识星球" class="headerlink" title="部署nginx 反代知识星球"></a><em>部署nginx 反代知识星球</em></h2><pre><code>
+docker run  --name zsxq -d -e YOUR_ACCESS_TOKEN=&quot;xxxxx&quot; -e YOUR_IP_OR_DOMAIN=&quot;xx.xx.xx.xx:9090&quot; -p 9090:80 zgao/zsxq
+</code></pre>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="/2025/02/11/docker-%E7%8E%AF%E5%A2%83%E5%A4%87%E5%BF%98/" class="go-post">阅读全文</a>
+</div>
+
 
         <div class="page-current">
     
@@ -477,13 +477,21 @@ X-forwarded-For
         <div class="avatar">
             <img src="/images/xiongmao.png" alt="avatar" />
         </div>
-        <div class="name">John Doe</div>
+        <div class="name">WXZ</div>
         <div class="description">
             <p>Here’s an argvchs…</p>
 
         </div>
         
         <div class="icon-links">
+            
+            <span class="icon-link">
+                <a href="/">
+                    <i
+                        class="fa- fa- fa-fw"
+                    ></i>
+                </a>
+            </span>
             
             <span class="icon-link">
                 <a target="_blank" rel="noopener" href="https://github.com/argvchs">
@@ -551,11 +559,11 @@ X-forwarded-For
     <div id="footer-wrap">
         <div>
             &copy;
-            2022 - 2025 汪の收藏
+            2022 - 2025 X汪Z
             <span id="footer-icon">
                 <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
-            &commat;John Doe
+            &commat;WXZ
         </div>
         <div>
             Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
