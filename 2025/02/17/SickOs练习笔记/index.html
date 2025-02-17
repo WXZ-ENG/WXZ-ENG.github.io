@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>Archives | X汪Z</title>
+    <title> | X汪Z</title>
     <meta name="author" content="WXZ" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -45,7 +45,9 @@
 
 
 
-<script src="/js/lib/search.js"></script>
+
+
+
 
 
 
@@ -145,56 +147,73 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            
-<div id="archives">
-    
-    <input id="search-bar" class="input" placeholder="搜索" v-model="rawSearch" />
-    
-    <div id="timeline-wrap" ref="timeline">
+            <div class="article">
+    <div>
+        <h1></h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/2/17
+        </span>
         
-        <div class="timeline" data-title="docker环境备忘">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2025/2/11</div>
-                <a href="/2025/02/11/docker-%E7%8E%AF%E5%A2%83%E5%A4%87%E5%BF%98/">
-                    <h3>docker环境备忘</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="sql注入">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2025/2/11</div>
-                <a href="/2025/02/11/SQL%E6%B3%A8%E5%85%A5/">
-                    <h3>SQL注入</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2025/2/17</div>
-                <a href="/2025/02/17/SickOs%E7%BB%83%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                    <h3></h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
         
     </div>
+    
+    <div class="content" v-pre>
+        <hr>
+<h2 id="title-SickOs练习笔记"><a href="#title-SickOs练习笔记" class="headerlink" title="title:SickOs练习笔记"></a>title:SickOs练习笔记</h2><h1 id="SickOs练习笔记"><a href="#SickOs练习笔记" class="headerlink" title="SickOs练习笔记"></a>SickOs练习笔记</h1><p>首先信息收集利用goby、nmap扫描</p>
+<p><img src="C:\Users\123\AppData\Roaming\Typora\typora-user-images\image-20250217092428819.png" alt="image-20250217092428819"></p>
+<p>直接访问3128端口errer</p>
+<p>发现是代理服务器</p>
+<p>配置代理 192.168.101.33：3128</p>
+<p><img src="C:\Users\123\AppData\Roaming\Typora\typora-user-images\image-20250217092722579.png" alt="image-20250217092722579"></p>
+<p>发现访问默认80好使了</p>
+<p><img src="C:\Users\123\AppData\Roaming\Typora\typora-user-images\image-20250217092840203.png" alt="image-20250217092840203"></p>
+<p>接下来想要扫描可以用burp</p>
+<p>攻击机-&gt;buep-&gt;代理服务器-&gt;靶机</p>
+<p>在burp下设置代理</p>
+<p><img src="C:\Users\123\AppData\Roaming\Typora\typora-user-images\image-20250217092806426.png" alt="image-20250217092806426"></p>
+<p>挂代理扫描</p>
+<p>扫到robots.txt</p>
+<p><img src="C:\Users\123\AppData\Roaming\Typora\typora-user-images\image-20250217094355411.png" alt="image-20250217094355411"></p>
+<p>正常应该扫出wolfcms 再</p>
+<p><img src="C:\Users\123\AppData\Roaming\Typora\typora-user-images\image-20250217094431011.png" alt="image-20250217094431011"></p>
+<p>输入admin&#x2F;admin（弱口令了）</p>
+<p>成功进入</p>
+<p><img src="C:\Users\123\AppData\Roaming\Typora\typora-user-images\image-20250217095710427.png" alt="image-20250217095710427"></p>
+<p>发现文件位置可以上传文件尝试上传.php一句话木马</p>
+<p><img src="C:\Users\123\AppData\Roaming\Typora\typora-user-images\image-20250217095810273.png" alt="image-20250217095810273"></p>
+<p>用蚁剑配置代理连接发现显示的连接不对</p>
+<p><img src="C:\Users\123\AppData\Roaming\Typora\typora-user-images\image-20250217095941188.png" alt="image-20250217095941188"></p>
+<p><img src="C:\Users\123\AppData\Roaming\Typora\typora-user-images\image-20250217101705062.png" alt="image-20250217101705062"></p>
+<p>根据线索挨个试试</p>
+<p>找到正确路径进入</p>
+<p>ps：蚁剑也需要配置代理</p>
+<p><img src="C:\Users\123\AppData\Roaming\Typora\typora-user-images\image-20250217101839833.png" alt="image-20250217101839833"></p>
+<p>翻后台发现config文件拿到数据库账号密码</p>
+<p><img src="C:\Users\123\AppData\Roaming\Typora\typora-user-images\image-20250217105938114.png" alt="image-20250217105938114"></p>
+<p>尝试连接ssh发现用户sickos，john@123可以成功登录</p>
+<p><img src="C:\Users\123\AppData\Roaming\Typora\typora-user-images\image-20250217110544554.png" alt="image-20250217110544554"></p>
+<p>ssh 用户名@域名</p>
+<p>输入密码登录</p>
+<p>sudo &#x2F;bin&#x2F;bash</p>
+<p>输入密码提权</p>
+
+    </div>
+    
+    
+    
+    
+    <div id="comment">
+        <div id="giscus-container" class="giscus"></div>
+    </div>
+    
+    
+    
+    
 </div>
 
             <footer id="footer">
@@ -232,6 +251,29 @@
             document.body.append(document.createRange().createContextualFragment(html));
         }
     </script>
+    
+    
+<script
+    src="https://giscus.app/client.js"
+    data-repo="argvchs/giscus-comments"
+    data-repo-id="R_kgDOI_uC-w"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOI_uC-84CUToF"
+    data-mapping="pathname"
+    data-strict="1"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="https://static-argvchs.netlify.app/css/giscus.css"
+    data-lang="zh-CN"
+    crossorigin
+    async
+></script>
+
+
+
+
+
     
 </body>
 </html>
